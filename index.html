@@ -1,1 +1,89 @@
-Hello World
+<html> 
+<head> 
+  <style type="text/css"> 
+ 
+html, body {
+height: 100%;         /* required */
+}
+body {
+text-align: center;   /* horizontal centering hack for IE */
+padding: 0;           /* required to "hide" distance div */
+margin: 0;            /* required to "hide" distance div */
+}
+ 
+div#distance { 
+margin-bottom: -10em; /* half of content height */
+width: 1px;           /* required to "hide" distance div */
+height: 50%;          /* required */
+float: left;          /* required */
+ 
+}
+div#content {
+position: relative;   /* positions content on top of distance */
+text-align: left;     /* horizontal centering hack for IE */
+height: 20em;         /* required - desired height */
+width: 40em;          /* required - desired width */
+margin: 0 auto;       /* required */
+clear: left;          /* required */
+}
+ 
+ 
+td.linklabel {
+padding-right: 20px;
+text-align: right;
+}
+ 
+td {
+font-family: sans-serif;
+}
+ 
+td {
+padding-bottom: 7px;
+}
+ 
+a, a:visited {
+color:black;
+ 
+}
+ 
+ 
+td#imageCell {
+padding-bottom: 30px;
+}
+  </style> 
+  <title>Daniel Ramteke</title> 
+  </head> 
+<body> 
+ 
+  
+   <div id="distance"></div> 
+      <div id="content"> 
+	<table> 
+	  <tr> 
+	    <td>&nbsp;</td><td id="imageCell"><img src="daniel.png" alt="Daniel Ramteke"/></td> 
+	    </tr> 
+	  <tr> 
+	    <td class="linklabel">Twitter </td> 
+	    <td class="linkcell"><a href="http://twitter.com/danramteke">twitter.com/danramteke</a></td> 
+	  </tr> 
+	  <tr> 
+	    <td class="linklabel">Tumblr </td> 
+	    <td class="linkcell"><a href="http://danramteke.tumblr.com">danramteke.tumblr.com</a></td> 
+	  </tr> 
+	  <tr> 
+	    <td class="linklabel">GitHub </td> 
+	    <td class="linkcell"><a href="http://github.com/danramteke">github.com/danramteke</a></td> 
+	  </tr> 
+	  <tr> 
+	    <td class="linklabel">LinkedIn </td> 
+	    <td class="linkcell"><a href="http://www.linkedin.com/in/danielramteke">linkedin.com/in/danielramteke</a></td> 
+	  </tr> 
+	  <tr> 
+	    <td class="linklabel">Music </td> 
+	    <td class="linkcell"><a href="http://stainedglasspoet.com">stainedglasspoet.com</a></td> 
+	    </tr> 
+	  </table> 
+	   </div> 
+      </body> 
+</html> 
+
