@@ -6,3 +6,7 @@ body{
     
     font-size: small;
 }
+
+div.titleContainer{
+    font-size: 300%;
+}
