@@ -1,0 +1,55 @@
+body{
+    background-color: eeeeee;
+}
+
+.bodyContainer {
+    background-color: white;
+    padding-left: 50px;
+    padding-right:50px;
+    padding-top:25px;
+    padding-bottom:25;
+      margin-left: auto;
+      margin-right: auto
+}
+#titleBanner{
+    display: block;
+    
+    margin-left: auto;
+      margin-right: auto;
+}
+
+.titleContainer {
+    
+    margin-left: auto;
+      margin-right: auto; 
+}
+
+div.container {
+      width: 768px;
+      margin-left: auto;
+        margin-right: auto;
+}
+
+img.centeredImage{
+    display:block;
+    margin-left: auto;
+         margin-right: auto;
+}
+
+div.footer {
+    margin-top: 5px;
+    text-align: center;
+    margin-left: auto;
+      margin-right: auto;
+}
+
+div.screenshotLinks {
+    text-align:center;
+    white-space: nowrap;
+    margin-bottom: 15px;
+}
+
+a.screenshotCaption {
+    display:block;
+    text-align:center;
+}
