@@ -21,7 +21,7 @@ float: left;          /* required */
 div#content {
 
 position: relative;   /* positions content on top of distance */
-text-align: left;     /* horizontal centering hack for IE */
+text-align: center;     /* horizontal centering hack for IE */
 
 width: 300px;          /* required - desired width */
 margin: 0 auto;       /* required */
@@ -29,32 +29,23 @@ clear: left;          /* required */
 }
  
  
-td.linklabel {
-padding-right: 20px;
-text-align: right;
-}
  
 td, div {
 font-family: sans-serif;
 }
  
-td {
-padding-bottom: 7px;
-}
- 
 a, a:visited {
 color:black;
- 
 }
  
  
-td#imageCell {
+div#imageCell {
 padding-bottom: 30px;
 }
 
 div.extraLinks{
 	text-align: center;
-	margin-top: 78px;
+	margin-top: 30px;
 }
   </style> 
   <title>Daniel Ramteke</title> 
@@ -63,37 +54,23 @@ div.extraLinks{
  
   
    <div id="distance"></div> 
+
       <div id="content"> 
-	<table> 
-	  <tr> 
-	    <td>&nbsp;</td><td id="imageCell"><img src="daniel.png" alt="Daniel Ramteke"/></td> 
-	    </tr> 
-	  <tr> 
-	    <td class="linklabel">Twitter </td> 
-	    <td class="linkcell"><a href="http://twitter.com/danramteke">twitter.com/danramteke</a></td> 
-	  </tr> 
-	  <tr> 
-	    <td class="linklabel">Tumblr </td> 
-	    <td class="linkcell"><a href="http://danramteke.tumblr.com">danramteke.tumblr.com</a></td> 
-	  </tr> 
-	  <tr> 
-	    <td class="linklabel">GitHub </td> 
-	    <td class="linkcell"><a href="http://github.com/danramteke">github.com/danramteke</a></td> 
-	  </tr> 
-	  <tr> 
-	    <td class="linklabel">LinkedIn </td> 
-	    <td class="linkcell"><a href="http://www.linkedin.com/in/danielramteke">linkedin.com/in/danielramteke</a></td> 
-	  </tr> 
-	  <tr> 
-	    <td class="linklabel">Music </td> 
-	    <td class="linkcell"><a href="http://stainedglasspoet.com">stainedglasspoet.com</a></td> 
-	    </tr> 
+		<div id="imageCell"><img src="daniel.png" alt="Daniel Ramteke"/></div> 
+	    
 	
-	  
-	  </table> 
+		<div class="firstRow">
+	    	<a href="http://twitter.com/danramteke">Twitter</a> | 
+			<a href="http://danramteke.tumblr.com">Tumblr</a> | <a href="http://github.com/danramteke">GitHub</a> |
+			 <a href="http://www.linkedin.com/in/danielramteke">LinkedIn</a>
+		</div>
+
+
 	
-	
-		<div class="extraLinks"><a href="./resume.html">resume</a></div>
+		<div class="extraLinks">
+			<a href="./resume.html">resume</a> 
+			<a href="http://stainedglasspoet.com">music</a>
+		</div>
 	
 	
 	   </div> 
