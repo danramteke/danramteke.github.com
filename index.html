@@ -1,5 +1,6 @@
 <html> 
 <head> 
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css">
   <style type="text/css"> 
  
 html, body {
@@ -22,8 +23,7 @@ div#content {
 
 position: relative;   /* positions content on top of distance */
 text-align: center;     /* horizontal centering hack for IE */
-
-width: 500px;          /* required - desired width */
+width: 440px;          /* required - desired width */
 margin: 0 auto;       /* required */
 clear: left;          /* required */
 }
@@ -36,13 +36,36 @@ font-family: sans-serif;
  
 a, a:visited {
 color:black;
-margin-left: 10px;
-margin-right: 10px;
+
 }
  
  
 div#imageCell {
-padding-bottom: 60px;
+padding-bottom: 20px;
+}
+
+div.linkLabel {
+	width: 120px;
+	float:left;
+	text-align: right;
+	padding-top:13px;
+}
+div.linkActual {
+	width: 300px;
+	text-align: left;
+	float:right;
+	padding-top:13px;
+}
+div.infoRow{
+
+	position:relative;
+}
+
+
+div.secondRow{
+	width:400px;
+
+	padding-top:225px;
 }
 
   </style> 
@@ -58,16 +81,53 @@ padding-bottom: 60px;
 	    
 	
 		<div class="firstRow">
-	    	<a href="http://twitter.com/danramteke">Twitter</a> 
-			<a href="http://danramteke.tumblr.com">Tumblr</a>  <a href="http://github.com/danramteke">GitHub</a> 
-			 <a href="http://www.linkedin.com/in/danielramteke">LinkedIn</a>
-	
-			<a href="./resume.html">resume</a> 
-			<a href="http://stainedglasspoet.com">music</a>
+			
+			<div class="infoRow">
+				<div class="linkLabel">Twitter:</div>
+			 	<div class="linkActual"> <a href="http://twitter.com/danramteke">twitter.com/danramteke</a> </div>
+			</div>
+			
+			
+				<div class="infoRow">
+					<div class="linkLabel">Tumblr:</div>
+				 	<div class="linkActual"> <a href="http://danramteke.tumblr.com">danramteke.tumblr.com</a> </div>
+				</div>			
+		
+			<div class="infoRow">
+				<div class="linkLabel">GitHub:</div>
+			 	<div class="linkActual"> <a href="http://github.com/danramteke">github.com/danramteke</a> </div>
+			</div>
+			
+			
+
+				<div class="infoRow">
+					<div class="linkLabel">LinkedIn:</div>
+				 	<div class="linkActual"> <a href="http://linkedin.com/in/danielramteke">linkedin.com/in/danielramteke</a> </div>
+				</div>
+
+
+				<div class="infoRow">
+					<div class="linkLabel">App Store:</div>
+				 	<div class="linkActual"> <a href="http://itunes.com/apps/danramteke">itunes.com/apps/danramteke</a> </div>
+				</div>
+				
 		</div>
 	
-	
+		<div class="secondRow">
+			<a href="./resume.html">resume</a>, 
+			<a href="http://stainedglasspoet.com">music</a>,
+			<a href="http://danramteke.com/placetumbler">PlaceTumbler</a>
+		</div>
 	   </div> 
       </body> 
 </html> 
+
+<!-- <div>
+<a href="http://twitter.com/danramteke">Twitter</a> 
+<a href="http://danramteke.tumblr.com">Tumblr</a>  <a href="http://github.com/danramteke">GitHub</a> 
+ <a href="http://www.linkedin.com/in/danielramteke">LinkedIn</a>
+
+<a href="./resume.html">resume</a> 
+<a href="http://stainedglasspoet.com">music</a>
+</div> -->
 
