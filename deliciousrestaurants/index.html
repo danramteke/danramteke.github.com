@@ -1,22 +1,66 @@
-<html>
-<head>
-  <title>Delicious Restaurants</title>
-  <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Delicious Restaurants by </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<div id="floatingContainer">
-<h1>Delicious Restaurants</h1>
-<h2>These restaurants are delicious</h2>
+    <!-- Le styles -->
+    <link href="./assets/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+  </head>
 
+  <body>
 
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Delicious Restaurants</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#map">Map</a></li>
+              <li><a href="#latest">Latest</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-  <h3>Five Napkin Burger</h3>
-  <p><a href="http://maps.google.com/maps?q=40.760273,-73.99123&z=16"><img src="http://maps.google.com/maps/api/staticmap?center=40.760273,-73.99123&zoom=15&markers=40.760273,-73.99123&size=220x180&sensor=true" /></a></p>
-  <p><a href="http://maps.google.com/maps?q=40.760273,-73.99123&z=16">W 45th and 9th</a></p>
-  <p><p>JD and I go here often. The restaurant is always crowded, but the wait is shorter than they hostess promises it will be. There's a bar in the back to order a drink while waiting for an open table. You know when your table is ready when the mini buzzer they give you lights up.</p>
+    <div class="container">
+
+      <h1>Bootstrap starter template</h1>
+      <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
+
+      
+        <h3>Five Napkin Burger</h3>
+        <p><a href="http://maps.google.com/maps?q=40.760273,-73.99123&z=16"><img src="http://maps.google.com/maps/api/staticmap?center=40.760273,-73.99123&zoom=15&markers=40.760273,-73.99123&size=220x180&sensor=true" /></a></p>
+        <p><a href="http://maps.google.com/maps?q=40.760273,-73.99123&z=16">W 45th and 9th</a></p>
+        <p><p>JD and I go here often. The restaurant is always crowded, but the wait is shorter than they hostess promises it will be. There's a bar in the back to order a drink while waiting for an open table. You know when your table is ready when the mini buzzer they give you lights up.</p>
 
 <p>The beer selection is pretty good. Southern Tier comes bottled, Alagash on tap. Other good brews, too. There's a special Five Napkin house brew, but we've never tried it. There's a featured mainstream whiskey, and a couple other whiskeys.</p>
 
@@ -36,15 +80,19 @@
 
 
 <a href="http://5napkinburger.com/wp-mainsite/wp-content/files_mf/45thmenu.pdf">Full Menu</a></p>
+      
+        <h3>Mary's Fish Camp</h3>
+        <p><a href="http://maps.google.com/maps?q=40.734799,-74.003236&z=16"><img src="http://maps.google.com/maps/api/staticmap?center=40.734799,-74.003236&zoom=15&markers=40.734799,-74.003236&size=220x180&sensor=true" /></a></p>
+        <p><a href="http://maps.google.com/maps?q=40.734799,-74.003236&z=16">W 4th and Charles</a></p>
+        <p>Fantastic seafood. The best flavor composition of entrees in the city. So many flavors, and great balance. Also, great oysters.</p>
+      
 
+    </div> <!-- /container -->
 
-
-  <h3>Mary's Fish Camp</h3>
-  <p><a href="http://maps.google.com/maps?q=40.734799,-74.003236&z=16"><img src="http://maps.google.com/maps/api/staticmap?center=40.734799,-74.003236&zoom=15&markers=40.734799,-74.003236&size=220x180&sensor=true" /></a></p>
-  <p><a href="http://maps.google.com/maps?q=40.734799,-74.003236&z=16">W 4th and Charles</a></p>
-  <p>Fantastic seafood. The best flavor composition of entrees in the city. So many flavors, and great balance. Also, great oysters.</p>
-
-
-</div>
-</body>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/bootstrap-min.js"></script>
+  </body>
 </html>
