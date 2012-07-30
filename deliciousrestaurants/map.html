@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <title>CloudMade JavaScript API example</title>
+</head>
+<body>
+
+  <div id="cm-example" style="width: 500px; height: 500px"></div>
+
+  <script type="text/javascript" src="http://tile.cloudmade.com/wml/latest/web-maps-lite.js"></script>
+  <script type="text/javascript">
+    var cloudmade = new CM.Tiles.CloudMade.Web({key: '8ee2a50541944fb9bcedded5165f09d9'});
+    var map = new CM.Map('cm-example', cloudmade);
+    // map.setCenter(new CM.LatLng(40.760273,-73.99123), 15);
+
+ 
+
+    var myMarkerLatLng = new CM.LatLng(50.136,8.302);
+    var myMarker = new CM.Marker(myMarkerLatLng, {
+      title: "This is the Village of Naurod"
+    });
+    
+    map.setCenter(myMarkerLatLng, 14);
+    map.addOverlay(myMarker);
+
+       var topRight = new CM.ControlPosition(CM.TOP_RIGHT, new CM.Size(50, 20));
+    map.addControl(new CM.SmallMapControl(), topRight);
+    map.addControl(new CM.LargeMapControl());
+    map.addControl(new CM.ScaleControl());
+    map.addControl(new CM.OverviewMapControl());
+  </script>
+
+</body>
+</html>
