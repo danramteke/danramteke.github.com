@@ -27,6 +27,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+    <script src="./assets/js/jquery.js"></script>
   </head>
 
   <body>
@@ -56,27 +57,40 @@
     <div class="container">
   <div id="cm-example" style="width: 500px; height: 500px"></div>
 
+  
   <script type="text/javascript" src="http://tile.cloudmade.com/wml/latest/web-maps-lite.js"></script>
   <script type="text/javascript">
-    var cloudmade = new CM.Tiles.CloudMade.Web({key: '8ee2a50541944fb9bcedded5165f09d9'});
+  $(function(){
+    var cloudmade = new CM.Tiles.CloudMade.Web({key: 'f54a6dc9875746868b4f6a9fbd0d23ad'});
     var map = new CM.Map('cm-example', cloudmade);
-    // map.setCenter(new CM.LatLng(40.760273,-73.99123), 15);
+    
+      var myMarkerLatLng0 = new CM.LatLng(40.760273,-73.99123);
+      var myMarker0 = new CM.Marker(myMarkerLatLng0, {
+        title: "Five Napkin Burger"
+      });
+          
+      map.setCenter(myMarkerLatLng0, 14);
+      map.addOverlay(myMarker0);
+    
+      var myMarkerLatLng1 = new CM.LatLng(40.734799,-74.003236);
+      var myMarker1 = new CM.Marker(myMarkerLatLng1, {
+        title: "Mary's Fish Camp"
+      });
+          
+      map.setCenter(myMarkerLatLng1, 14);
+      map.addOverlay(myMarker1);
+    
 
+    
  
 
-    var myMarkerLatLng = new CM.LatLng(50.136,8.302);
-    var myMarker = new CM.Marker(myMarkerLatLng, {
-      title: "This is the Village of Naurod"
-    });
-    
-    map.setCenter(myMarkerLatLng, 14);
-    map.addOverlay(myMarker);
 
-       var topRight = new CM.ControlPosition(CM.TOP_RIGHT, new CM.Size(50, 20));
-    map.addControl(new CM.SmallMapControl(), topRight);
+
+
     map.addControl(new CM.LargeMapControl());
     map.addControl(new CM.ScaleControl());
     map.addControl(new CM.OverviewMapControl());
+  });
   </script>
 
 </div>
@@ -86,7 +100,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./assets/js/jquery.js"></script>
+    
     <script src="./assets/js/bootstrap.min.js"></script>
   </body>
 </html>
