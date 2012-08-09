@@ -63,22 +63,51 @@
   $(function(){
     var cloudmade = new CM.Tiles.CloudMade.Web({key: 'f54a6dc9875746868b4f6a9fbd0d23ad'});
     var map = new CM.Map('cm-example', cloudmade);
+
+    var centerLat = 40.7651634;
+    var centerLong =  -73.9880138;
+    map.setCenter(new CM.LatLng(centerLat, centerLong), 15);
     
-      var myMarkerLatLng0 = new CM.LatLng(40.760273,-73.99123);
+    
+      var myMarkerLatLng0 = new CM.LatLng(40.7651634, -73.9880138);
       var myMarker0 = new CM.Marker(myMarkerLatLng0, {
+        title: "Ariana"
+      });
+          
+      
+      map.addOverlay(myMarker0);
+    
+      var myMarkerLatLng1 = new CM.LatLng(40.760273,-73.99123);
+      var myMarker1 = new CM.Marker(myMarkerLatLng1, {
         title: "Five Napkin Burger"
       });
           
-      map.setCenter(myMarkerLatLng0, 14);
-      map.addOverlay(myMarker0);
+      
+      map.addOverlay(myMarker1);
     
-      var myMarkerLatLng1 = new CM.LatLng(40.734799,-74.003236);
-      var myMarker1 = new CM.Marker(myMarkerLatLng1, {
+      var myMarkerLatLng2 = new CM.LatLng(40.760683, -73.99116);
+      var myMarker2 = new CM.Marker(myMarkerLatLng2, {
+        title: "La Carafe"
+      });
+          
+      
+      map.addOverlay(myMarker2);
+    
+      var myMarkerLatLng3 = new CM.LatLng(40.734799,-74.003236);
+      var myMarker3 = new CM.Marker(myMarkerLatLng3, {
         title: "Mary's Fish Camp"
       });
           
-      map.setCenter(myMarkerLatLng1, 14);
-      map.addOverlay(myMarker1);
+      
+      map.addOverlay(myMarker3);
+    
+      var myMarkerLatLng4 = new CM.LatLng(40.7659239, -73.9874158);
+      var myMarker4 = new CM.Marker(myMarkerLatLng4, {
+        title: "Wondee Siam II"
+      });
+          
+      
+      map.addOverlay(myMarker4);
     
 
     
