@@ -5,6 +5,7 @@
 
 html, body {
 height: 100%;         /* required */
+background-color: #ffffff;
 }
 body {
 text-align: center;   /* horizontal centering hack for IE */
@@ -23,11 +24,12 @@ div#content {
 
 position: relative;   /* positions content on top of distance */
 text-align: center;     /* horizontal centering hack for IE */
-width: 440px;          /* required - desired width */
+width: 506px;          /* required - desired width */
 margin: 0 auto;       /* required */
 clear: left;          /* required */
+
+
 }
- 
  
  
 td, div {
@@ -35,38 +37,26 @@ font-family: sans-serif;
 }
  
 a, a:visited {
-color:black;
-
-}
- 
- 
-div#imageCell {
-padding-bottom: 20px;
-}
-
-div.linkLabel {
-	width: 120px;
-	float:left;
-	text-align: right;
-	padding-top:13px;
-}
-div.linkActual {
-	width: 300px;
-	text-align: left;
-	float:right;
-	padding-top:13px;
-}
-div.infoRow{
-
-	position:relative;
+	color:black;
 }
 
 
-div.secondRow{
-	width:400px;
-
-	padding-top:225px;
+div.main-links {
+	font-size: 1.3em;
+		
 }
+
+div.links  {
+
+margin: 30px auto;
+	background-color: #dddddd;
+	padding: 18px;
+	border-radius: 15px;
+	width: 320px;
+	text-align: center;
+}
+
+
 
 </style>
   <title>Daniel Ramteke</title> 
@@ -74,61 +64,28 @@ div.secondRow{
 <body> 
  
   
-   <div id="distance"></div> 
+  <div id="distance"></div> 
 
-      <div id="content"> 
+  <div id="content"> 
 		<div id="imageCell"><img src="daniel.png" alt="Daniel Ramteke"/></div> 
-	    
-	
-		<div class="firstRow">
-			
-			<div class="infoRow">
-				<div class="linkLabel">Twitter:</div>
-			 	<div class="linkActual"> <a href="http://twitter.com/danramteke">twitter.com/danramteke</a> </div>
-			</div>
+	  
 
-            
-			<div class="infoRow">
-				<div class="linkLabel">Blog:</div>
-			 	<div class="linkActual"> <a href="http://danramteke.com/blog">danramteke.com/blog</a> </div>
-			</div>
+	  <div class="main-links links">
+	  		<ul>
+					<li> <a href="./deliciousrestaurants/index.html">Delicious Restaurants</a></li>
+					
+				</ul>
+	  </div>
 
-            
-				<div class="infoRow">
-					<div class="linkLabel">Tumblr:</div>
-				 	<div class="linkActual"> <a href="http://danramteke.tumblr.com">danramteke.tumblr.com</a> </div>
-				</div>	
-		
-			<div class="infoRow">
-				<div class="linkLabel">GitHub:</div>
-			 	<div class="linkActual"> <a href="http://github.com/danramteke">github.com/danramteke</a> </div>
-			</div>
-			
-			
-
-				<div class="infoRow">
-					<div class="linkLabel">LinkedIn:</div>
-				 	<div class="linkActual"> <a href="http://linkedin.com/in/danielramteke">linkedin.com/in/danielramteke</a> </div>
-				</div>
-
-
-			
-			
+	  <div class="links">
+				<ul>
+					<li><a href="./resume.html">resume</a></li>
+					<li>Twitter: <a href="http://twitter.com/danramteke">twitter.com/danramteke</a></li>
+					<li>Tumblr: <a href="http://danramteke.tumblr.com">danramteke.tumblr.com</a></li>
+					<li>GitHub: <a href="http://github.com/danramteke">github.com/danramteke</a></li>
+					<li>LinkedIn: <a href="http://linkedin.com/in/danielramteke">linkedin.com/in/danielramteke</a></li>
+				</ul>
 		</div>
-	
-		<div class="secondRow">
-			<a href="./resume.html">resume</a>, <a href="./deliciousrestaurants/index.html">Delicious Restaurants</a>
-		</div>
-	   </div> 
-      </body> 
+	</div>   
+</body> 
 </html> 
-
-<!-- <div>
-<a href="http://twitter.com/danramteke">Twitter</a> 
-<a href="http://danramteke.tumblr.com">Tumblr</a>  <a href="http://github.com/danramteke">GitHub</a> 
- <a href="http://www.linkedin.com/in/danielramteke">LinkedIn</a>
-
-<a href="./resume.html">resume</a> 
-<a href="http://stainedglasspoet.com">music</a>
-</div> -->
-
