@@ -1,49 +1,55 @@
 <html> 
 <head> 
-	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/reset/reset-min.css"/>
-<style type="text/css">
+	<style type="text/css">
+/*
+Copyright (c) 2010, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.com/yui/license.html
+version: 2.8.1
+*/
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}del,ins{text-decoration:none;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:baseline;}sub{vertical-align:baseline;}legend{color:#000;}input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}input,button,textarea,select{*font-size:100%;}
 
 html, body {
-height: 100%;         /* required */
-background-color: #eeeeee;
+	height: 100%;         /* required */
+	background-color: #eeeeee;
 }
 body {
-text-align: center;   /* horizontal centering hack for IE */
-padding: 0;           /* required to "hide" distance div */
-margin: 0;            /* required to "hide" distance div */
+	text-align: center;   /* horizontal centering hack for IE */
+	padding: 0;           /* required to "hide" distance div */
+	margin: 0;            /* required to "hide" distance div */
 }
- 
+
 div#distance { 
-margin-bottom: -20em; /* reduction of content height */
-width: 1px;           /* required to "hide" distance div */
-height: 50%;          /* required */
-float: left;          /* required */
-
+	margin-bottom: -20em; /* reduction of content height */
+	width: 1px;           /* required to "hide" distance div */
+	height: 50%;          /* required */
+	float: left;          /* required */
+	min-height: 40px;
 }
+
 div#content {
-
-position: relative;   /* positions content on top of distance */
-text-align: center;     /* horizontal centering hack for IE */
-width: 506px;          /* required - desired width */
-margin: 0 auto;       /* required */
-clear: left;          /* required */
-
-
+	position: relative;   /* positions content on top of distance */
+	text-align: center;     /* horizontal centering hack for IE */
+	width: 506px;          /* required - desired width */
+	margin: 0 auto;       /* required */
+	clear: left;          /* required */
 }
- 
- 
+
+
 td, div {
-font-family: sans-serif;
+	font-family: sans-serif;
 }
- 
+
 a, a:visited {
 	color:black;
 }
 
 
+section#links {
+	width:320px;
+}
 
-
-div.links  {
+section.links  {
 	margin: 30px auto;
 	background-color: #dddddd;
 	padding: 12px;
@@ -52,34 +58,36 @@ div.links  {
 	text-align: center;
 }
 
-div.links ul li {
+section.links ul li {
 	margin: 6px 0;
 }
- div.main-links {
- 	margin-top: 70px;
- }
+section.first.links {
+	margin-top: 70px;
+}
+
+
 
 </style>
-  <title>Daniel Ramteke</title> 
-  </head> 
+<title>Daniel Ramteke</title> 
+</head> 
 <body> 
- 
-  
-  <div id="distance"></div> 
 
-  <div id="content"> 
+
+	<div id="distance"></div> 
+
+	<div id="content"> 
 		<div id="imageCell"><img src="daniel.png" alt="Daniel Ramteke"/></div> 
-	  
 
-	  <div class="main-links links">
-	  		<ul>
+		<article id="links">
+			<section class="links first">
+				<ul>
 					<li> <a href="./deliciousrestaurants/index.html">Delicious Restaurants</a></li>
 					<li> <a href="http://mywebsiteissoold.com">My Website is so Old</a></li>
 					<li> <a href="http://danramteke.com/devlog">Development Notes</a></li>
 				</ul>
-	  </div>
+			</section>
 
-	  <div class="links">
+			<section class="links">
 				<ul>
 					
 					<li>Twitter: <a href="http://twitter.com/danramteke">twitter.com/danramteke</a></li>
@@ -88,7 +96,8 @@ div.links ul li {
 					<li>LinkedIn: <a href="http://linkedin.com/in/danielramteke">linkedin.com/in/danielramteke</a></li>
 					<li>resume: <a href="./resume.html">danramteke.com/resume.html</a></li>
 				</ul>
-		</div>
+			</section>
+		</article>
 	</div>   
 </body> 
 </html> 
