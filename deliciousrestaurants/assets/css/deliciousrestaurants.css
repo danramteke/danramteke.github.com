@@ -4,5 +4,8 @@
 }
 
 .restaurant.container {
-  margin-bottom: 100px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: #eeeeee;
+  border-radius: 10px;
 }

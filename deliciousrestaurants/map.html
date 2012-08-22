@@ -57,7 +57,48 @@
 
 
     <div class="container">
-  <div id="cm-map" style="width: 100%; height: 500px; padding-bottom: 20%;"></div>
+  <style type="text/css">
+    #cm-map {
+      margin: auto;
+      padding-bottom: 20%;
+    }
+
+    @media (max-width: 480px) {
+      #cm-map {
+        height: 330px;
+        width: 330px;
+      }
+    }
+    @media (min-width: 768px) and (max-width: 979px) {
+      #cm-map {
+        height: 768px;
+        width: 768px;
+      }
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+      #cm-map {
+        height: 481px;
+        width: 481px;
+      }
+    }
+
+
+    @media (min-width: 980px) {
+      #cm-map {
+        height: 800px;
+        width: 980px;
+      }
+    }
+    @media (min-width: 1200px) {
+      #cm-map {
+        height: 800px;
+        width: 1200px;
+      }
+    }
+
+  </style>
+
+  <div id="cm-map" ></div>
 
   
   <script type="text/javascript" src="http://tile.cloudmade.com/wml/latest/web-maps-lite.js"></script>
@@ -119,21 +160,29 @@
       
       map.addOverlay(myMarker5);
     
-      var myMarkerLatLng6 = new CM.LatLng(40.8014967,-73.9651644);
+      var myMarkerLatLng6 = new CM.LatLng(40.755978,-73.990396);
       var myMarker6 = new CM.Marker(myMarkerLatLng6, {
-        title: "Taqueria y Fonda"
+        title: "Schnipper's Quality Kitchen"
       });
           
       
       map.addOverlay(myMarker6);
     
-      var myMarkerLatLng7 = new CM.LatLng(40.7659239,-73.9874158);
+      var myMarkerLatLng7 = new CM.LatLng(40.8014967,-73.9651644);
       var myMarker7 = new CM.Marker(myMarkerLatLng7, {
-        title: "Wondee Siam II"
+        title: "Taqueria y Fonda"
       });
           
       
       map.addOverlay(myMarker7);
+    
+      var myMarkerLatLng8 = new CM.LatLng(40.7659239,-73.9874158);
+      var myMarker8 = new CM.Marker(myMarkerLatLng8, {
+        title: "Wondee Siam II"
+      });
+          
+      
+      map.addOverlay(myMarker8);
     
 
     
