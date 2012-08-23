@@ -47,23 +47,44 @@ div#content {
 
 section.links  {
 	margin: 30px auto;
-	background-color: #C09D64;
+	
 	padding: 12px;
 	border-radius: 5px;
-	width: 320px;
+	
 	
 }
 
-section.links ul li {
-	margin: 6px 0;
+
+
+section.links.projects {
+	margin:0 auto;
+	margin-left: -50px;
+	width: 600px;
+}
+section.links.projects ul {
 	
-	padding: 1px;
-	color: #5c3900;
+
+	height: 60px;
+
+}
+section.links.projects ul li {
+	background-color: #C09D64;
+	padding: 13px;
+	border-radius: 5px;	
+	float: left;
+	margin: 10px;
+}
+
+section.links.social  {
+	width: 300px;
+	padding: 13px;
+	background-color: #C09D64;
 }
 
 section.links.social ul li {
-	font-size: .7em;
+	font-size: .9em;
 	color:#5C0023;
+	padding: 2px;
 }
 
 
@@ -80,8 +101,8 @@ section.links.social ul li {
 	<div id="content"> 
 		<div id="imageCell"><img src="daniel.png" alt="Daniel Ramteke"/></div> 
 
-		<article id="links projects">
-			<section class="links">
+		<article>
+			<section class="links projects">
 				<ul>
 					<li> <a href="./deliciousrestaurants/index.html">Delicious Restaurants</a></li>
 					<li> <a href="http://mywebsiteissoold.com">My Website is so Old</a></li>
