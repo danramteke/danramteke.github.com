@@ -29,7 +29,7 @@ a, a:visited {
 }
 
 div#distance { 
-	margin-bottom: -20em; /* reduction of content height */
+	margin-bottom: -25em; /* reduction of content height */
 	width: 1px;           /* required to "hide" distance div */
 	height: 50%;          /* required */
 	float: left;          /* required */
@@ -37,7 +37,7 @@ div#distance {
 
 div#content {
 	position: relative;   /* positions content on top of distance */
-	text-align: center;     /* horizontal centering hack for IE */
+	 text-align: left;     /* horizontal centering hack for IE */
 	width: 506px;          /* required - desired width */
 	margin: 0 auto;       /* required */
 	clear: left;          /* required */
@@ -45,21 +45,25 @@ div#content {
 
 
 
-section#links {
-	width:320px;
-}
-
 section.links  {
 	margin: 30px auto;
-	background-color: #dddddd;
+	background-color: #C09D64;
 	padding: 12px;
 	border-radius: 5px;
 	width: 320px;
-	text-align: center;
+	
 }
 
 section.links ul li {
 	margin: 6px 0;
+	
+	padding: 1px;
+	color: #5c3900;
+}
+
+section.links.social ul li {
+	font-size: .7em;
+	color:#5C0023;
 }
 
 
@@ -76,7 +80,7 @@ section.links ul li {
 	<div id="content"> 
 		<div id="imageCell"><img src="daniel.png" alt="Daniel Ramteke"/></div> 
 
-		<article id="links">
+		<article id="links projects">
 			<section class="links">
 				<ul>
 					<li> <a href="./deliciousrestaurants/index.html">Delicious Restaurants</a></li>
@@ -85,7 +89,7 @@ section.links ul li {
 				</ul>
 			</section>
 
-			<section class="links">
+			<section class="links social">
 				<ul>
 					<li>Twitter: <a href="http://twitter.com/danramteke">twitter.com/danramteke</a></li>
 					<li>Tumblr: <a href="http://danramteke.tumblr.com">danramteke.tumblr.com</a></li>
