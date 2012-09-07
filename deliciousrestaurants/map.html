@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-
+  <link href='http://fonts.googleapis.com/css?family=Mate' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
     <!--[if lte IE 8]>
        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
@@ -111,15 +111,27 @@ div#titlebar {
   height: 43px;
   z-index: 99;
   border-radius: 4px;
-  background-color: rgba(100,100,100,0.5);;
+  background-color: rgba(100,100,100,0.8);;
+}
+
+div#titlebar h1 {
+  color: #00235D;
+  font-size: 2em;
+  background-color: #eeeeee;
+  border-radius: 4px;
+  padding: 5px;
+}
+div#titlebar h1 a {
+  text-decoration: none;
+  color: #00235D;
 }
 
 div#titlebar ul {
-  margin-top: 5px;
+  
 }
 
 div#titlebar ul li {
-  font-size: 8pt;
+  font-size: .6em;
   display: inline;
 }
 
@@ -127,21 +139,22 @@ div#titlebar ul li {
 </style>
 <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
   
-  <div id="titlebar"><h1>Delicious Restaurants</h1>
-    <section>
+  <div id="titlebar">
+    <h1><a href="list.html">Delicious Restaurants</a></h1>
+<!--     <section>
       <ul>
-        <li><a href="">List</a></li>
+        <li><a href="list.html">List</a></li>
         <li><a href="">Re-center</a></li>
         <li><a href="">Current Location</a></li>
 
       </ul>
-    </section>
+    </section> -->
   </div>
   <div id="map" ></div>
  
  
   <script type="text/javascript">
-    var map = L.map('map').setView([40.760273,-73.99123], 13);
+    var map = L.map('map').setView([40.760273,-73.99123], 14);
     L.tileLayer('http://{s}.tile.cloudmade.com/f54a6dc9875746868b4f6a9fbd0d23ad/997/256/{z}/{x}/{y}.png', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
       maxZoom: 18
