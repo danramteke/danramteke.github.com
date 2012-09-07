@@ -7,6 +7,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.css" />
+    <!--[if lte IE 8]>
+       <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.4/leaflet.ie.css" />
+    <![endif]-->
+
     <!-- Le styles -->
     <link href="./assets/css/bootstrap.css" rel="stylesheet">
     <style>
@@ -58,159 +64,58 @@
 
     <div class="container">
   <style type="text/css">
-    #cm-map {
-      margin: auto;
-      padding-bottom: 20%;
-    }
-
-    @media (max-width: 480px) {
-      #cm-map {
-        height: 330px;
-        width: 330px;
-      }
-    }
-    @media (min-width: 768px) and (max-width: 979px) {
-      #cm-map {
-        height: 768px;
-        width: 768px;
-      }
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
-      #cm-map {
-        height: 481px;
-        width: 481px;
-      }
-    }
-
-
-    @media (min-width: 980px) {
-      #cm-map {
-        height: 800px;
-        width: 980px;
-      }
-    }
-    @media (min-width: 1200px) {
-      #cm-map {
-        height: 800px;
-        width: 1200px;
-      }
+    #map {
+      height: 500px;
     }
 
   </style>
 
-  <div id="cm-map" ></div>
-
-  
-  <script type="text/javascript" src="http://tile.cloudmade.com/wml/latest/web-maps-lite.js"></script>
-  <script type="text/javascript">
-  $(function(){
-    var cloudmade = new CM.Tiles.CloudMade.Web({key: 'f54a6dc9875746868b4f6a9fbd0d23ad'});
-    var map = new CM.Map('cm-map', cloudmade);
-
-    var centerLat = 40.7651634;
-    var centerLong = -73.9880138;
-    map.setCenter(new CM.LatLng(centerLat, centerLong), 15);
-    
-    
-      var myMarkerLatLng0 = new CM.LatLng(40.7651634,-73.9880138);
-      var myMarker0 = new CM.Marker(myMarkerLatLng0, {
-        title: "Ariana"
-      });
-          
-      
-      map.addOverlay(myMarker0);
-    
-      var myMarkerLatLng1 = new CM.LatLng(40.760273,-73.99123);
-      var myMarker1 = new CM.Marker(myMarkerLatLng1, {
-        title: "Five Napkin Burger"
-      });
-          
-      
-      map.addOverlay(myMarker1);
-    
-      var myMarkerLatLng2 = new CM.LatLng(40.7579939,-73.9804039);
-      var myMarker2 = new CM.Marker(myMarkerLatLng2, {
-        title: "Hing Won"
-      });
-          
-      
-      map.addOverlay(myMarker2);
-    
-      var myMarkerLatLng3 = new CM.LatLng(40.7974699,-73.9680965);
-      var myMarker3 = new CM.Marker(myMarkerLatLng3, {
-        title: "Krik Krak"
-      });
-          
-      
-      map.addOverlay(myMarker3);
-    
-      var myMarkerLatLng4 = new CM.LatLng(40.760683,-73.99116);
-      var myMarker4 = new CM.Marker(myMarkerLatLng4, {
-        title: "La Carafe"
-      });
-          
-      
-      map.addOverlay(myMarker4);
-    
-      var myMarkerLatLng5 = new CM.LatLng(40.734799,-74.003236);
-      var myMarker5 = new CM.Marker(myMarkerLatLng5, {
-        title: "Mary's Fish Camp"
-      });
-          
-      
-      map.addOverlay(myMarker5);
-    
-      var myMarkerLatLng6 = new CM.LatLng(40.7636633,-73.9886356);
-      var myMarker6 = new CM.Marker(myMarkerLatLng6, {
-        title: "Rice 'n' Beans"
-      });
-          
-      
-      map.addOverlay(myMarker6);
-    
-      var myMarkerLatLng7 = new CM.LatLng(40.755978,-73.990396);
-      var myMarker7 = new CM.Marker(myMarkerLatLng7, {
-        title: "Schnipper's Quality Kitchen"
-      });
-          
-      
-      map.addOverlay(myMarker7);
-    
-      var myMarkerLatLng8 = new CM.LatLng(40.7527863,-73.9845271);
-      var myMarker8 = new CM.Marker(myMarkerLatLng8, {
-        title: "Sichaun Gourmet"
-      });
-          
-      
-      map.addOverlay(myMarker8);
-    
-      var myMarkerLatLng9 = new CM.LatLng(40.8014967,-73.9651644);
-      var myMarker9 = new CM.Marker(myMarkerLatLng9, {
-        title: "Taqueria y Fonda"
-      });
-          
-      
-      map.addOverlay(myMarker9);
-    
-      var myMarkerLatLng10 = new CM.LatLng(40.7659239,-73.9874158);
-      var myMarker10 = new CM.Marker(myMarkerLatLng10, {
-        title: "Wondee Siam II"
-      });
-          
-      
-      map.addOverlay(myMarker10);
-    
-
-    
+  <div id="map" > </div>
+ <script src="http://cdn.leafletjs.com/leaflet-0.4/leaflet.js"></script>
  
+  <script type="text/javascript">
+    var map = L.map('map').setView([40.760273,-73.99123], 13);
+    L.tileLayer('http://{s}.tile.cloudmade.com/f54a6dc9875746868b4f6a9fbd0d23ad/997/256/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+      maxZoom: 18
+    }).addTo(map);
 
 
+    
+      var m0 = L.marker([40.7651634,-73.9880138]).addTo(map);
+      m0.bindPopup("<a href='http://daringfireball.net'>Ariana</a>");
+    
+      var m1 = L.marker([40.760273,-73.99123]).addTo(map);
+      m1.bindPopup("<a href='http://daringfireball.net'>Five Napkin Burger</a>");
+    
+      var m2 = L.marker([40.7579939,-73.9804039]).addTo(map);
+      m2.bindPopup("<a href='http://daringfireball.net'>Hing Won</a>");
+    
+      var m3 = L.marker([40.7974699,-73.9680965]).addTo(map);
+      m3.bindPopup("<a href='http://daringfireball.net'>Krik Krak</a>");
+    
+      var m4 = L.marker([40.760683,-73.99116]).addTo(map);
+      m4.bindPopup("<a href='http://daringfireball.net'>La Carafe</a>");
+    
+      var m5 = L.marker([40.734799,-74.003236]).addTo(map);
+      m5.bindPopup("<a href='http://daringfireball.net'>Mary's Fish Camp</a>");
+    
+      var m6 = L.marker([40.7636633,-73.9886356]).addTo(map);
+      m6.bindPopup("<a href='http://daringfireball.net'>Rice 'n' Beans</a>");
+    
+      var m7 = L.marker([40.755978,-73.990396]).addTo(map);
+      m7.bindPopup("<a href='http://daringfireball.net'>Schnipper's Quality Kitchen</a>");
+    
+      var m8 = L.marker([40.7527863,-73.9845271]).addTo(map);
+      m8.bindPopup("<a href='http://daringfireball.net'>Sichaun Gourmet</a>");
+    
+      var m9 = L.marker([40.8014967,-73.9651644]).addTo(map);
+      m9.bindPopup("<a href='http://daringfireball.net'>Taqueria y Fonda</a>");
+    
+      var m10 = L.marker([40.7659239,-73.9874158]).addTo(map);
+      m10.bindPopup("<a href='http://daringfireball.net'>Wondee Siam II</a>");
+    
 
-
-    map.addControl(new CM.LargeMapControl());
-    map.addControl(new CM.ScaleControl());
-    map.addControl(new CM.OverviewMapControl());
-  });
   </script>
 
 </div>
