@@ -14,6 +14,7 @@ html, body {
 	height: 100%;         /* required */
 	background-color: #eee;
 	margin: 40px;
+	line-height:182%;
 }
 body {
 	text-align: center;   /* horizontal centering hack for IE */
@@ -45,42 +46,35 @@ section.links  {
 	padding: 12px;
 	border-radius: 5px;
 	
-	
+		width: 600px;
+		font-size: 1.2em;
 }
 
 
 
 section.links.projects {
-	margin:0 auto;
-	margin-left: -50px;
-	width: 600px;
+
+
+	background-color: #C3FFBE;
 }
 section.links.projects ul {
-	
 
-	height: 60px;
 
 }
 section.links.projects ul li {
-	/*background-color: #C3FFBE;*/
-	padding: 13px;
-	border-radius: 5px;	
-	float: left;
-	margin: 10px;
+
+
 }
 
 section.links.social  {
-	width: 300px;
-	padding: 13px;
-/*	background-color: #FFDCFF;*/
+	background-color: #FFDCFF;
 }
 
 section.links.social ul li {
-	font-size: .9em;
+	
 	color:#5C0023;
-	padding: 3px;
-}
 
+}
 
 
 
@@ -94,19 +88,27 @@ section.links.social ul li {
 
 		<article>
 			<section class="links projects">
-				<ul>
-					<li> <a href="http://deliciousrestaurants.net">Delicious Restaurants</a></li>
-					<li> <a href="http://danramteke.com/skillet">Skillet Timer</a></li>
-					<li> <a href="http://danramteke.com/devlog">Development Notes</a></li>
+				<ul><li><a href="http://github.com/danramteke/DRAutolayout">DRAutolayout</a>:
+					NSLayoutConstraint helpers in cocoapod form.</li>
+					
+					<li><a href="http://deliciousrestaurants.net">Delicious Restaurants</a>: 
+						Where to get delicious food in NYC.</li>
+					
+					<li><a href="http://danramteke.com/skillet">Skillet Timer</a>: 
+						Multistep timer for cooking. Shake to start!</li>
+						
+				    <li><a href="http://danramteke.com/devlog">Devlog</a>: Development blog.</li>
+					<li><a href="./resume.html">R&eacute;sum&eacute;</a>: Frequently out of date.</li>
 				</ul>
 			</section>
+			
 
 			<section class="links social">
 				<ul>
 					<li>Twitter: <a href="http://twitter.com/danramteke">twitter.com/danramteke</a></li>
 					<li>GitHub: <a href="http://github.com/danramteke">github.com/danramteke</a></li>
 					<li>LinkedIn: <a href="http://linkedin.com/in/danielramteke">linkedin.com/in/danielramteke</a></li>
-					<li>resume: <a href="./resume.html">danramteke.com/resume.html</a></li>
+					
 				</ul>
 			</section>
 		</article>
