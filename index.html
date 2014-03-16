@@ -1,5 +1,5 @@
-<html> 
-<head> 
+<html>
+<head>
 
 	<style type="text/css">
 /*
@@ -12,23 +12,33 @@ html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pr
 
 html, body {
 	/* height: 100%;         /* required */
-	background-color: #eee;
+	background-color: #ddd;
 	margin: 40px 0;
 	line-height:200%;
 }
 body {
-	text-align: center;   
-	padding: 0;           
-	margin: 0;            
+	text-align: center;
+	padding: 0;
+	margin: 0;
+}
+
+.tagline {
+	text-align: right;
+	margin-right: 45px;
+	margin-top: 15px;
+
+	margin-bottom: 15px;
+	color:color: #00235D;;
+
 }
 
 td, div, article, section, a {
-	font-family: sans-serif;
+	font-family: "Helvetica Neue", sans-serif;
 }
 
 a, a:visited {
 	color:black;
-	font-weight: 100;
+
 }
 
 div#content {
@@ -44,12 +54,19 @@ div#content {
 /*	padding-left:33px;*/
 }
 
+.section-heading {
+	font-size: 1.4em;
+	margin-bottom:3px;
+	color: #00235D;
+	font-family: "Copperhead";
+}
+
 section.links  {
-	margin: 30px 0;
-	
+	margin: 0 0 20px 0;
+
 	padding: 16px;
 	/*border-radius: 32px;*/
-	
+
 	width: 480px;
 	font-size: 1.2em;
 }
@@ -72,46 +89,69 @@ section.links.social ul li {
 		margin: 0 auto;
 	}
 </style>
-<title>Daniel Ramteke</title> 
-</head> 
-<body> 
+<title>Daniel Ramteke - Freelance iOS Developer in New York City</title>
+</head>
+<body>
 
-	<div id="content"> 
-		<div id="imageCell"><img src="daniel.png" alt="Daniel Ramteke"/></div> 
+	<div id="content">
+		<div id="imageCell"><img src="daniel.png" alt="Daniel Ramteke - Freelance iOS Developer in New York City"/></div>
 
 		<article>
+			<section>
+				<div class="tagline">Freelance iOS Developer in New York City</div>
+			</section>
+		</article>
+
+		<article>
+			<header class="section-heading">Projects</header>
 			<section class="links projects">
 				<ul>
-				<li><a href="http://danramteke.com/skillet">Rare</a>: 
+				<li><a href="http://danramteke.com/skillet">Rare</a>:
 					Multistep timer for cooking. Shake to start!</li>
-					
-					<li><a href="http://danramteke.com/devlog">Devlog</a>: Notes about software development as a blog.</li>
+
+					<li><a href="http://deliciousrestaurants.net">Delicious Restaurants</a>:
+						Where to eat in New York City.</li>
+
+					<li><a href="http://danieldelicious.tumblr.com">Daniel Delicious</a>: my cooking tumblr</li>
+
+
+
+				</ul>
+			</section>
+
+			<header class="section-heading">Words</header>
+			<section class="links projects">
+				<ul>
+
+				<li><a href="http://danramteke.com/devlog">Devlog</a>: Software development notes as a blog.</li>
+				<li><a href="./resume.html">R&eacute;sum&eacute;</a>: A long list.</li>
+				</ul>
+			</section>
+
+
+			<header class="section-heading">Cocoapods</header>
+			<section class="links projects">
+				<ul>
 				<li><a href="https://github.com/danramteke/DRAutolayout">DRAutolayout</a>:
 					iOS autolayout helpers in a cocoapod.</li>
 					<li><a href="https://github.com/danramteke/DRFormattedLabel">DRFormattedLabel</a>: UILabel for formatted strings.</li>
 					<li><a href="https://github.com/danramteke/DRTap">DRTap</a>:
 										.tap from Ruby as a category on NSObject.</li>
-					
-					<li><a href="http://deliciousrestaurants.net">Delicious Restaurants</a>: 
-						Where to eat in New York City.</li>
-					
-					<li><a href="http://danieldelicious.tumblr.com">Daniel Delicious</a>: my cooking tumblr</li>
-						
-				    
-					<li><a href="./resume.html">R&eacute;sum&eacute;</a>: Frequently out of date.</li>
 				</ul>
 			</section>
-			
 
+
+			<header class="section-heading">Contact</header>
 			<section class="links social">
 				<ul>
+					<li>Gmail: danramteke</li>
 					<li>Twitter: <a href="http://twitter.com/danramteke">twitter.com/danramteke</a></li>
 					<li>GitHub: <a href="http://github.com/danramteke">github.com/danramteke</a></li>
 					<li>LinkedIn: <a href="http://linkedin.com/in/danielramteke">linkedin.com/in/danielramteke</a></li>
-					
+
 				</ul>
 			</section>
 		</article>
-	</div>   
-</body> 
-</html> 
+	</div>
+</body>
+</html>
