@@ -1,0 +1,22 @@
+body {
+  color: #eee;
+  background-color: #333;
+}
+
+a {
+  color: #EFED8D;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #333;
+  background-color: #EFED8D;
+}
+
+.btn-default, .btn-default:hover, .btn-default:focus {
+  background-color: #EFED8D;
+  border-color: #EFED8D;
+}
+
+.jumbotron {
+  background-color: #333;
+}

@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Underway</title>
+    <title>Underway Features</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="./css/cover.css" rel="stylesheet">
+    <link href="./css/jumbotron.css" rel="stylesheet">
     <link href="./css/underway.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,67 +19,90 @@
     <![endif]-->
   </head>
   <body>
-     <div class="site-wrapper">
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active"><a href="./index.html">Home</a></li>
+            <li role="presentation"><a href="./support.html">Support</a></li>
+            <li role="presentation"><a href="https://itunes.apple.com/us/app/underway-real-time-subway/id1118548566?ls=1&mt=8">Download</a></li>
+          </ul>
+        </nav>
+        <h3><img src="./images/ipad-icon-40.png" height="40" width="40"/>  Underway</h3>
+      </div>
 
-      <div class="site-wrapper-inner">
 
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand"><img src="./images/ipad-icon-40.png" height="40" width="40"/> Underway</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="./features.html">Features</a></li>
-                  <li><a href="./support.html">Support</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading"><img src="./images/iTunesArtwork.png" height="256" width="256"/></h1>
-            <h1 class="cover-heading">Underway</h1>
-            <p class="lead">Real time subway times for New York City.</p>
-            
-            <p class="lead">
+      <div class="jumbotron">
+        <h1>Underway</h1>
+        <p class="lead">Real time subway times for New York City.
+             <p class="lead">
                 <a href="https://itunes.apple.com/us/app/underway-real-time-subway/id1118548566?ls=1&mt=8"><img src="./images/Download_on_the_App_Store_Badge_US-UK_135x40.svg"></a>
             </p>
             
             <p class="lead">Available for iPhones and iPads with iOS 9.</p>
-
-            
-
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Made in New York City. &copy; 2016 <a href="http://danramteke.com">Dan Ramteke Consulting, Inc</a>.     Maps: © Metropolitan Transportation Authority. Used with permission.
-    Symbols: ® or TM as applicable. Used with permission of Metropolitan Transportation Authority.</p>
-            </div>
-          </div>
-
-        </div>
-
       </div>
 
-    </div>
 
+      <div class="row marketing">
+            <div class="col-xs-6">
+              <div class="thumbnail">
+                <img src="./images/iPhone6-0-Launch_framed.png" alt="Zoomable and scrollable MTA map">
+                <div class="caption">
+                       <h3>MTA Map</h3>
+                        <p>Zoomable and scrollable MTA map</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="thumbnail">
+                <img src="images/iPhone6-1-ShortList_framed.png" alt="Next arriving train of each route, real time.">
+                <div class="caption">
+                       <h3>Tap a station</h3>
+                        <p>Next arriving train of each route, real time.</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="thumbnail">
+                <img src="images/iPhone6-2-StationScreen_framed.png" alt="Arriving trains, 5 per route, if available">
+                <div class="caption">
+                       <h3>More Times</h3>
+                        <p>Arriving trains, 5 per route, if available.</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="thumbnail">
+                <img src="images/iPhone6-3-TripScreen_framed.png" alt="See where a train is now, and when it will reach your stop.">
+                <div class="caption">
+                       <h3>Follow a train</h3>
+                        <p>See where a train is now, and when it will reach your stop.</p>
+
+                </div>
+              </div>
+            </div>
+      </div>
+
+      <footer class="footer">
+                    <div class="inner">
+              <p>Made in New York City. &copy; 2016 <a href="http://danramteke.com">Dan Ramteke Consulting, Inc</a>. Maps: © Metropolitan Transportation Authority. Used with permission.
+    Symbols: ® or TM as applicable. Used with permission of Metropolitan Transportation Authority.</p>
+            </div>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+
+    
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./scripts/retina.js"></script>
+
   </body>
 </html>
-
-
-
-<!-- Latest compiled and minified CSS -->
-
-
-<!-- Optional theme -->
-
-<!-- Latest compiled and minified JavaScript -->
