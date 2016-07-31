@@ -9,7 +9,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link href="./css/cover.css" rel="stylesheet">
+    <link href="./css/jumbotron.css" rel="stylesheet">
     <link href="./css/underway.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -19,45 +19,36 @@
     <![endif]-->
   </head>
   <body>
-     <div class="site-wrapper">
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation"><a href="./index.html">Home</a></li>
+            <li role="presentation" class="active"><a href="./support.html">Support</a></li>
+            <li role="presentation"><a href="https://itunes.apple.com/us/app/underway-real-time-subway/id1118548566?ls=1&mt=8">Download</a></li>
+          </ul>
+        </nav>
+        <h3><img src="./images/ipad-icon-40.png" height="40" width="40"/>  Underway</h3>
+      </div>
 
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand"><img src="./images/ipad-icon-40.png" height="40" width="40"/>Underway</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li><a href="./index.html">Home</a></li>
-                  <li><a href="./features.html">Features</a></li>
-                  <li class="active"><a href="./support.html">Support</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading">Underway Support</h1>
-            <p class="lead">Note - on the 1, 2, 3, 4, 5, 6, L, Grand Central Shuttle, and Staten Island Railroad support real time schedules. Other apps may show you scheduled times for those stations but this app does not.</p>
+          <div class="jumbotron">
+            <h1>Underway Support</h1>
+            <p class="lead">Note - only the 1, 2, 3, 4, 5, 6, L, Grand Central Shuttle, and Staten Island Railroad have real time schedules. Other apps may show you scheduled times for those stations but this app does not.</p>
             <p class="lead">
               <a href="mailto:underway@danramteke.com" class="btn btn-lg btn-default">Send email</a>
             </p>
           </div>
 
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Made in New York City. &copy; 2016 <a href="http://danramteke.com">Dan Ramteke Consulting, Inc</a>.     Maps: © Metropolitan Transportation Authority. Used with permission.
+    
+          <footer class="footer">
+                    <div class="inner">
+              <p>Made in New York City. &copy; 2016 <a href="http://danramteke.com">Dan Ramteke Consulting, Inc</a>. Maps: © Metropolitan Transportation Authority. Used with permission.
     Symbols: ® or TM as applicable. Used with permission of Metropolitan Transportation Authority.</p>
             </div>
-          </div>
+      </footer>
 
-        </div>
+    </div> <!-- /container -->
 
-      </div>
-
-    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
