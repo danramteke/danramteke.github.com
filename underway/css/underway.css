@@ -12,6 +12,14 @@ a {
   background-color: #EFED8D;
 }
 
+.thumbnail {
+  background-color: #EFED8D;
+}
+
+.thumbnail .caption {
+  background-color: #EFED8D;
+}
+
 .btn-default, .btn-default:hover, .btn-default:focus {
   background-color: #EFED8D;
   border-color: #EFED8D;
