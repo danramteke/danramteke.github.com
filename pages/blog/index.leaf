@@ -3,6 +3,8 @@ title: Blog
 ---
 #extend("html.leaf"):
 #export("body"):
+<div class="page-content">
+<div class="wrapper">
 <div class="home">
 
   <h1 class="page-heading">Posts</h1>
@@ -20,6 +22,6 @@ title: Blog
 
   </ul>
 
-</div>
+</div></div></div>
 #endexport
 #endextend

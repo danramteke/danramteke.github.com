@@ -1,5 +1,7 @@
 #extend("html.leaf"):
 #export("body"):
+<div class="page-content">
+<div class="wrapper">
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -8,11 +10,14 @@
     <time datetime="#date(current.date)" itemprop="datePublished">#date(current.date, "MMMM d, YYYY")</time>
     </p>
   </header>
-
+  
   <div class="post-content" itemprop="articleBody">
     #import("content")
   </div>
+  
 
 </article>
+</div>
+</div>
 #endexport
 #endextend
