@@ -1,0 +1,27 @@
+---
+title: Blog
+---
+#extend("html.leaf"):
+#export("body"):
+<div class="page-content">
+<div class="wrapper">
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+  
+    <ul>
+    #for(post in website.posts):
+    <li>
+    <span class="post-meta">#date(post.date, "MMMM d, YYYY")</span>
+    <h2><a href="#(post.relativeURL)">#(post.title)</a></h2>
+    </li>
+    #endfor
+    </ul>
+
+  </ul>
+
+</div></div></div>
+#endexport
+#endextend
