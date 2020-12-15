@@ -14,7 +14,9 @@ jobs:
       - name: Build
         run: |
           apt-get update && apt-get install -y rsync curl
-          curl -L https://github.com/danramteke/leaf-press/releases/download/0.4.15/leaf-press-ubuntu-20.04.tgz | tar xzf -C /usr/local/bin - 
+          cd /usr/local/bin
+          curl -L https://github.com/danramteke/leaf-press/releases/download/0.4.15/leaf-press-ubuntu-20.04.tgz | tar xzf - 
+          cd -
           leaf-press build 
 
       - name: Deploy
