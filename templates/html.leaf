@@ -1,0 +1,11 @@
+<html>
+<head>
+<title>#(current.title)</title>
+<link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+  #import("body")
+
+</body>
+</html>
