@@ -2,6 +2,7 @@
 layout: post
 published: true
 date: 2013-02-18T20:18:12-04:00
+title: Find Options in Xcode Documentation
 ---
 
 Xcode searches all available documentation sets by default. This is annoying when developing for the latest version of iOS, and a result comes back from every previous documentation set. 

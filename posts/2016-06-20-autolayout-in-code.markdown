@@ -1,7 +1,5 @@
 ---
-layout: post
 title: "Autolayout in Code"
-date: 2016-06-20T20:18:12-04:00
 categories: ios-dev ui
 ---
 
