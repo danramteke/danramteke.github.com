@@ -12,5 +12,5 @@ jobs:
       - uses: actions/checkout@v2
       - run: sudo apt-get install rsync
       - run: mkdir -p dist
-      - run: curl -L https://github.com/danramteke/leaf-press/releases/download/0.4.16/leaf-press-ubuntu-20.04.tgz | tar xzf -
+      - run: curl -L https://github.com/danramteke/leaf-press/releases/download/0.4.17/leaf-press-ubuntu-20.04.tgz | tar xzf -
       - run: ./leaf-press build
