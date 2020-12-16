@@ -10,7 +10,10 @@ jobs:
     runs-on: macOS-11.0
     steps:
       - uses: actions/checkout@v2
-      - run: sudo apt-get install rsync
-      - run: mkdir -p dist
-      - run: curl -L https://github.com/danramteke/leaf-press/releases/download/0.4.17/leaf-press-macos-11.0.tgz | tar xzf -
+      - run: curl -L https://github.com/danramteke/leaf-press/releases/download/0.4.18/leaf-press-macos-11.0.tgz | tar xzf -
       - run: ./leaf-press build
+      - 
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist
