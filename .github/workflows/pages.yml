@@ -7,10 +7,10 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: macOS-11.0
     steps:
       - uses: actions/checkout@v2
       - run: sudo apt-get install rsync
       - run: mkdir -p dist
-      - run: curl -L https://github.com/danramteke/leaf-press/releases/download/0.4.17/leaf-press-ubuntu-20.04.tgz | tar xzf -
+      - run: curl -L https://github.com/danramteke/leaf-press/releases/download/0.4.17/leaf-press-macos-11.0.tgz | tar xzf -
       - run: ./leaf-press build
