@@ -8,11 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-20.04
-    container: danramteke/leaf-press:0.4.15
     steps:
       - uses: actions/checkout@v2
-
-      - run: leaf-press build 
+      - run: mkdir -p dist
+      - run: docker run -v `pwd`:`pwd` -w `pwd` danramteke/leaf-press:0.4.15 leaf-press build 
 
       - 
         uses: peaceiris/actions-gh-pages@v3
