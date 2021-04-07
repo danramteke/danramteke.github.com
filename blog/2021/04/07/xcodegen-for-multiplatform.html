@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Blog</title>
+    <title>Xcodegen for Multiplatform Xcode projects</title>
     <link rel="stylesheet" href="/main.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,89 +38,129 @@
     
 <div class="page-content">
 <div class="wrapper">
-<div class="home">
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Xcodegen for Multiplatform Xcode projects</h1>
+    <p class="post-meta">
+    <time datetime="2021-04-07T00:00:00" itemprop="datePublished">April 7, 2021</time>
+    </p>
+  </header>
   
-    <ul>
+  <div class="post-content" itemprop="articleBody">
     
-    <li>
-    <span class="post-meta">April 7, 2021</span>
-    <h2><a href="/blog/2021/04/07/xcodegen-for-multiplatform.html">Xcodegen for Multiplatform Xcode projects</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">November 20, 2020</span>
-    <h2><a href="/blog/2020/11/20/spm-and-docker.html">Docker Layers for Swift Package Manager</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">October 15, 2019</span>
-    <h2><a href="/blog/2019/10/15/appstore-script.html">Automating Your Upload to Testflight in 4 Easy Steps</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">July 10, 2019</span>
-    <h2><a href="/blog/2019/07/10/reordering-collectionview.html">Reordering UICollectionViews with Custom UICollectionView Layouts</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">July 19, 2016</span>
-    <h2><a href="/blog/2016/07/19/uiappearance.html">UIAppearance</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">June 20, 2016</span>
-    <h2><a href="/blog/2016/06/20/autolayout-in-code.html">Autolayout in Code</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">December 4, 2013</span>
-    <h2><a href="/blog/2013/12/04/atos.html">Symbolicating RubyMotion Crash Logs</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">September 3, 2013</span>
-    <h2><a href="/blog/2013/09/03/converting-to-rubymotion.html">Converting from Objective-C to RubyMotion</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">July 22, 2013</span>
-    <h2><a href="/blog/2013/07/22/introducing-DRAutolayout.html">Introducing DRAutolayout</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">February 18, 2013</span>
-    <h2><a href="/blog/2013/02/18/find-options-in-xcode-documentation.html">Find Options in Xcode Documentation</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">October 4, 2012</span>
-    <h2><a href="/blog/2012/10/04/affix.html">Affixing navbars using bootstrap.</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">September 4, 2012</span>
-    <h2><a href="/blog/2012/09/04/dot-gitconfig.html">.gitconfig</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">September 4, 2012</span>
-    <h2><a href="/blog/2012/09/04/git-branch-in-command-line.html">Git Branch in command -line</a></h2>
-    </li>
-    
-    <li>
-    <span class="post-meta">August 20, 2012</span>
-    <h2><a href="/blog/2012/08/20/sublime-text-keymapping.html">Sublime Text 2 Keymapping</a></h2>
-    </li>
-    
-    </ul>
+<h1>Xcodegen for Multiplatform Xcode projects</h1>
+<p>Here's how I use <a href="https://github.com/yonaskolb/XcodeGen">Xcodegen</a> for a new project that targets MacOS and iOS.</p>
+<h1>Project</h1>
+<p>Here is my <code>project.yml</code>:</p>
+<pre><code>name: Example
+options:
+  deploymentTarget:
+    iOS: &quot;14.0&quot;
+    macOS: &quot;11.0&quot;
+schemes:
+  Example-iOS:
+    build:
+      targets:
+        Example-iOS: all
+  Example-macOS:
+    build:
+      targets:
+        Example-macOS: all
+targets:
+  Example-macOS:
+    type: application
+    platform: macOS
+    sources: 
+      - path: macOS
+      - path: Shared
+    settings:
+      DEVELOPMENT_TEAM: 1234567890
+      CODE_SIGN_STYLE: Automatic
+      ORGANIZATIONNAME: &quot;Example Organization&quot;
+      PRODUCT_BUNDLE_IDENTIFIER: com.Example.app
+      VERSIONING_SYSTEM: apple-generic
+      SWIFT_VERSION: 5.3
+      CURRENT_PROJECT_VERSION: ${APP_BUILD_NUMBER}
+    entitlements: 
+      path: macOS/macOS.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.files.user-selected.read-only: true
+    info:
+      path: macOS/Info.plist
+      properties:
+        CFBundleVersion: ${APP_BUILD_NUMBER}
+        CFBundleShortVersionString: ${APP_BUILD_VERSION}
+        CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+        CFBundleName: $(PRODUCT_NAME)
+        CFBundleDisplayName: Example
+        CFBundleIconFile: &quot;&quot;
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleInfoDictionaryVersion: &quot;6.0&quot;
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+  Example-iOS:
+    type: application
+    platform: iOS
+    sources: 
+      - path: iOS
+      - path: Shared
+    settings:
+      DEVELOPMENT_TEAM: 1234567890
+      CODE_SIGN_STYLE: Automatic
+      ORGANIZATIONNAME: &quot;Example Organization&quot;
+      PRODUCT_BUNDLE_IDENTIFIER: com.Example.app
+      TARGETED_DEVICE_FAMILY: 1,2
+      VERSIONING_SYSTEM: apple-generic
+      SWIFT_VERSION: 5.3
+      CURRENT_PROJECT_VERSION: ${APP_BUILD_NUMBER}
+    entitlements: 
+      path: iOS/iOS.entitlements
+    info:
+      path: iOS/Info.plist
+      properties:
+        CFBundleVersion: ${APP_BUILD_NUMBER}
+        CFBundleShortVersionString: ${APP_BUILD_VERSION}
+        CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+        CFBundleDisplayName: Example
+        ITSAppUsesNonExemptEncryption: false
+        LSRequiresIPhoneOS: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+        UIApplicationSupportsIndirectInputEvents: true
+        UILaunchScreen: {}
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        UIRequiredDeviceCapabilities: [armv7]
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+</code></pre>
+<p>This defines two targets, one for macOS and one for iOS, just like Xcode's multiplatform template.</p>
+<h2>Bootstrap</h2>
+<p>I don't call <code>xcodegen</code> directly. The <code>project.yml</code> references two variables for the build number and the marketing version, and those are stored in two files named <code>build-number</code> which contains the current build number (for example: <code>1</code>) and <code>build-version</code> which contains the current marketing version (for example: <code>1.0.0</code>).</p>
+<p>To make sure those values are available to <code>xcodegen</code>, I create a <code>bootstrap.sh</code> script that looks like this:</p>
+<pre><code>rm -fr *.xcodeproj
 
-  </ul>
+export APP_BUILD_NUMBER=$(cat build-number)
+export APP_BUILD_VERSION=$(cat build-version)
 
-</div></div></div>
+xcodegen generate -s project.yml
+</code></pre>
+<p>So when I need to regenerate the xcode project, I run <code>./bootstrap.sh</code> from the project's root directory.</p>
+
+
+  </div>
+  
+
+</article>
+</div>
+</div>
 
     <footer class="site-footer">
 
