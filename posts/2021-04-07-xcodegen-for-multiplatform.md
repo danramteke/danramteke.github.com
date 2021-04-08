@@ -8,7 +8,7 @@ published: true
 
 # Xcodegen for Multiplatform Xcode projects
 
-Here's how I use [Xcodegen](https://github.com/yonaskolb/XcodeGen) for a new project that targets MacOS and iOS.
+Here's how I use [Xcodegen](https://github.com/yonaskolb/XcodeGen) for a new project that targets MacOS and iOS. It's here for your reference or inspiration.
 
 # Project 
 
