@@ -1,0 +1,50 @@
+---
+export interface Props {
+  title: string;
+  style?: keyof typeof BlueSectionStyle;
+}
+
+const BlueSectionStyle = {
+    regular: "regular", light: "light"
+} as const;
+
+const { title, style } = Astro.props;
+
+
+const bgForStyle = function (style?: keyof typeof BlueSectionStyle): string {
+  switch ( style ){
+    case BlueSectionStyle.light as keyof typeof BlueSectionStyle:
+        return  "bg-dr-gray-8";
+    default:
+        return "bg-dr-blue-4";
+  }
+ };
+
+ const bgClass: string =  bgForStyle(style);
+ const divClasses: string = bgClass.concat(
+     " grid grid-cols-1 md:grid-cols-3 md:gap-8 " ,
+  "sm:border-x border-y border-solid sm:rounded-lg ",
+  "border-dr-blue-1  text-dr-blue-1 ",
+  "px-4 py-4  -mx-4 my-4 "
+ );
+
+---
+
+        <div class="container  text-dr-blue-1 mt-8">
+            <h2 class="text-3xl">{title}</h2>
+            <div class={divClasses}>
+
+                <div class="">
+                    <slot name="left"/>
+                </div>
+
+                <div class="">
+                    <slot name="middle"/>
+                </div>
+
+                <div class="">
+                    <slot name="right"/>
+                </div>
+
+            </div>
+        </div>

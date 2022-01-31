@@ -1,0 +1,26 @@
+---
+import Layout from 'layout:PageLayout'
+
+const { content } = Astro.props;
+---
+<Layout title={content.title}>
+
+<div class="blog-post">
+ <slot />
+</div>
+
+</Layout>
+
+<style scoped>
+.blog-post :global(h1) {
+    @apply text-3xl font-bold text-dr-blue-a
+}
+
+.blog-post :global(h2) {
+    @apply text-2xl font-bold text-dr-blue-a
+}
+
+.blog-post :global(h3) {
+    @apply text-xl font-bold text-dr-blue-a
+}
+</style>

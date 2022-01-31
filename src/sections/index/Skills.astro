@@ -1,0 +1,39 @@
+---
+import BlueSection from 'component:BlueSection';
+const { style } = Astro.props;
+---
+
+<BlueSection title="Expertise for a complete app" style={style}>
+<div slot="left">
+<h4>iOS and Android</h4>
+<p>
+Ever since Steve Jobs unveiled his revolutionary communications device, I've been obsessed with building hand-held interfaces. 
+I use native tools: Swift on iOS and Kotlin on Android.</p>
+
+<p>The mobile app I'm most proud of is <a href="https://www.underway.nyc/">Underway</a>. It's a complete app on iOS and Android</p>
+<p><a href="/ios">Learn more about my iOS experience</a></p>
+</div>
+
+<div slot="middle">
+<h4>DevOps</h4>
+
+<p>
+If it can be automated with a script, it probably should. Scripting increases confidence in important processes such as publishing to the App Store or setting up server infrastructure. Unfortunately, not everyone has the time or familiarity to develop bullet-proof scripts. Contracting a DevOps consultant such as myself can propel your project forward.
+</p>
+
+
+<p><a href="/devops">Learn more about my DevOps experience</a></p>
+</div>
+
+
+<div slot="right">
+<h4>Web</h4>
+<p>
+A solid web presence remains an important part of a complete app. It hasn't gone out of style, despite social networks best efforts.
+Build websites using VueJS, Astro, and Tailwind CSS. Build webapps using Vapor.
+</p>
+
+
+<p><a href="/web">Learn more about my web experience.</a></p>
+</div>
+</BlueSection>

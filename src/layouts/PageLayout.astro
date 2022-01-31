@@ -1,0 +1,18 @@
+---
+import BaseLayout from 'layout:BaseLayout'
+import Masthead from 'component:Masthead'
+import Footer from 'component:Footer'
+
+const { title } = Astro.props;
+---
+<BaseLayout>
+
+    <Masthead/>
+
+    <div class="text-3xl font-bold pb-4">{title}</div>
+
+    <slot/>
+
+    <Footer/>
+
+</BaseLayout>

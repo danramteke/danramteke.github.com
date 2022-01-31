@@ -1,0 +1,48 @@
+---
+import Layout from 'layout:PageLayout'
+import BlueSection from '../components/BlueSection.astro';
+---
+
+<Layout title="Custom web development">
+
+A website and a webserver often play an important role in a complete app. I've got you covered here. VueJS is my preferred frontend framework, and I'm flexible if your team is already using React, Alpine, or Svelte.
+
+
+ <BlueSection title="Web toolbox" style="regular">
+        <div slot="left">
+            <h4>Tailwind CSS</h4>
+            <p>
+
+           Tailwind is a fresh take on CSS tooling. It's utilty-first and modular out-of-the box. It's also customizable for managing themes across web properties. This website and <a href="https://www.underway.nyc">www.underway.nyc</a> both use Tailwind CSS.
+            </p>
+
+            <p><a href="https://www.tailwindcss.com">Visit website</a></p>
+        </div>
+
+        <div slot="middle">
+            <h4>Astro</h4>
+
+            <p>
+                Astro is a relatively new static site generator. It pre-renders static React and Vue components for a fast web experience. It uses JSX style components to manage layouts and re-usable components.
+                
+                This website and <a href="https://www.underway.nyc">www.underway.nyc</a> are both built using Astro.
+                
+                  </p>
+
+               <p><a href="https://www.astro.build">Visit website</a></p>
+        </div>
+
+        <div slot="right">
+            <h4>Vapor</h4>
+
+            <p>
+             Vapor is a webapp framework written on Swift, and built on top on non-blocking IO for lightning speed.
+             <a href="https://www.underway.nyc">Underway</a>'s server relies on Vapor, not only as a webserver, but also for background workers to fetch & transform data from the MTA.
+              </p>
+            <p><a href="https://vapor.codes">Visit website</a></p>
+
+        </div>
+    </BlueSection>
+
+
+</Layout>

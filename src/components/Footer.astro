@@ -1,0 +1,32 @@
+---
+import social from '../data/social.json'
+import SocialItem from '../list-items/SocialItem.astro'
+---
+<footer class="container mt-8 pt-2 border-solid border-dr-blue-1 border-t">
+
+    <div class="container grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
+
+            <div class="">
+                <p>Interested in working together? I'd love to hear from you. Contact me <a href="mailto:daniel@danramteke.com">daniel at
+                        danramteke dot com</a>.</p>
+
+            </div>
+            <div class="">
+                <p>
+                   <img src="/hi.png" width="220" height="220" />
+                </p>
+            </div>
+
+            <div class="">
+             
+             <ul class="list-group ">               
+              {social.map((object, i) => <SocialItem obj={object} key={i} />)}
+              <li><a href="/resume.html">Resume</a></li>
+             </ul>
+
+            </div>
+      
+    </div>  
+</footer>
+
+  <p>&copy; Daniel Ramteke 2022</p>

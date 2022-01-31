@@ -1,0 +1,48 @@
+---
+import Layout from 'layout:PageLayout'
+import BlueSection from '../components/BlueSection.astro';
+---
+
+<Layout title="Custom DevOps">
+
+<p>Wrangling iOS build scripts and optimizing server infrastructure scripts: I enjoy both of these. If it can be automated with a script, it probably should. Scripting as much as possible increases confidence in important processes such as publishing to the App Store or disaster recovery. 
+ Unfortunately, not everyone has the time or familiarity to develop bullet-proof scripts. Contracting a DevOps consultant such as myself can propel your project forward.</p>
+
+
+ <BlueSection title="Server infrastructure toolbox" style="regular">
+        <div slot="left">
+            <h4>Docker</h4>
+            <p>
+
+            Docker is a format for packing apps into standardized containers. Standardized and lightweight containers enables new workflows for codesharing, quality testing, and dev enviroments. Docker shines in production enviroments when combined with an orchestration layer such as Kubernetes.
+            </p>
+
+            <p><a href="https://www.docker.com">Visit website</a></p>
+        </div>
+
+        <div slot="middle">
+            <h4>Terraform</h4>
+
+            <p>
+                Terraform is a declarative tool for managing infrastructure. And it's a gamechanger. It has eclipsed Ansible in my workflows. It also enables reuse with its modules feature.
+
+                I even have a <a href="https://github.com/digitalocean/terraform-provider-digitalocean/pull/290">merged pull request</a> to DigitalOcean's Terraform Provider. 
+            </p>
+
+               <p><a href="https://www.terraform.io">Visit website</a></p>
+        </div>
+
+        <div slot="right">
+            <h4>Kubernetes</h4>
+
+            <p>
+               After declaring infra with Terraform and packing apps with Docker, Kubernetes is the declarative glue between the two.           
+               I've been running Kubernetes in production for <a href="https://www.underway.nyc">Underway</a> since 2018. My preferred ingress controller is <a href="https://projectcontour.io">Contour</a>.
+               </p>
+            <p><a href="https://kubernetes.io">Visit website</a></p>
+
+        </div>
+    </BlueSection>
+
+
+</Layout>

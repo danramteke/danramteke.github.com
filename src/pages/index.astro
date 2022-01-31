@@ -1,0 +1,25 @@
+---
+import ListSection from '../components/ListSection.astro'
+import Layout from '../layouts/PageLayout.astro'
+import Skills from '../sections/index/Skills.astro'
+import Projects from '../sections/index/Projects.astro'
+import Testimonials from '../sections/index/Testimonials.astro'
+import WorkStyles from '../sections/index/WorkStyles.astro'
+---
+<Layout>
+
+A complete app is an app available for iOS and Android, with supporting web presence.
+
+  <WorkStyles/>
+    <Skills/>
+  
+    <Testimonials style="light"/>
+
+    <Projects/>
+
+    <ListSection title="Merged open-source pull requests" 
+        style="regular" 
+        jsonPath="../data/pull-request.json" 
+        itemPath="../list-items/PullRequestItem.astro"/>
+
+</Layout>

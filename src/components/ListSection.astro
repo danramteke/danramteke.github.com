@@ -1,0 +1,43 @@
+---
+export interface Props {
+  title: string;
+  style?: string;
+  jsonPath: string;
+  itemPath: string;
+}
+import BlueSection from '../components/BlueSection.astro';
+
+const { title, style, jsonPath, itemPath } = Astro.props;
+
+let itemModule = await import(itemPath);
+let Item = itemModule.default;
+
+let jsonModule = await import(jsonPath);
+let json = jsonModule.default;
+
+const rawThird = json.length/3;
+const reversed = json.slice().reverse();
+const right = reversed.slice(0, rawThird).reverse();
+const middle = reversed.slice(rawThird, 2*rawThird).reverse();
+const left = reversed.slice(2*rawThird).reverse();
+---
+
+    <BlueSection title={title} style={style}>
+        <div slot="left">
+      <ul class="list-group ">               
+        {left.map((object, i) => <Item obj={object} key={i} />)}
+      </ul>
+    </div>
+
+    <div slot="middle">
+      <ul class="list-group ">
+        {middle.map((object, i) => <Item obj={object} key={i} />)}
+      </ul>
+    </div>
+
+    <div slot="right">
+      <ul class="list-group ">
+        {right.map((object, i) => <Item obj={object} key={i} />)}
+      </ul>
+    </div>
+    </BlueSection>
