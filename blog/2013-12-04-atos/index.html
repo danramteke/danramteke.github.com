@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="geo.placename" content="New York City">
+    <meta name="geo.region" content="US-NY">
+    <meta name="description" content="Freelance iOS App Developer for New York City">
+    <meta name="keywords" content="nyc, new york city, ios, swift, iphone, developer, programmer, engineer, freelance, contractor, devops, kubernetes, digitalocean, docker, terraform">
+    <meta name="author" content="Dan Ramteke">
+    <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
+    <link rel="stylesheet" href="../../assets/tailwind.3ea5ae42.css"><link rel="stylesheet" href="../../assets/2013-02-18-find-options-in-xcode-documentation.c60b502b.css">
+</head>
+<body class="bg-dr-gray-9">
+
+<div class="mx-auto container p-4">
+<div class="container mb-8">
+
+    <div class="pb-4 border-solid border-dr-blue-1 border-b">
+    <a href="/" class="no-underline">
+        <h1 class="text-dr-blue-1 text-4xl font-medium inline mr-2">Dan Ramteke</h1> 
+        <h2 class="text-dr-gray-5 text-2xl inline ">
+        Complete app expertise: iOS, 
+        DevOps, &amp; web 
+        </h2>
+        </a>
+    </div>
+</div><div class="text-3xl font-bold pb-4">Symbolicating RubyMotion Crash Logs</div><div class="blog-post astro-CFTPTCZT">
+ <p><strong>Update!</strong> The information in this blog post is mostly irrelevent now that you can type <code data-astro-raw="">rake crashlog:device</code> to symbolicate crash logs from your device as of RubyMotion 2.18. <strong>Thanks!</strong></p><p>Symbolicating a crash log is the process of finding a line number in source from a crash log. Crash logs often look like <a href="http://i.imgur.com/HLXbG1I.png">this</a>. This specific process is interesting in particular to RubyMotion because Apple’s Xcode doesn’t symbolicate to Ruby code.</p><p>Now let’s see how it’s done.</p><p>After running <code data-astro-raw="">rake device</code>, you have binary files in the build directory, including a <code data-astro-raw="">.dSYM</code> file. Go ahead and <code data-astro-raw="">cd</code> into that directory, I’ll be typing all commands from that directory. Here is the directory listing for my <code data-astro-raw="">build/iPhoneOS-7.0-Development</code> directory: <img src="http://i.imgur.com/Nas5e5N.png" alt="Imgur"></p><p>A good example to use is this crash log I received from our customer: <a href="%7B%7Bsite.baseurl%7D%7Dimages/symbolicating-crashlog.png">Crash Trace</a> <a href="%7B%7Bsite.baseurl%7D%7Dimages/symbolicating-binaryimages.png">Binary Images</a> Another good resource is this handy guide to getting crash logs from Apple devices: <a href="http://help.getpocket.com/customer/portal/articles/500338-how-to-find-the-iphone-ipad-app-crash-logs">Pocket</a></p><p>Next, we’re going to use a command called <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/atos.1.html">atos</a>. You’ll need the load address, the architecture, and the list of addresses from the crash log. I’ll show where to get these from the crash log.</p><p>Here is the command I typed based on the crash log example: <code data-astro-raw="">xcrun atos -l 0xed000 -arch armv7 0x00a22a30 0x00a22b56 0x0098caec 0x00a20866 0x00a0a930 0x00a09a66 0x00a0a420 0x0080b524 0x0081241e 0x008124ae -o Redacted\ \(Dev\).dSYM/Contents/Resources/DWARF/Redacted\ \(Dev\)</code></p><p>The value for the <code data-astro-raw="">-l</code> flag is taken from the Binary Images section. That first number there. The value for the <code data-astro-raw="">-arch</code> flag is <code data-astro-raw="">arm7</code> since the binaries were built for an iOS device.</p><p>The rest of the hex numbers are taken from the first screen shot of the crash log. I copy/pasted them from the crash log for now (would like to hear of a better way). And I got this output:</p><pre class="language-null"><code data-astro-raw="" class="language-null">got symbolicator for Redacted (Dev).dSYM/Contents/Resources/DWARF/Redacted (Dev), base address 4000
+__vm_raise() (in Redacted (Dev)) + 276
+rb_vm_raise (in Redacted (Dev)) + 82
+rb_frozen_class_p (in Redacted (Dev)) + 72
+rb_vm_method_missing (in Redacted (Dev)) + 358
+rb_vm_dispatch (in Redacted (Dev)) + 3060
+rb_vm_trigger_method_missing (in Redacted (Dev)) + 522
+rb_vm_dispatch (in Redacted (Dev)) + 1764
+vm_fast_plus (in Redacted (Dev)) + 356
+__unnamed_28 (in Redacted (Dev)) + 274
+rb_scope__commandDidStart:__ (in Redacted (Dev)) (login_view_controller.rb:56)</code></pre><p>As you can see, the crash was in the login controller. Looking at that file, it’s the Facebook log in code.</p><p>Although having to copy/paste addresses into the command line isn’t ideal, the main goal is retrieving a line number in ruby code (although off by one) from an otherwise opaque crash log intended for Xcode. And this allows further debugging.</p>
+</div><footer class="container mt-8 pt-2 border-solid border-dr-blue-1 border-t">
+
+    <div class="container grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
+
+            <div class="">
+                <p>Interested in working together? I'd love to hear from you. Contact me <a href="mailto:daniel@danramteke.com">daniel at
+                        danramteke dot com</a>.</p>
+
+            </div>
+            <div class="">
+                <p>
+                   <img src="/hi.png" width="220" height="220">
+                </p>
+            </div>
+
+            <div class="">
+             
+             <ul class="list-group ">               
+              
+<div>
+    Twitter: <a href="https://twitter.com/danramteke">danramteke</a>
+</div>
+<div>
+    GitHub: <a href="https://github.com/danramteke">danramteke</a>
+</div>
+<div>
+    Instagram: <a href="https://instagram.com/danramteke">danramteke</a>
+</div>
+<div>
+    LinkedIn: <a href="http://linkedin.com/in/danielramteke">danielramteke</a>
+</div>
+              <li><a href="/resume.html">Resume</a></li>
+             </ul>
+
+            </div>
+      
+    </div>  
+</footer>
+
+  <p>© Daniel Ramteke 2022</p>
+</div>
+
+
+
+
+</body></html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="geo.placename" content="New York City">
+    <meta name="geo.region" content="US-NY">
+    <meta name="description" content="Freelance iOS App Developer for New York City">
+    <meta name="keywords" content="nyc, new york city, ios, swift, iphone, developer, programmer, engineer, freelance, contractor, devops, kubernetes, digitalocean, docker, terraform">
+    <meta name="author" content="Dan Ramteke">
+    <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
+    <link rel="stylesheet" href="../../assets/tailwind.3ea5ae42.css"><link rel="stylesheet" href="../../assets/2013-02-18-find-options-in-xcode-documentation.c60b502b.css">
+</head>
+<body class="bg-dr-gray-9">
+
+<div class="mx-auto container p-4">
+<div class="container mb-8">
+
+    <div class="pb-4 border-solid border-dr-blue-1 border-b">
+    <a href="/" class="no-underline">
+        <h1 class="text-dr-blue-1 text-4xl font-medium inline mr-2">Dan Ramteke</h1> 
+        <h2 class="text-dr-gray-5 text-2xl inline ">
+        Complete app expertise: iOS, 
+        DevOps, &amp; web 
+        </h2>
+        </a>
+    </div>
+</div><div class="text-3xl font-bold pb-4">Xcodegen for Multiplatform Xcode projects</div><div class="blog-post astro-CFTPTCZT">
+ <p>Here’s how I use <a href="https://github.com/yonaskolb/XcodeGen">Xcodegen</a> for a new project that targets MacOS and iOS. It’s here for your reference or inspiration.</p><h1 id="project">Project</h1><p>Here is my <code data-astro-raw="">project.yml</code>:</p><pre class="language-null"><code data-astro-raw="" class="language-null">name: Example
+options:
+  deploymentTarget:
+    iOS: "14.0"
+    macOS: "11.0"
+schemes:
+  Example-iOS:
+    build:
+      targets:
+        Example-iOS: all
+  Example-macOS:
+    build:
+      targets:
+        Example-macOS: all
+targets:
+  Example-macOS:
+    type: application
+    platform: macOS
+    sources:
+      - path: macOS
+      - path: Shared
+    settings:
+      DEVELOPMENT_TEAM: 1234567890
+      CODE_SIGN_STYLE: Automatic
+      ORGANIZATIONNAME: "Example Organization"
+      PRODUCT_BUNDLE_IDENTIFIER: com.Example.app
+      VERSIONING_SYSTEM: apple-generic
+      SWIFT_VERSION: 5.3
+      CURRENT_PROJECT_VERSION: ${APP_BUILD_NUMBER}
+    entitlements:
+      path: macOS/macOS.entitlements
+      properties:
+        com.apple.security.app-sandbox: true
+        com.apple.security.files.user-selected.read-only: true
+    info:
+      path: macOS/Info.plist
+      properties:
+        CFBundleVersion: ${APP_BUILD_NUMBER}
+        CFBundleShortVersionString: ${APP_BUILD_VERSION}
+        CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+        CFBundleName: $(PRODUCT_NAME)
+        CFBundleDisplayName: Example
+        CFBundleIconFile: ""
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleInfoDictionaryVersion: "6.0"
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
+  Example-iOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: iOS
+      - path: Shared
+    settings:
+      DEVELOPMENT_TEAM: 1234567890
+      CODE_SIGN_STYLE: Automatic
+      ORGANIZATIONNAME: "Example Organization"
+      PRODUCT_BUNDLE_IDENTIFIER: com.Example.app
+      TARGETED_DEVICE_FAMILY: 1,2
+      VERSIONING_SYSTEM: apple-generic
+      SWIFT_VERSION: 5.3
+      CURRENT_PROJECT_VERSION: ${APP_BUILD_NUMBER}
+    entitlements:
+      path: iOS/iOS.entitlements
+    info:
+      path: iOS/Info.plist
+      properties:
+        CFBundleVersion: ${APP_BUILD_NUMBER}
+        CFBundleShortVersionString: ${APP_BUILD_VERSION}
+        CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)
+        CFBundleDisplayName: Example
+        ITSAppUsesNonExemptEncryption: false
+        LSRequiresIPhoneOS: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+        UIApplicationSupportsIndirectInputEvents: true
+        UILaunchScreen: {}
+        NSAppTransportSecurity:
+          NSAllowsLocalNetworking: true
+        UIRequiredDeviceCapabilities: [armv7]
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight</code></pre><p>This defines two targets, one for macOS and one for iOS, just like Xcode’s multiplatform template.</p><h2 id="bootstrap">Bootstrap</h2><p>I don’t call <code data-astro-raw="">xcodegen</code> directly. The <code data-astro-raw="">project.yml</code> references two variables for the build number and the marketing version, and those are stored in two files named <code data-astro-raw="">build-number</code> which contains the current build number (for example: <code data-astro-raw="">1</code>) and <code data-astro-raw="">build-version</code> which contains the current marketing version (for example: <code data-astro-raw="">1.0.0</code>).</p><p>To make sure those values are available to <code data-astro-raw="">xcodegen</code>, I create a <code data-astro-raw="">bootstrap.sh</code> script that looks like this:</p><pre class="language-null"><code data-astro-raw="" class="language-null">rm -fr *.xcodeproj
+
+export APP_BUILD_NUMBER=$(cat build-number)
+export APP_BUILD_VERSION=$(cat build-version)
+
+xcodegen generate -s project.yml</code></pre><p>So when I need to regenerate the xcode project, I run <code data-astro-raw="">./bootstrap.sh</code> from the project’s root directory.</p>
+</div><footer class="container mt-8 pt-2 border-solid border-dr-blue-1 border-t">
+
+    <div class="container grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
+
+            <div class="">
+                <p>Interested in working together? I'd love to hear from you. Contact me <a href="mailto:daniel@danramteke.com">daniel at
+                        danramteke dot com</a>.</p>
+
+            </div>
+            <div class="">
+                <p>
+                   <img src="/hi.png" width="220" height="220">
+                </p>
+            </div>
+
+            <div class="">
+             
+             <ul class="list-group ">               
+              
+<div>
+    Twitter: <a href="https://twitter.com/danramteke">danramteke</a>
+</div>
+<div>
+    GitHub: <a href="https://github.com/danramteke">danramteke</a>
+</div>
+<div>
+    Instagram: <a href="https://instagram.com/danramteke">danramteke</a>
+</div>
+<div>
+    LinkedIn: <a href="http://linkedin.com/in/danielramteke">danielramteke</a>
+</div>
+              <li><a href="/resume.html">Resume</a></li>
+             </ul>
+
+            </div>
+      
+    </div>  
+</footer>
+
+  <p>© Daniel Ramteke 2022</p>
+</div>
+
+
+
+
+</body></html>
