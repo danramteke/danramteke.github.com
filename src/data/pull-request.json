@@ -48,5 +48,15 @@
         "url": "https://github.com/fastlane/fastlane/pull/3872",
         "repo": "fastlane/fastlane",
         "pr": "3872"
+    },
+    {
+        "url": "https://gitlab.com/Mordil/RediStack/-/merge_requests/163",
+        "repo": "Mordil/RediStack",
+        "pr": "163"
+    },
+    {
+        "url": "https://github.com/matrix-org/matrix-ios-sdk/pull/1353",
+        "repo": "matrix-org/matrix-ios-sdk",
+        "pr": "1353"
     }
 ]
