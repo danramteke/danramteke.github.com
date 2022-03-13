@@ -58,5 +58,10 @@
         "url": "https://github.com/matrix-org/matrix-ios-sdk/pull/1353",
         "repo": "matrix-org/matrix-ios-sdk",
         "pr": "1353"
+    },
+    {
+        "url": "https://github.com/vapor/jwt-kit/pull/66",
+        "repo": "vapor/jwt-kit",
+        "pr": "66"
     }
 ]
