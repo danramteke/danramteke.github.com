@@ -1,4 +1,5 @@
 ---
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 import BlueSection from 'component:BlueSection';
 const { style } = Astro.props;
 ---
@@ -7,29 +8,29 @@ const { style } = Astro.props;
 
 
 <div slot="left">
-<h4>Underway</h4>
-<p>For New Yorkers, <a href="https://www.underway.nyc">Underway</a> is the best app to quickly see real-time info. Available on <a href="https://apps.apple.com/app/id1118548566">iOS</a> and <a href="https://play.google.com/store/apps/details?id=nyc.underway.underway">Android</a>. </p>
+<H2>Underway</H2>
+<P>For New Yorkers, <Link href="https://www.underway.nyc">Underway</Link> is the best app to quickly see real-time info. Available on <Link href="https://apps.apple.com/app/id1118548566">iOS</Link> and <Link href="https://play.google.com/store/apps/details?id=nyc.underway.underway">Android</Link>. </P>
 
-<p><a href="https://www.underway.nyc/">Learn more</a></p>
+<P><Link href="https://www.underway.nyc/">Learn more</Link></P>
 </div>
 
 
 <div slot="right">
-<h4>Swish</h4>
-<p>For developers, <a href="https://github.com/danramteke/swish">Swish</a> enables writing scripts in Swift. It bridges the gap between shell scripting and Swift.
-</p>
+<H2>Swish</H2>
+<P>For developers, <Link href="https://github.com/danramteke/swish">Swish</Link> enables writing scripts in Swift. It bridges the gap between shell scripting and Swift.
+</P>
 
-<p><a href="https://github.com/danramteke/swish">Learn more</a></p>
+<P><Link href="https://github.com/danramteke/swish">Learn more</Link></P>
 </div>
 
 
 
 <div slot="middle">
-<h4>Live coding</h4>
-<p>
-Checkout my <a href="https://www.twitch.tv/fullqueuedeveloper">Twitch stream</a> and <a href="https://www.youtube.com/channel/UCqJ4mrrpAXbzA-KaZ8f_aMg">YouTube channel</a> where I share my love for creativity & programming!
-</p>
+<H2>Live coding</H2>
+<P>
+Checkout my <Link href="https://www.twitch.tv/fullqueuedeveloper">Twitch stream</Link> and <Link href="https://www.youtube.com/channel/UCqJ4mrrpAXbzA-KaZ8f_aMg">YouTube channel</Link> where I share my love for creativity & programming!
+</P>
 
-<p><a href="https://fullqueuedeveloper.com">FullQueueDeveloper.com</a></p>
+<P><Link href="https://fullqueuedeveloper.com">FullQueueDeveloper.com</Link></P>
 </div>
 </BlueSection>

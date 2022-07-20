@@ -1,10 +1,11 @@
 ---
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 import social from '../data/social.json'
 import SocialItem from '../list-items/SocialItem.astro'
 ---
-<footer class="container mt-8 pt-2 border-solid border-dr-blue-1 border-t">
+<footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-4 text-slate-300 ">
 
-    <div class="container grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
+    <div class=" grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
 
             <div class="">
                 <p>Interested in working together? I'd love to hear from you. Contact me <a href="mailto:daniel@danramteke.com">daniel at
@@ -18,15 +19,18 @@ import SocialItem from '../list-items/SocialItem.astro'
             </div>
 
             <div class="">
-             
-             <ul class="list-group ">               
-              {social.map((object, i) => <SocialItem obj={object} key={i} />)}
-              <li><a href="/resume.html">Resume</a></li>
+
+             <ul class="list-group ">
+
+
+              {social.map((obj, i) => <div>
+                     <a href={obj.url} class="hover:underline">{obj.site}: {obj.user}</a>
+                </div>)}
              </ul>
 
             </div>
-      
-    </div>  
+
+    </div>
+    <p>&copy;2022 Daniel Ramteke </p>
 </footer>
 
-  <p>&copy; Daniel Ramteke 2022</p>

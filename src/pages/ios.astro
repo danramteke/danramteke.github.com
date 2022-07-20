@@ -1,90 +1,91 @@
 ---
 import Layout from 'layout:PageLayout'
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 import BlueSection from '../components/BlueSection.astro';
 ---
 
 <Layout title="Custom iOS and iPhone app development">
 
-<p>
+<P>
 I have been developing for iOS ever since Apple unveiled the App Store with iOS 2.0. I transitioned to Swift as soon as it was announced, looking back to Objective-C as needed.
-</p>
+</P>
 
-<p>Previous iOS clients include <a href="https://stash.com">Stash</a>, <a href="https://newsela.com">Newsela</a>, <a href="https://www.ustadium.com">uSTADIUM</a>, and <a href="https://coinmarketcap.com">CoinMarketCap</a>. </p>
+<P>Previous iOS clients include <Link href="https://stash.com">Stash</Link>, <Link href="https://newsela.com">Newsela</Link>, <Link href="https://www.ustadium.com">uSTADIUM</Link>, and <Link href="https://coinmarketcap.com">CoinMarketCap</Link>. </P>
 
-   
+
     <BlueSection title="iOS build scripts">
      <div slot="left">
-            <h4>Screenshots</h4>
-            <p>
+            <H2>Screenshots</H2>
+            <P>
 
-            Keeping screenshots up-to-date for the App Store can require a lot of repetitive effort. Whenever <a href="https://www.underway.nyc">Underway</a> has a UI change, I use Xcode's UI testing feature along with Fastlane to generate fresh screenshots.  Scripting can save a lot of time, and still show the latest screenshots on the App Store.
-            </p>
+            Keeping screenshots up-to-date for the App Store can require a lot of repetitive effort. Whenever <Link href="https://www.underway.nyc">Underway</Link> has a UI change, I use Xcode's UI testing feature along with Fastlane to generate fresh screenshots.  Scripting can save a lot of time, and still show the latest screenshots on the App Store.
+            </P>
 
-            <p><a href="https://apps.apple.com/app/id1118548566">View Underway's screenshots on the App Store.</a></p>
+            <P><Link href="https://apps.apple.com/app/id1118548566">View Underway's screenshots on the App Store.</Link></P>
 
         </div>
 
         <div slot="middle">
-            <h4>XcodeGen</h4>
+            <H2>XcodeGen</H2>
 
-            <p>I'm very familiar with <a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a>. Generating
+            <P>I'm very familiar with <Link href="https://github.com/yonaskolb/XcodeGen">XcodeGen</Link>. Generating
                 the project file reduces merge conflicts, and eliminates build configuration drift. The maintainer
                 has kept it up to date with all the changes to Xcode over the years.
-                
+
                 XcodeGen combined with CocoaPods or Carthage is a powerful code management combo.
-                 </p>
+                 </P>
 
 
 
-               <p><a href="https://github.com/yonaskolb/XcodeGen">Visit on GitHub</a></p>
+               <P><Link href="https://github.com/yonaskolb/XcodeGen">Visit on GitHub</Link></P>
         </div>
 
         <div slot="right">
-            <h4>Swish</h4>
+            <H2>Swish</H2>
 
-            <p>
-               Ruby with Fastlane doesn't need to the last word when it comes to iOS deploy scripts. I've been developing Swish alongside <a href="https://www.underway.nyc">Underway</a> to script repetive tasks.
-               </p>
-            <p><a href="https://github.com/danramteke/swish">Visit on GitHub</a></p>
+            <P>
+               Ruby with Fastlane doesn't need to the last word when it comes to iOS deploy scripts. I've been developing Swish alongside <Link href="https://www.underway.nyc">Underway</Link> to script repetive tasks.
+               </P>
+            <P><Link href="https://github.com/danramteke/swish">Visit on GitHub</Link></P>
 
         </div>
     </BlueSection>
 
     <BlueSection title="Tools for a better app" style="regular">
         <div slot="left">
-            <h4>PaintCode</h4>
-            <p><a href="https://www.paintcodeapp.com">PaintCode</a> generates vectorized images at
+            <H2>PaintCode</H2>
+            <P><Link href="https://www.paintcodeapp.com">PaintCode</Link> generates vectorized images at
                 runtime, passing in colors and lineweights as arguments. Saves time going back and forth with
                 designers on the right image, and allows for
                 image reuse. In addition, this speeds up the launch time of the app due to how iOS handles asset
                 catalogs.
-            </p>
+            </P>
 
-            <p><a href="https://www.paintcodeapp.com">Visit website</a></p>
+            <P><Link href="https://www.paintcodeapp.com">Visit website</Link></P>
         </div>
 
         <div slot="middle">
             <h4>GRDB.swift</h4>
 
-            <p>
+            <P>
 GRDB has outmatched every other SQLite wrapper I've tried. It's interface is clear and easy to use. GRDB enables raw SQL as well as mapping results to <code>struct</code>s or <code>class</code>es.
 And it's even updated for <code>Combine</code>. It also has a smaller footprint compared to Realm.
-            </p>
+            </P>
 
-               <p><a href="https://github.com/groue/GRDB.swift">View on GitHub</a></p>
+               <P><Link href="https://github.com/groue/GRDB.swift">View on GitHub</Link></P>
         </div>
 
         <div slot="right">
             <h4>XcodeGen</h4>
 
-            <p>
-                I'm very familiar with <a href="https://github.com/yonaskolb/XcodeGen">XcodeGen</a>. Generating
+            <P>
+                I'm very familiar with <Link href="https://github.com/yonaskolb/XcodeGen">XcodeGen</Link>. Generating
                 the project file reduces merge conflicts, and eliminates build configuration drift. The maintainer
                 has kept it up to date with all the changes to Xcode over the years.
                   XcodeGen combined with CocoaPods or Carthage is a powerful code management combo.
-            </p>
+            </P>
 
-            <p><a href="https://github.com/yonaskolb/XcodeGen">View on GitHub</a></p>
+            <P><Link href="https://github.com/yonaskolb/XcodeGen">View on GitHub</Link></P>
 
         </div>
     </BlueSection>

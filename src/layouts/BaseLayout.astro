@@ -1,4 +1,6 @@
 ---
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
+import Footer from 'component:Footer';
 export interface Props {
   title?: string;
 }
@@ -11,14 +13,11 @@ const paddedTitle: string = title ? title + " :: " : "";
 <html lang="en">
 
 <head>
-    <style global>
-      @import "../styles/tailwind.css";
-    </style>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="geo.placename" CONTENT="New York City">
+    <meta name="geo.placename" content="New York City">
     <meta name="geo.region" content="US-NY" />
     <meta name="description" content="Freelance iOS App Developer for New York City" />
     <meta name="keywords" content="nyc, new york city, ios, swift, iphone, developer, programmer, engineer, freelance, contractor, devops, kubernetes, digitalocean, docker, terraform" />
@@ -26,10 +25,28 @@ const paddedTitle: string = title ? title + " :: " : "";
     <title>{paddedTitle}Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
 </head>
-<body class="bg-dr-gray-9">
+<body class="bg-neutral-200">
 
-<div class="mx-auto container p-4">
+<div class="sticky top-0 bg-neutral-100 flex justify-between items-center">
+  <div class="text-3xl text-blue-900 font-bold px-4"><a href="/">Daniel Ramteke</a></div>
+
+  <div class="flex">
+    <a href="/about" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+      About
+    </a>
+
+    <a href="/resume" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+      Resume
+    </a>
+    <a href="/contact" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+      Contact
+    </a>
+  </div>
+</div>
+
+<div>
 <slot/>
 </div>
+
 </body>
 </html>

@@ -1,11 +1,9 @@
-// @ts-check
-export default/** @type {import('astro').AstroUserConfig} */ ({
-    buildOptions: {
-        site: "https://danramteke.com/",
-        sitemap: false
-    },
-    devOptions: {
-        tailwindConfig: './tailwind.config.cjs',
-    },
-    renderers: []
+import { defineConfig } from "astro/config";
+
+import tailwind from "@astrojs/tailwind";
+
+// https://astro.build/config
+export default defineConfig({
+  site: "https://danramteke.com",
+  integrations: [tailwind()],
 });

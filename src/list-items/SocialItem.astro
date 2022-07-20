@@ -1,7 +1,8 @@
 ---
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 const { obj, key } = Astro.props;
 ---
 
 <div>
-    {obj.site}: <a href={obj.url}>{obj.user}</a>
+    {obj.site}: <Link href={obj.url}>{obj.user}</Link>
 </div>

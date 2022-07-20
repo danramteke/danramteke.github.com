@@ -1,7 +1,7 @@
 ---
 import Layout from 'layout:PageLayout'
 
-const blogPosts = Astro.fetchContent('./blog/*.md');
+const blogPosts = await Astro.glob('./blog/*.md');
 
 function compareBlogPosts(a, b) {
     const aDate = new Date(a.date);

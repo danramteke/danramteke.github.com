@@ -1,39 +1,40 @@
 ---
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 import BlueSection from 'component:BlueSection';
 const { style } = Astro.props;
 ---
 
 <BlueSection title="Expertise for a complete app" style={style}>
 <div slot="left">
-<h4>iOS and Android</h4>
-<p>
-Ever since Steve Jobs unveiled his revolutionary communications device, I've been obsessed with building hand-held interfaces. 
-I use native tools: Swift on iOS and Kotlin on Android.</p>
+<H2>iOS and Android</H2>
+<P>
+Ever since Steve Jobs unveiled his revolutionary communications device, I've been obsessed with building hand-held interfaces.
+I use native tools: Swift on iOS and Kotlin on Android.</P>
 
-<p>The mobile app I'm most proud of is <a href="https://www.underway.nyc/">Underway</a>. It's a complete app on iOS and Android</p>
-<p><a href="/ios">Learn more about my iOS experience</a></p>
+<P>The mobile app I'm most proud of is <Link href="https://www.underway.nyc/">Underway</Link>. It's a complete app on iOS and Android</P>
+<P><Link href="/ios">Learn more about my iOS experience</Link></P>
 </div>
 
 <div slot="middle">
-<h4>DevOps</h4>
+<H2>DevOps</H2>
 
-<p>
+<P>
 If it can be automated with a script, it probably should. Scripting increases confidence in important processes such as publishing to the App Store or setting up server infrastructure. Unfortunately, not everyone has the time or familiarity to develop bullet-proof scripts. Contracting a DevOps consultant such as myself can propel your project forward.
-</p>
+</P>
 
 
-<p><a href="/devops">Learn more about my DevOps experience</a></p>
+<P><Link href="/devops">Learn more about my DevOps experience</Link></P>
 </div>
 
 
 <div slot="right">
-<h4>Web</h4>
-<p>
+<H2>Web</H2>
+<P>
 A solid web presence remains an important part of a complete app. It hasn't gone out of style, despite social networks best efforts.
 Build websites using VueJS, Astro, and Tailwind CSS. Build webapps using Vapor.
-</p>
+</P>
 
 
-<p><a href="/web">Learn more about my web experience.</a></p>
+<P><Link href="/web">Learn more about my web experience.</Link></P>
 </div>
 </BlueSection>

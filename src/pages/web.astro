@@ -1,4 +1,5 @@
 ---
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 import Layout from 'layout:PageLayout'
 import BlueSection from '../components/BlueSection.astro';
 ---
@@ -10,36 +11,36 @@ A website and a webserver often play an important role in a complete app. I've g
 
  <BlueSection title="Web toolbox" style="regular">
         <div slot="left">
-            <h4>Tailwind CSS</h4>
-            <p>
+            <H2>Tailwind CSS</H2>
+            <P>
 
            Tailwind is a fresh take on CSS tooling. It's utilty-first and modular out-of-the box. It's also customizable for managing themes across web properties. This website and <a href="https://www.underway.nyc">www.underway.nyc</a> both use Tailwind CSS.
-            </p>
+            </P>
 
-            <p><a href="https://www.tailwindcss.com">Visit website</a></p>
+            <P><Link href="https://www.tailwindcss.com">Visit website</Link></P>
         </div>
 
         <div slot="middle">
-            <h4>Astro</h4>
+            <H2>Astro</H2>
 
-            <p>
+            <P>
                 Astro is a relatively new static site generator. It pre-renders static React and Vue components for a fast web experience. It uses JSX style components to manage layouts and re-usable components.
-                
-                This website and <a href="https://www.underway.nyc">www.underway.nyc</a> are both built using Astro.
-                
-                  </p>
 
-               <p><a href="https://www.astro.build">Visit website</a></p>
+                This website and <Link href="https://www.underway.nyc">www.underway.nyc</Link> are both built using Astro.
+
+                  </P>
+
+               <P><Link href="https://www.astro.build">Visit website</Link></P>
         </div>
 
         <div slot="right">
-            <h4>Vapor</h4>
+            <H2>Vapor</H2>
 
-            <p>
+            <P>
              Vapor is a webapp framework written on Swift, and built on top on non-blocking IO for lightning speed.
-             <a href="https://www.underway.nyc">Underway</a>'s server relies on Vapor, not only as a webserver, but also for background workers to fetch & transform data from the MTA.
-              </p>
-            <p><a href="https://vapor.codes">Visit website</a></p>
+             <Link href="https://www.underway.nyc">Underway</Link>'s server relies on Vapor, not only as a webserver, but also for background workers to fetch & transform data from the MTA.
+              </P>
+            <P><Link href="https://vapor.codes">Visit website</Link></P>
 
         </div>
     </BlueSection>
