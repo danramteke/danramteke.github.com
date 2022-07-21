@@ -13,11 +13,11 @@
     <meta name="author" content="Dan Ramteke">
     <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/b2092d7e.8dd152dc.css" /></head>
+<link rel="stylesheet" href="/assets/b2092d7e.5f52c6f4.css" /></head>
 <body class="bg-neutral-200">
 
 <div class="sticky top-0 bg-neutral-100 flex justify-between items-center">
-  <div class="text-3xl text-blue-900 font-bold px-4"><a href="/">Daniel Ramteke</a></div>
+  <div class="text-3xl text-blue-900 font-bold px-8"><a href="/">Daniel Ramteke</a></div>
 
   <div class="flex">
     <a href="/about" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
@@ -33,9 +33,9 @@
   </div>
 </div>
 
-<div>
-<div class="text-3xl font-bold py-4 px-4">Xcodegen for Multiplatform Xcode projects</div><div class="px-4">
-        <div class="blog-post">
+<div class="container">
+<div class="text-3xl font-bold py-4 px-8">Xcodegen for Multiplatform Xcode projects</div><div class="px-8">
+        <div class="blog-post px-8">
  <p>Here’s how I use <a href="https://github.com/yonaskolb/XcodeGen">Xcodegen</a> for a new project that targets MacOS and iOS. It’s here for your reference or inspiration.</p><h1 id="project">Project</h1><p>Here is my <code>project.yml</code>:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">name: Example</span></span>
 <span class="line"><span style="color: #c9d1d9">options:</span></span>
 <span class="line"><span style="color: #c9d1d9">  deploymentTarget:</span></span>
@@ -129,7 +129,10 @@
 <span class="line"><span style="color: #c9d1d9"></span></span>
 <span class="line"><span style="color: #c9d1d9">xcodegen generate -s project.yml</span></span></code></pre><p>So when I need to regenerate the xcode project, I run <code>./bootstrap.sh</code> from the project’s root directory.</p>
 </div>
-    </div><footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-4 text-slate-300 ">
+    </div>
+</div>
+
+<footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-8 text-slate-300 ">
 
     <div class=" grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
 
@@ -165,6 +168,4 @@
     </div>
     <p>&copy;2022 Daniel Ramteke </p>
 </footer>
-</div>
-
 </body></html>

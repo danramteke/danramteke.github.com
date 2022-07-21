@@ -13,11 +13,11 @@
     <meta name="author" content="Dan Ramteke">
     <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/b2092d7e.8dd152dc.css" /></head>
+<link rel="stylesheet" href="/assets/b2092d7e.5f52c6f4.css" /></head>
 <body class="bg-neutral-200">
 
 <div class="sticky top-0 bg-neutral-100 flex justify-between items-center">
-  <div class="text-3xl text-blue-900 font-bold px-4"><a href="/">Daniel Ramteke</a></div>
+  <div class="text-3xl text-blue-900 font-bold px-8"><a href="/">Daniel Ramteke</a></div>
 
   <div class="flex">
     <a href="/about" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
@@ -33,14 +33,17 @@
   </div>
 </div>
 
-<div>
-<div class="text-3xl font-bold py-4 px-4">Converting from Objective-C to RubyMotion</div><div class="px-4">
-        <div class="blog-post">
+<div class="container">
+<div class="text-3xl font-bold py-4 px-8">Converting from Objective-C to RubyMotion</div><div class="px-8">
+        <div class="blog-post px-8">
  <p>At Cyrus, we recently fielded a proposal to convert an existing app on the App Store from Objective-C to RubyMotion. I’ll give some background to the project and client, describe what we did, and give some recommendations.</p><p>First, a little background on the proposal. The client already had a pure Objective-C app in the App Store. They already had a design firm and a consulting firm that they had a a good working relationship with. They were Rails developers, curious about how RubyMotion could benefit them.</p><p>Also, they were pushing new features constantly. The other firm writing new features while we were translating the app to RubyMotion seemed like a recipe for continual merge conflicts. We would have been happy to implement new features for them. Stopping development to translate the app to RubyMotion didn’t seem like a good use of their time.</p><p>Here’s what we did. We planned to vendor the Objective-C project, convert the application delegate to Ruby, and then pull over one controller at a time until we got everything in Ruby that would be likely to change. We planned to leave in Objective-C all the dropped-in third party libraries.</p><p>We started by vendoring the entire Objective-C project. And already hit some bumps in the road. Because the other dev shop used the <code>.pch</code> file (pre-compiled headers file) to require fewer <code>#import</code> statements in their files, we couldn’t simply drop the entire project in a vendor sub-folder in our RubyMotion project. Further, the cocoapods wouldn’t load for the vendored project. Because of all these missing dependencies, we had to take a different route.</p><p>Instead, we built the existing project as a static framework for iOS, remembering to properly export headers. This approach didn’t require us tp fiddle with the <code>.pch</code> file, muck with pre-compiler directives, or do any other shenanigans with dependencies. This gave us a <code>.a</code> file that we put in the vendor directory of our RubyMotion project. (Although we found blog posts describing how to do so, we didn’t bother making a <code>.a</code> file for both the simulator and the iPhone - we were spiking this out to try to get it to work.) Here is the line from our <code>Rakefile</code></p><p>app.vendor_project(‘vendor/libclientname-static’, :static, :force_load => false,
 :products => [‘libclientname-static.a’],
 :headers_dir => “include/libclientname-static”)</p><p>After translating the application delegate, vendoring the appropriate included frameworks, and setting up the cocoapods, we had a stable foundation to build on. We were able to reference controllers in the storyboard, and instantiate views from the vendored <code>.a</code> file.</p><p>Through this prep work, we discovered that converting a project from Objective-C to RubyMotion is doable. It’s even doable to translate one class at a time, iteratively, until the project feels right. The cost-to-benefit of stopping to translate an already existing app is very dependent on the environment the app is being developed in. When new features are important, not translating makes sense. If a team of Ruby developers is taking over an app, a translation makes more sense.</p>
 </div>
-    </div><footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-4 text-slate-300 ">
+    </div>
+</div>
+
+<footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-8 text-slate-300 ">
 
     <div class=" grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
 
@@ -76,6 +79,4 @@
     </div>
     <p>&copy;2022 Daniel Ramteke </p>
 </footer>
-</div>
-
 </body></html>

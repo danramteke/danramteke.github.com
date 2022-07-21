@@ -13,11 +13,11 @@
     <meta name="author" content="Dan Ramteke">
     <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/b2092d7e.8dd152dc.css" /><script type="module" src="/hoisted.2b695522.js"></script></head>
+<link rel="stylesheet" href="/assets/b2092d7e.5f52c6f4.css" /><script type="module" src="/hoisted.2b695522.js"></script></head>
 <body class="bg-neutral-200">
 
 <div class="sticky top-0 bg-neutral-100 flex justify-between items-center">
-  <div class="text-3xl text-blue-900 font-bold px-4"><a href="/">Daniel Ramteke</a></div>
+  <div class="text-3xl text-blue-900 font-bold px-8"><a href="/">Daniel Ramteke</a></div>
 
   <div class="flex">
     <a href="/about" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
@@ -33,12 +33,15 @@
   </div>
 </div>
 
-<div>
-<div class="text-3xl font-bold py-4 px-4">Git Branch in command -line</div><div class="px-4">
-        <div class="blog-post">
+<div class="container">
+<div class="text-3xl font-bold py-4 px-8">Git Branch in command -line</div><div class="px-8">
+        <div class="blog-post px-8">
  <p>Here’s a script to show the git branch in the command prompt. I color the git branch to quickly show thestate of the working directory. RED means there are unstaged changes. YELLOW means the working directory and index match. And GREEN means working directory is clean (nothing to commit).</p><p>This is known to work with git version 1.7.12. However, git version 1.7.6.4 doesn’t properly support the <code>-b</code> flag with the <code>--porcelain</code> flags.</p><p>RED, YELLOW, GREEN, and NO_COLOUR are color settings.</p><p>The function parse_git_branch parses the branch from the <code>git status -b --porcelain</code> command. I used <code>head</code> to take the first lineusing sed to run the regular expressions.</p><p>parse_git_status echo’s RED or GREEN depending if the directory is clean or not. <code>git status --porcelain</code> is a minimalist git status that should be used for scripting. In the first line, I pass <code>stderr</code> to <code>stdin</code> so that I can grep it for “not a git repository.”</p><p>The PS1 line sets the prompt. The $(function_name) runs the function every time the prompt is accessed, which is what you want for a prompt. If it were merely $(function_name) or <code>function_name</code>, the function would be run only once.</p>
 </div>
-    </div><footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-4 text-slate-300 ">
+    </div>
+</div>
+
+<footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-8 text-slate-300 ">
 
     <div class=" grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
 
@@ -74,6 +77,4 @@
     </div>
     <p>&copy;2022 Daniel Ramteke </p>
 </footer>
-</div>
-
 </body></html>

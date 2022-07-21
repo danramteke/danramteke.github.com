@@ -13,11 +13,11 @@
     <meta name="author" content="Dan Ramteke">
     <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/b2092d7e.8dd152dc.css" /></head>
+<link rel="stylesheet" href="/assets/b2092d7e.5f52c6f4.css" /></head>
 <body class="bg-neutral-200">
 
 <div class="sticky top-0 bg-neutral-100 flex justify-between items-center">
-  <div class="text-3xl text-blue-900 font-bold px-4"><a href="/">Daniel Ramteke</a></div>
+  <div class="text-3xl text-blue-900 font-bold px-8"><a href="/">Daniel Ramteke</a></div>
 
   <div class="flex">
     <a href="/about" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
@@ -33,9 +33,9 @@
   </div>
 </div>
 
-<div>
-<div class="text-3xl font-bold py-4 px-4">Docker Layers for Swift Package Manager</div><div class="px-4">
-        <div class="blog-post">
+<div class="container">
+<div class="text-3xl font-bold py-4 px-8">Docker Layers for Swift Package Manager</div><div class="px-8">
+        <div class="blog-post px-8">
  <p>This post will show how to use Docker layers for Swift Package Manager projects. The sample project is on <a href="https://github.com/danramteke/spm-in-docker">GitHub</a>.</p><h2 id="motivation">Motivation</h2><p>Consider this Dockerfile for a Swift project:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">FROM swift:5.3.1-focal</span></span>
 <span class="line"><span style="color: #c9d1d9">WORKDIR /build</span></span>
 <span class="line"><span style="color: #c9d1d9">ADD ./Package.* ./</span></span>
@@ -108,7 +108,10 @@ the output of <code>docker build -t hello-world .</code> looks like this:</p><pr
 <span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; writing image sha256:5960e06c78c5c2e247a42bff00c390ffcf75093e546228e8aa4cbd46ce37e5e1                                    0.0s</span></span>
 <span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; naming to docker.io/library/hello-world                                                                                  0.0s</span></span></code></pre><p>We can see that it builds much quicker! Only a few seconds compared to the over 300 seconds before caching.</p><p>Also, we can see the various layers marked as <code>CACHED</code>. Only our own project’s code needs to be compiled, since the third party dependencies already are compiled and cached in the docker layer.</p><p>I hope this was helpful. Checkout the sample project on Github here <a href="https://github.com/danramteke/spm-in-docker">https://github.com/danramteke/spm-in-docker</a></p>
 </div>
-    </div><footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-4 text-slate-300 ">
+    </div>
+</div>
+
+<footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-8 text-slate-300 ">
 
     <div class=" grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
 
@@ -144,6 +147,4 @@ the output of <code>docker build -t hello-world .</code> looks like this:</p><pr
     </div>
     <p>&copy;2022 Daniel Ramteke </p>
 </footer>
-</div>
-
 </body></html>
