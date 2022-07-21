@@ -28,7 +28,7 @@ const paddedTitle: string = title ? title + " :: " : "";
 <body class="bg-neutral-200">
 
 <div class="sticky top-0 bg-neutral-100 flex justify-between items-center">
-  <div class="text-3xl text-blue-900 font-bold px-4"><a href="/">Daniel Ramteke</a></div>
+  <div class="text-3xl text-blue-900 font-bold px-8"><a href="/">Daniel Ramteke</a></div>
 
   <div class="flex">
     <a href="/about" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
@@ -44,9 +44,10 @@ const paddedTitle: string = title ? title + " :: " : "";
   </div>
 </div>
 
-<div>
+<div class="container">
 <slot/>
 </div>
 
+<Footer/>
 </body>
 </html>

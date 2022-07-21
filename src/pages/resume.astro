@@ -9,9 +9,28 @@ import pullRequests from '@data/pull-request.json';
 
 ---
 <Layout title="Résumé">
-  <Section id="resume">
-  <H1>Résumé</H1>
-  </Section>
+
+  <div class="flex relative ">
+  <div class="sticky top-8 h-screen overflow-y-auto  p-8 w-64 hidden sm:block">
+
+    <List>
+      <div class="pb-2 hover:underline"><a href="#goal">Goal &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#press">Press coverage &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#active">Active projects  &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#pull-requests">Merged open source pull requests  &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#testimonials">Testimonials &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#reviews">Reviews &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#tools">Current tools &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#expertise">Expertise &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#experience">Experience &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#conferences">Conferences &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#education">Education &rsaquo;</a></div>
+    </List>
+  </div>
+  <div class="p-8 ">
+
+
+
 
   <Section id="goal">
     <H2>Goal</H2>
@@ -20,6 +39,7 @@ import pullRequests from '@data/pull-request.json';
   </Section>
 
 
+  <div class="block sm:hidden">
   <Section id="contents">
 
     <H2>Contents</H2>
@@ -27,7 +47,7 @@ import pullRequests from '@data/pull-request.json';
     <List>
       <ListItem><Link href="#press">Press coverage</Link></ListItem>
       <ListItem><Link href="#active">Active projects</Link></ListItem>
-      <ListItem><Link href="#prs">Merged open source pull requests</Link></ListItem>
+      <ListItem><Link href="#pull-requests">Merged open source pull requests</Link></ListItem>
       <ListItem><Link href="#testimonials">Testimonials</Link></ListItem>
       <ListItem><Link href="#reviews">Reviews</Link></ListItem>
       <ListItem><Link href="#tools">Current tools</Link></ListItem>
@@ -38,6 +58,7 @@ import pullRequests from '@data/pull-request.json';
     </List>
 
   </Section>
+  </div>
 
 
   <Section id="press">
@@ -112,7 +133,7 @@ import pullRequests from '@data/pull-request.json';
     </List>
   </Section>
 
-  <Section>
+  <Section id="testimonials">
     <H2>Testimonials</H2>
 
     <List>
@@ -136,7 +157,7 @@ import pullRequests from '@data/pull-request.json';
 
   </Section>
 
-  <Section>
+  <Section id="reviews">
     <H2>Reviews</H2>
 
     <List>
@@ -222,5 +243,6 @@ import pullRequests from '@data/pull-request.json';
 
   </Section>
 
-
+  </div>
+  </div>
 </Layout>

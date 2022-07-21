@@ -2,8 +2,10 @@
 const { id } = Astro.props;
 
 ---
-<div id={id} class="">
-  <div class="mx-auto max-w-prose px-8 pb-8">
+
+<a name={id} class="pt-16"></a>
+  <div class="max-w-prose pb-8 " >
+
     <slot/>
   </div>
-</div>
+
