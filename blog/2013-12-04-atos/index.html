@@ -13,28 +13,30 @@
     <meta name="author" content="Dan Ramteke">
     <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/b2092d7e.5f52c6f4.css" /></head>
-<body class="bg-neutral-200">
+<link rel="stylesheet" href="/assets/b2092d7e.b6f74ec7.css" /></head>
+<body class="bg-sky-100 text-sky-900 ">
 
-<div class="sticky top-0 bg-neutral-100 flex justify-between items-center">
-  <div class="text-3xl text-blue-900 font-bold px-8"><a href="/">Daniel Ramteke</a></div>
+<div class="sm:sticky sm:top-0 sm:flex sm:justify-between sm:items-center bg-neutral-800 text-blue-50 py-2">
+  <div class="text-3xl font-bold px-8"><a href="/">Daniel Ramteke</a></div>
 
-  <div class="flex">
-    <a href="/about" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+
+  <div class="sm:flex px-4">
+    <a href="/about" class="px-4 hover:bg-sky-900 hover:text-white text-sky-50 corner-2 rounded-full">
       About
     </a>
 
-    <a href="/resume" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+    <a href="/resume" class="px-4 hover:bg-sky-900 hover:text-white text-sky-50 corner-2 rounded-full">
       Resume
     </a>
-    <a href="/contact" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+    <a href="/contact" class="px-4 hover:bg-sky-900 hover:text-white text-sky-50 corner-2 rounded-full">
       Contact
     </a>
   </div>
+
 </div>
 
-<div class="container">
-<div class="text-3xl font-bold py-4 px-8">Symbolicating RubyMotion Crash Logs</div><div class="px-8">
+<div>
+<div class="text-3xl font-bold py-4 px-8">Symbolicating RubyMotion Crash Logs</div><div class="px-8 container">
         <div class="blog-post px-8">
  <p><strong>Update!</strong> The information in this blog post is mostly irrelevent now that you can type <code>rake crashlog:device</code> to symbolicate crash logs from your device as of RubyMotion 2.18. <strong>Thanks!</strong></p><p>Symbolicating a crash log is the process of finding a line number in source from a crash log. Crash logs often look like <a href="http://i.imgur.com/HLXbG1I.png">this</a>. This specific process is interesting in particular to RubyMotion because Apple’s Xcode doesn’t symbolicate to Ruby code.</p><p>Now let’s see how it’s done.</p><p>After running <code>rake device</code>, you have binary files in the build directory, including a <code>.dSYM</code> file. Go ahead and <code>cd</code> into that directory, I’ll be typing all commands from that directory. Here is the directory listing for my <code>build/iPhoneOS-7.0-Development</code> directory: <img src="http://i.imgur.com/Nas5e5N.png" alt="Imgur"></p><p>A good example to use is this crash log I received from our customer: <a href="%7B%7Bsite.baseurl%7D%7Dimages/symbolicating-crashlog.png">Crash Trace</a> <a href="%7B%7Bsite.baseurl%7D%7Dimages/symbolicating-binaryimages.png">Binary Images</a> Another good resource is this handy guide to getting crash logs from Apple devices: <a href="http://help.getpocket.com/customer/portal/articles/500338-how-to-find-the-iphone-ipad-app-crash-logs">Pocket</a></p><p>Next, we’re going to use a command called <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/atos.1.html">atos</a>. You’ll need the load address, the architecture, and the list of addresses from the crash log. I’ll show where to get these from the crash log.</p><p>Here is the command I typed based on the crash log example: <code>xcrun atos -l 0xed000 -arch armv7 0x00a22a30 0x00a22b56 0x0098caec 0x00a20866 0x00a0a930 0x00a09a66 0x00a0a420 0x0080b524 0x0081241e 0x008124ae -o Redacted\ \(Dev\).dSYM/Contents/Resources/DWARF/Redacted\ \(Dev\)</code></p><p>The value for the <code>-l</code> flag is taken from the Binary Images section. That first number there. The value for the <code>-arch</code> flag is <code>arm7</code> since the binaries were built for an iOS device.</p><p>The rest of the hex numbers are taken from the first screen shot of the crash log. I copy/pasted them from the crash log for now (would like to hear of a better way). And I got this output:</p><p>got symbolicator for Redacted (Dev).dSYM/Contents/Resources/DWARF/Redacted (Dev), base address 4000
 __vm_raise() (in Redacted (Dev)) + 276
@@ -51,16 +53,16 @@ rb_scope__commandDidStart:</strong> (in Redacted (Dev)) (login_view_controller.r
     </div>
 </div>
 
-<footer class=" mt-8 pt-2 border-solid bg-blue-900  border-t px-8 text-slate-300 ">
+<footer class=" mt-8 pt-2 border-solid bg-sky-900  border-t px-8 text-slate-300 ">
 
-    <div class=" grid grid-cols-1 md:grid-cols-3 md:gap-8 ">
+    <div class=" grid grid-cols-1 md:grid-cols-3 gap-8 ">
 
             <div class="">
                 <p>Interested in working together? I'd love to hear from you. Contact me <a href="mailto:daniel@danramteke.com">daniel at
                         danramteke dot com</a>.</p>
 
             </div>
-            <div class="">
+            <div class="pt-1">
                 <p>
                    <img src="/hi.png" width="220" height="220">
                 </p>
@@ -85,6 +87,6 @@ rb_scope__commandDidStart:</strong> (in Redacted (Dev)) (login_view_controller.r
             </div>
 
     </div>
-    <p>&copy;2022 Daniel Ramteke </p>
+    <p class="py-8"><a href="/" class="hover:underline">&copy;2022 Daniel Ramteke</a> </p>
 </footer>
 </body></html>
