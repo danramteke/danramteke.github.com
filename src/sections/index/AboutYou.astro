@@ -1,0 +1,23 @@
+---
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
+import BlueSection from 'component:BlueSection';
+const { style } = Astro.props;
+---
+
+
+<BlueSection title="About you" style={style}>
+<div slot="left">
+  <H2>Creative</H2>
+
+  <P>You've had so many ideas, but this one you can't shake. You <span class="font-semibold">need</span> to see this one come to life.</P>
+
+</div>
+<div slot="middle">
+  <H2>Sincere</H2>
+  <P>You prefer direct and honest communication. You believe your idea will help humanity in some greater way.</P>
+</div>
+<div slot="right">
+  <H2>Curious</H2>
+  <P>You wonder what would happen</P>
+</div>
+</BlueSection>

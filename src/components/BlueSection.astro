@@ -22,16 +22,15 @@ const bgForStyle = function (style?: keyof typeof BlueSectionStyle): string {
 
  const bgClass: string =  bgForStyle(style);
  const divClasses: string = bgClass.concat(
-     " grid grid-cols-1 md:grid-cols-3 md:gap-8 " ,
-  "sm:border-x border-y border-solid sm:rounded-lg ",
-  "border-dr-blue-1  text-dr-blue-1 ",
-  "px-4 py-4  -mx-4 my-4 "
+  " grid grid-cols-1 md:grid-cols-3 md:gap-8",
+  " border-t border-solid border-violet-600",
+  " px-4 py-4  -mx-4 my-4 "
  );
 
 ---
 
-        <div class="container  text-dr-blue-1 mt-8">
-            <h2 class="text-3xl">{title}</h2>
+        <div class="container  mt-8 ">
+            <h2 class="text-3xl font-bold mt-2">{title}</h2>
             <div class={divClasses}>
 
                 <div class="">

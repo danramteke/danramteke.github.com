@@ -1,14 +1,22 @@
 ---
 import ListSection from '../components/ListSection.astro'
-import Layout from '../layouts/PageLayout.astro'
+import Layout from '../layouts/BaseLayout.astro'
 import Skills from '../sections/index/Skills.astro'
 import Projects from '../sections/index/Projects.astro'
 import Testimonials from '../sections/index/Testimonials.astro'
 import WorkStyles from '../sections/index/WorkStyles.astro'
+import WorkingWithMe from '../sections/index/WorkingWithMe.astro'
+import AboutYou from '../sections/index/AboutYou.astro'
+import Hero from '../sections/index/Hero.astro'
 ---
 <Layout>
 
+<Hero/>
 
+<div class="px-8">
+
+  <WorkingWithMe />
+  <AboutYou />
 
   <WorkStyles/>
   <Skills/>
@@ -16,5 +24,6 @@ import WorkStyles from '../sections/index/WorkStyles.astro'
   <Testimonials style="light"/>
 
   <Projects/>
+</div>
 
 </Layout>

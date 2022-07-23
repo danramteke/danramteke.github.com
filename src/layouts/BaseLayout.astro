@@ -25,26 +25,28 @@ const paddedTitle: string = title ? title + " :: " : "";
     <title>{paddedTitle}Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
 </head>
-<body class="bg-neutral-200">
+<body class="bg-sky-100 text-sky-900 ">
 
-<div class="sticky top-0 bg-neutral-100 flex justify-between items-center">
-  <div class="text-3xl text-blue-900 font-bold px-8"><a href="/">Daniel Ramteke</a></div>
+<div class="sticky top-0 flex justify-between items-center bg-neutral-800 text-blue-50 py-2">
+  <div class="text-3xl font-bold px-8"><a href="/">Daniel Ramteke</a></div>
+
 
   <div class="flex">
-    <a href="/about" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+    <a href="/about" class="px-4 hover:bg-sky-900 hover:text-white text-sky-50 corner-2 rounded-full">
       About
     </a>
 
-    <a href="/resume" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+    <a href="/resume" class="px-4 hover:bg-sky-900 hover:text-white text-sky-50 corner-2 rounded-full">
       Resume
     </a>
-    <a href="/contact" class="px-4 hover:bg-blue-900 hover:text-white text-blue-900 corner-2 rounded-full">
+    <a href="/contact" class="px-4 hover:bg-sky-900 hover:text-white text-sky-50 corner-2 rounded-full">
       Contact
     </a>
   </div>
+
 </div>
 
-<div class="container">
+<div>
 <slot/>
 </div>
 
