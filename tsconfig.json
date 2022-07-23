@@ -6,6 +6,7 @@
       "@elements": ["src/element/index.ts"],
       "list-item:*": ["src/list-items/*.astro"],
       "layout:*": ["src/layouts/*.astro"],
+      "section:base-layout:*": ["src/sections/base-layout/*.astro"],
       "element:*": ["src/elements/*.astro"],
       "@data/*": ["src/data/*"]
     }

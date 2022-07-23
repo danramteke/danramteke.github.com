@@ -1,6 +1,6 @@
 ---
 import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
-import Footer from 'component:Footer';
+import Footer from 'section:base-layout:Footer';
 export interface Props {
   title?: string;
 }
@@ -27,11 +27,12 @@ const paddedTitle: string = title ? title + " :: " : "";
 </head>
 <body class="bg-sky-100 text-sky-900 ">
 
-<div class="sticky top-0 flex justify-between items-center bg-neutral-800 text-blue-50 py-2">
+<div class="sticky top-0 flex sm:justify-between sm:items-center bg-neutral-800 text-blue-50 py-2">
   <div class="text-3xl font-bold px-8"><a href="/">Daniel Ramteke</a></div>
 
 
-  <div class="flex">
+  <input type="checkbox" class="hidden">
+  <div class="hidden sm:flex overlay">
     <a href="/about" class="px-4 hover:bg-sky-900 hover:text-white text-sky-50 corner-2 rounded-full">
       About
     </a>
