@@ -4,26 +4,15 @@ import BlueSection from 'component:BlueSection';
 const { style } = Astro.props;
 ---
 
-<BlueSection title="Side projects" style={style}>
+<BlueSection title="Current projects" style={style}>
 
 
 <div slot="left">
 <H2>Underway</H2>
-<P>For New Yorkers, <Link href="https://www.underway.nyc">Underway</Link> is the best app to quickly see real-time info. Available on <Link href="https://apps.apple.com/app/id1118548566">iOS</Link> and <Link href="https://play.google.com/store/apps/details?id=nyc.underway.underway">Android</Link>. </P>
+<P>For New Yorkers, Underwayis the best app to quickly see real-time info. All the tools you need to make decisions while on the go or underground. Available on <Link href="https://apps.apple.com/app/id1118548566">iOS</Link> and <Link href="https://play.google.com/store/apps/details?id=nyc.underway.underway">Android</Link>. </P>
 
-<P><Link href="https://www.underway.nyc/">Learn more</Link></P>
+<P>Learn more at <Link href="https://www.underway.nyc/">underway.nyc</Link></P>
 </div>
-
-
-<div slot="right">
-<H2>Swish</H2>
-<P>For developers, <Link href="https://github.com/danramteke/swish">Swish</Link> enables writing scripts in Swift. It bridges the gap between shell scripting and Swift.
-</P>
-
-<P><Link href="https://github.com/danramteke/swish">Learn more</Link></P>
-</div>
-
-
 
 <div slot="middle">
 <H2>Live coding</H2>
@@ -31,6 +20,15 @@ const { style } = Astro.props;
 Checkout my <Link href="https://www.twitch.tv/fullqueuedeveloper">Twitch stream</Link> and <Link href="https://www.youtube.com/channel/UCqJ4mrrpAXbzA-KaZ8f_aMg">YouTube channel</Link> where I share my love for creativity & programming!
 </P>
 
-<P><Link href="https://fullqueuedeveloper.com">FullQueueDeveloper.com</Link></P>
+<P>Learn more at <Link href="https://fullqueuedeveloper.com">FullQueueDeveloper.com</Link></P>
 </div>
+
+<div slot="right">
+<H2>Swish</H2>
+<P>For developers, <Link href="https://github.com/FullQueueDeveloper/swish">Swish</Link> enables writing scripts in Swift. It bridges the gap between shell scripting and Swift.
+</P>
+
+<P>Learn more at <Link href="https://github.com/FullQueueDeveloper/swish">FullQueueDeveloper/swish</Link></P>
+</div>
+
 </BlueSection>

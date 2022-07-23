@@ -22,28 +22,28 @@ const bgForStyle = function (style?: keyof typeof BlueSectionStyle): string {
 
  const bgClass: string =  bgForStyle(style);
  const divClasses: string = bgClass.concat(
-  " grid grid-cols-1 md:grid-cols-3 md:gap-8",
+  " grid grid-cols-1 sm:grid-cols-3 sm:gap-8",
   " border-t border-solid border-violet-600",
-  " px-4 py-4  -mx-4 my-4 "
+  " py-4 my-4 "
  );
 
 ---
 
-        <div class="container  mt-8 ">
-            <h2 class="text-3xl font-bold mt-2">{title}</h2>
-            <div class={divClasses}>
+<div class="container  mt-8 ">
+  <h2 class="text-3xl font-bold mt-2">{title}</h2>
+  <div class={divClasses}>
 
-                <div class="">
-                    <slot name="left"/>
-                </div>
+    <div class="">
+      <slot name="left"/>
+    </div>
 
-                <div class="">
-                    <slot name="middle"/>
-                </div>
+    <div class="">
+      <slot name="middle"/>
+    </div>
 
-                <div class="">
-                    <slot name="right"/>
-                </div>
+    <div class="">
+      <slot name="right"/>
+    </div>
 
-            </div>
-        </div>
+  </div>
+</div>

@@ -1,5 +1,15 @@
 [
   {
+    "name": "WeThink",
+    "url": "https://wethink.com",
+    "capacity": "Freelancer",
+    "timeframe": "July 2022 - Present",
+    "items": [
+      "Inherited partially complete iOS, Android and node web app",
+      "Brought app to launch adding content moderation and main feed algorithm"
+    ]
+  },
+  {
     "name": "Full Queue Developer",
     "url": "https://fullqueuedeveloper.com",
     "capacity": "Live stream on Twitch",
