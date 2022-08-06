@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><link rel="stylesheet" href="/assets/b2092d7e.adda91d6.css" /><html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -13,8 +12,8 @@
     <meta name="author" content="Dan Ramteke">
     <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/b2092d7e.b6f74ec7.css" /></head>
-<body class="bg-sky-100 text-sky-900 ">
+<link rel="stylesheet" href="/assets/b2092d7e.adda91d6.css" /></head>
+<body class="bg-sky-50 text-sky-900 ">
 
 <div class="sm:sticky sm:top-0 sm:flex sm:justify-between sm:items-center bg-neutral-800 text-blue-50 py-2">
   <div class="text-3xl font-bold px-8"><a href="/">Daniel Ramteke</a></div>
@@ -38,77 +37,98 @@
 <div>
 <div class="text-3xl font-bold py-4 px-8">Docker Layers for Swift Package Manager</div><div class="px-8 container">
         <div class="blog-post px-8">
- <p>This post will show how to use Docker layers for Swift Package Manager projects. The sample project is on <a href="https://github.com/danramteke/spm-in-docker">GitHub</a>.</p><h2 id="motivation">Motivation</h2><p>Consider this Dockerfile for a Swift project:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">FROM swift:5.3.1-focal</span></span>
+ <p>This post will show how to use Docker layers for Swift Package Manager projects. The sample project is on <a href="https://github.com/danramteke/spm-in-docker">GitHub</a>.</p>
+<h2 id="motivation">Motivation</h2>
+<p>Consider this Dockerfile for a Swift project:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">FROM swift:5.3.1-focal</span></span>
 <span class="line"><span style="color: #c9d1d9">WORKDIR /build</span></span>
 <span class="line"><span style="color: #c9d1d9">ADD ./Package.* ./</span></span>
 <span class="line"><span style="color: #c9d1d9">ADD ./Sources ./Sources</span></span>
 <span class="line"><span style="color: #c9d1d9">RUN swift build -c release</span></span>
 <span class="line"><span style="color: #c9d1d9">ENV PORT 80</span></span>
 <span class="line"><span style="color: #c9d1d9">EXPOSE $PORT</span></span>
-<span class="line"><span style="color: #c9d1d9">CMD /app/Run serve --env production --hostname 0.0.0.0 -p $PORT</span></span></code></pre><p>We would build it using <code>docker build -t hello-world .</code> and we would see the following output:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9"> =&gt; [internal] load .dockerignore                                                                                             0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; transferring context: 103B                                                                                             0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [internal] load build definition from Dockerfile                                                                          0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; transferring dockerfile: 503B                                                                                          0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [internal] load metadata for docker.io/library/swift:5.3.1-focal                                                          0.6s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [1/5] FROM docker.io/library/swift:5.3.1-focal@sha256:3fff4e7b806d04e1f8ef4d8f15eabcd8c9d8898f5333cc59aa3fc2f527ce96a9   36.3s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; resolve docker.io/library/swift:5.3.1-focal@sha256:3fff4e7b806d04e1f8ef4d8f15eabcd8c9d8898f5333cc59aa3fc2f527ce96a9    0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; sha256:3fff4e7b806d04e1f8ef4d8f15eabcd8c9d8898f5333cc59aa3fc2f527ce96a9 320B / 320B                                    0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; sha256:a0f91b147671afee61dec3eb0f6cedfd819732931a8e5dc706a79a65509f3b58 1.37kB / 1.37kB                                0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; sha256:e07bbf2adda7980b0d48d09a34922356fc699409bf384c5532540a3e6739cb2c 7.13kB / 7.13kB                                0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; sha256:6a5697faee43339ef8e33e3839060252392ad99325a48f7c9d7e93c22db4d4cf 28.56MB / 28.56MB                              2.8s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; sha256:ba13d3bc422b493440f97a8f148d245e1999cb616cb05876edc3ef29e79852f2 847B / 847B                                    0.2s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; sha256:a254829d9e55168306fd80a49e02eb015551facee9c444d9dce3b26d19238b82 162B / 162B                                    0.2s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; sha256:d800a558a8d3578248d40fccef72e826fe3b709469aa49c2f2975ab7ad7ddc98 93.61MB / 93.61MB                              7.2s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; sha256:ee5f2394c96e071384625f1080ece8feca75f4b7b0118570e82032ee2cc4b131 422.07MB / 422.07MB                           17.7s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; extracting sha256:6a5697faee43339ef8e33e3839060252392ad99325a48f7c9d7e93c22db4d4cf                                     1.9s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; extracting sha256:ba13d3bc422b493440f97a8f148d245e1999cb616cb05876edc3ef29e79852f2                                     0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; extracting sha256:a254829d9e55168306fd80a49e02eb015551facee9c444d9dce3b26d19238b82                                     0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; extracting sha256:d800a558a8d3578248d40fccef72e826fe3b709469aa49c2f2975ab7ad7ddc98                                     7.7s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; extracting sha256:ee5f2394c96e071384625f1080ece8feca75f4b7b0118570e82032ee2cc4b131                                    17.6s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [internal] load build context                                                                                             0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; transferring context: 5.55kB                                                                                           0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [2/5] WORKDIR /build                                                                                                      0.7s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [3/5] ADD ./Package.* ./                                                                                                  0.1s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [4/5] ADD ./Sources ./Sources                                                                                             0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [5/5] RUN swift build -c release                                                                                        291.9s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; exporting to image                                                                                                        3.5s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; exporting layers                                                                                                       3.4s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; writing image sha256:fda601b5aebba754ac82c1a5dc95f9ad0be6b7695340d3355a9bab26d6c70237                                  0.1s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; naming to docker.io/library/hello-world                                                                                0.0s</span></span></code></pre><p>We can see the project builds for over 300 seconds or 5 minutes.</p><p>When building this project, there’s only one line that builds any Swift code: <code>RUN swift build -c release</code>. Therefore only one Docker layer cache exists.
-So anytime you change your code, in your own <code>Sources</code> directory, your third party dependencies rebuild your entire project without any cache.</p><p>Ideally, the third party dependencies would download and cache separately from your own code. For example the web framework <a href="https://github.com/vapor/vapor">Vapor</a> has many dependencies,
-and compiling just the framework takes a long time.</p><h2 id="solution">Solution</h2><p>If we create a empty files in a directory structure that matches our <code>Sources</code> folder, we can build the project’s dependencies. And docker will cache the built dependencies into a separate layer in our <code>Dockerfile</code>. This will speed up subsequent builds.</p><p>And now our dockerfile could look like this:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">FROM swift:5.3.1-focal</span></span>
+<span class="line"><span style="color: #c9d1d9">CMD /app/Run serve --env production --hostname 0.0.0.0 -p $PORT</span></span></code></pre>
+<p>We would build it using <code>docker build -t hello-world .</code> and we would see the following output:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9"> => [internal] load .dockerignore                                                                                             0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => transferring context: 103B                                                                                             0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [internal] load build definition from Dockerfile                                                                          0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => transferring dockerfile: 503B                                                                                          0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [internal] load metadata for docker.io/library/swift:5.3.1-focal                                                          0.6s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [1/5] FROM docker.io/library/swift:5.3.1-focal@sha256:3fff4e7b806d04e1f8ef4d8f15eabcd8c9d8898f5333cc59aa3fc2f527ce96a9   36.3s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => resolve docker.io/library/swift:5.3.1-focal@sha256:3fff4e7b806d04e1f8ef4d8f15eabcd8c9d8898f5333cc59aa3fc2f527ce96a9    0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => sha256:3fff4e7b806d04e1f8ef4d8f15eabcd8c9d8898f5333cc59aa3fc2f527ce96a9 320B / 320B                                    0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => sha256:a0f91b147671afee61dec3eb0f6cedfd819732931a8e5dc706a79a65509f3b58 1.37kB / 1.37kB                                0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => sha256:e07bbf2adda7980b0d48d09a34922356fc699409bf384c5532540a3e6739cb2c 7.13kB / 7.13kB                                0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => sha256:6a5697faee43339ef8e33e3839060252392ad99325a48f7c9d7e93c22db4d4cf 28.56MB / 28.56MB                              2.8s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => sha256:ba13d3bc422b493440f97a8f148d245e1999cb616cb05876edc3ef29e79852f2 847B / 847B                                    0.2s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => sha256:a254829d9e55168306fd80a49e02eb015551facee9c444d9dce3b26d19238b82 162B / 162B                                    0.2s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => sha256:d800a558a8d3578248d40fccef72e826fe3b709469aa49c2f2975ab7ad7ddc98 93.61MB / 93.61MB                              7.2s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => sha256:ee5f2394c96e071384625f1080ece8feca75f4b7b0118570e82032ee2cc4b131 422.07MB / 422.07MB                           17.7s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => extracting sha256:6a5697faee43339ef8e33e3839060252392ad99325a48f7c9d7e93c22db4d4cf                                     1.9s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => extracting sha256:ba13d3bc422b493440f97a8f148d245e1999cb616cb05876edc3ef29e79852f2                                     0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => extracting sha256:a254829d9e55168306fd80a49e02eb015551facee9c444d9dce3b26d19238b82                                     0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => extracting sha256:d800a558a8d3578248d40fccef72e826fe3b709469aa49c2f2975ab7ad7ddc98                                     7.7s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => extracting sha256:ee5f2394c96e071384625f1080ece8feca75f4b7b0118570e82032ee2cc4b131                                    17.6s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [internal] load build context                                                                                             0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => transferring context: 5.55kB                                                                                           0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [2/5] WORKDIR /build                                                                                                      0.7s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [3/5] ADD ./Package.* ./                                                                                                  0.1s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [4/5] ADD ./Sources ./Sources                                                                                             0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [5/5] RUN swift build -c release                                                                                        291.9s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => exporting to image                                                                                                        3.5s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => exporting layers                                                                                                       3.4s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => writing image sha256:fda601b5aebba754ac82c1a5dc95f9ad0be6b7695340d3355a9bab26d6c70237                                  0.1s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => naming to docker.io/library/hello-world                                                                                0.0s</span></span></code></pre>
+<p>We can see the project builds for over 300 seconds or 5 minutes.</p>
+<p>When building this project, there’s only one line that builds any Swift code: <code>RUN swift build -c release</code>. Therefore only one Docker layer cache exists.
+So anytime you change your code, in your own <code>Sources</code> directory, your third party dependencies rebuild your entire project without any cache.</p>
+<p>Ideally, the third party dependencies would download and cache separately from your own code. For example the web framework <a href="https://github.com/vapor/vapor">Vapor</a> has many dependencies,
+and compiling just the framework takes a long time.</p>
+<h2 id="solution">Solution</h2>
+<p>If we create a empty files in a directory structure that matches our <code>Sources</code> folder, we can build the project’s dependencies. And docker will cache the built dependencies into a separate layer in our <code>Dockerfile</code>. This will speed up subsequent builds.</p>
+<p>And now our dockerfile could look like this:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">FROM swift:5.3.1-focal</span></span>
 <span class="line"><span style="color: #c9d1d9">WORKDIR /build</span></span>
 <span class="line"><span style="color: #c9d1d9">ADD ./Package.* ./                                                   # A</span></span>
 <span class="line"><span style="color: #c9d1d9">RUN swift package resolve                                            # B</span></span>
-<span class="line"><span style="color: #c9d1d9">RUN mkdir -p Sources/App &amp;&amp; touch Sources/App/empty.swift \</span></span>
-<span class="line"><span style="color: #c9d1d9">    &amp;&amp; mkdir -p Sources/Run &amp;&amp; touch Sources/Run/main.swift          # C</span></span>
+<span class="line"><span style="color: #c9d1d9">RUN mkdir -p Sources/App &#x26;&#x26; touch Sources/App/empty.swift \</span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x26;&#x26; mkdir -p Sources/Run &#x26;&#x26; touch Sources/Run/main.swift          # C</span></span>
 <span class="line"><span style="color: #c9d1d9">RUN swift build -c release                                           # D</span></span>
 <span class="line"><span style="color: #c9d1d9">ADD ./Sources ./Sources                                              # E</span></span>
 <span class="line"><span style="color: #c9d1d9">RUN swift build -c release                                           # F</span></span>
 <span class="line"><span style="color: #c9d1d9">ENV PORT 80</span></span>
 <span class="line"><span style="color: #c9d1d9">EXPOSE $PORT</span></span>
-<span class="line"><span style="color: #c9d1d9">CMD /app/Run serve --env production --hostname 0.0.0.0 -p $PORT</span></span></code></pre><p>On line <code># A</code>, we add the <code>Package.swift</code> and <code>Package.resolved</code> files as normal. On line <code># B</code>, we resolve all the dependencies.</p><p>If stop editing here, and we <code>swift build</code> now, we’ll get an error about missing sources, since we haven’t copied our <code>Sources</code> in yet.
-To solve this, we write line <code># C</code> to create the needed directories and create empty files in them. Note that empty file the <code>Run</code> directory needs to be named <code>main.swift</code> since it’s an executable target.</p><p>On line <code># D</code>, we build all our dependencies.</p><p>On lines <code># E</code> and <code># F</code>, we add our sources and build then as normal.</p><p>Now when we run the docker build, the output of <code>docker build -t hello-world .</code> hasn’t changed much, because nothing has been cached yet. However, the next time we build (after we make some small code changes - for example, change from “hello world” to “hello earth”),
-the output of <code>docker build -t hello-world .</code> looks like this:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">[+] Building 4.8s (13/13) FINISHED</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [internal] load build definition from Dockerfile                                                                            0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; transferring dockerfile: 37B                                                                                             0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [internal] load .dockerignore                                                                                               0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; transferring context: 34B                                                                                                0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [internal] load metadata for docker.io/library/swift:5.3.1-focal                                                            0.5s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [1/8] FROM docker.io/library/swift:5.3.1-focal@sha256:3fff4e7b806d04e1f8ef4d8f15eabcd8c9d8898f5333cc59aa3fc2f527ce96a9      0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [internal] load build context                                                                                               0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; transferring context: 461B                                                                                               0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; CACHED [2/8] WORKDIR /build                                                                                                 0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; CACHED [3/8] ADD ./Package.* ./                                                                                             0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; CACHED [4/8] RUN swift package resolve                                                                                      0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; CACHED [5/8] RUN mkdir -p Sources/App &amp;&amp; touch Sources/App/empty.swift     &amp;&amp; mkdir -p Sources/Deps &amp;&amp; touch Sources/Deps/  0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; CACHED [6/8] RUN swift build -c release --target Deps                                                                       0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [7/8] ADD ./Sources ./Sources                                                                                               0.1s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; [8/8] RUN swift build -c release                                                                                            3.8s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; exporting to image                                                                                                          0.3s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; exporting layers                                                                                                         0.3s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; writing image sha256:5960e06c78c5c2e247a42bff00c390ffcf75093e546228e8aa4cbd46ce37e5e1                                    0.0s</span></span>
-<span class="line"><span style="color: #c9d1d9"> =&gt; =&gt; naming to docker.io/library/hello-world                                                                                  0.0s</span></span></code></pre><p>We can see that it builds much quicker! Only a few seconds compared to the over 300 seconds before caching.</p><p>Also, we can see the various layers marked as <code>CACHED</code>. Only our own project’s code needs to be compiled, since the third party dependencies already are compiled and cached in the docker layer.</p><p>I hope this was helpful. Checkout the sample project on Github here <a href="https://github.com/danramteke/spm-in-docker">https://github.com/danramteke/spm-in-docker</a></p>
+<span class="line"><span style="color: #c9d1d9">CMD /app/Run serve --env production --hostname 0.0.0.0 -p $PORT</span></span></code></pre>
+<p>On line <code># A</code>, we add the <code>Package.swift</code> and <code>Package.resolved</code> files as normal. On line <code># B</code>, we resolve all the dependencies.</p>
+<p>If stop editing here, and we <code>swift build</code> now, we’ll get an error about missing sources, since we haven’t copied our <code>Sources</code> in yet.
+To solve this, we write line <code># C</code> to create the needed directories and create empty files in them. Note that empty file the <code>Run</code> directory needs to be named <code>main.swift</code> since it’s an executable target.</p>
+<p>On line <code># D</code>, we build all our dependencies.</p>
+<p>On lines <code># E</code> and <code># F</code>, we add our sources and build then as normal.</p>
+<p>Now when we run the docker build, the output of <code>docker build -t hello-world .</code> hasn’t changed much, because nothing has been cached yet. However, the next time we build (after we make some small code changes - for example, change from “hello world” to “hello earth”),
+the output of <code>docker build -t hello-world .</code> looks like this:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">[+] Building 4.8s (13/13) FINISHED</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [internal] load build definition from Dockerfile                                                                            0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => transferring dockerfile: 37B                                                                                             0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [internal] load .dockerignore                                                                                               0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => transferring context: 34B                                                                                                0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [internal] load metadata for docker.io/library/swift:5.3.1-focal                                                            0.5s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [1/8] FROM docker.io/library/swift:5.3.1-focal@sha256:3fff4e7b806d04e1f8ef4d8f15eabcd8c9d8898f5333cc59aa3fc2f527ce96a9      0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [internal] load build context                                                                                               0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => transferring context: 461B                                                                                               0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => CACHED [2/8] WORKDIR /build                                                                                                 0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => CACHED [3/8] ADD ./Package.* ./                                                                                             0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => CACHED [4/8] RUN swift package resolve                                                                                      0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => CACHED [5/8] RUN mkdir -p Sources/App &#x26;&#x26; touch Sources/App/empty.swift     &#x26;&#x26; mkdir -p Sources/Deps &#x26;&#x26; touch Sources/Deps/  0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => CACHED [6/8] RUN swift build -c release --target Deps                                                                       0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [7/8] ADD ./Sources ./Sources                                                                                               0.1s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => [8/8] RUN swift build -c release                                                                                            3.8s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => exporting to image                                                                                                          0.3s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => exporting layers                                                                                                         0.3s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => writing image sha256:5960e06c78c5c2e247a42bff00c390ffcf75093e546228e8aa4cbd46ce37e5e1                                    0.0s</span></span>
+<span class="line"><span style="color: #c9d1d9"> => => naming to docker.io/library/hello-world                                                                                  0.0s</span></span></code></pre>
+<p>We can see that it builds much quicker! Only a few seconds compared to the over 300 seconds before caching.</p>
+<p>Also, we can see the various layers marked as <code>CACHED</code>. Only our own project’s code needs to be compiled, since the third party dependencies already are compiled and cached in the docker layer.</p>
+<p>I hope this was helpful. Checkout the sample project on Github here <a href="https://github.com/danramteke/spm-in-docker">https://github.com/danramteke/spm-in-docker</a></p>
 </div>
     </div>
 </div>

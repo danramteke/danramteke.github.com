@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><link rel="stylesheet" href="/assets/b2092d7e.adda91d6.css" /><html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -13,8 +12,8 @@
     <meta name="author" content="Dan Ramteke">
     <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/b2092d7e.b6f74ec7.css" /></head>
-<body class="bg-sky-100 text-sky-900 ">
+<link rel="stylesheet" href="/assets/b2092d7e.adda91d6.css" /></head>
+<body class="bg-sky-50 text-sky-900 ">
 
 <div class="sm:sticky sm:top-0 sm:flex sm:justify-between sm:items-center bg-neutral-800 text-blue-50 py-2">
   <div class="text-3xl font-bold px-8"><a href="/">Daniel Ramteke</a></div>
@@ -38,23 +37,32 @@
 <div>
 <div class="text-3xl font-bold py-4 px-8">Automating Your Upload to Testflight in 4 Easy Steps</div><div class="px-8 container">
         <div class="blog-post px-8">
- <h2 id="motivation">Motivation</h2><p>I was working on a project for a client where I was wrapping their website into a <code>WKWebView</code> in order to provide native BlueTooth access.
+ <h2 id="motivation">Motivation</h2>
+<p>I was working on a project for a client where I was wrapping their website into a <code>WKWebView</code> in order to provide native BlueTooth access.
 I of course wanted to automate uploading to the App Store, and typically I would just use Fastlane, but this client
 doesn’t have iOS devs, and they most likely have no interest in keeping Fastlane’s gem up to date, and very likely have no interest in keeping
-Ruby up to date since they weren’t using Ruby for anything else.</p><p>And personally, my projects don’t have Ruby backends either now that I’ve moved to Server-side Swift. So I don’t want to deal with Ruby if possible, either.</p><p>So I looked into how to automatically upload to TestFlight without Fastlane, and it was much easier than I expected. It was embarrassingly easier than I expected. It’s 4 commands.</p><h2 id="its-only-four-commands">It’s only four commands</h2><p>The four steps are:</p><ol>
+Ruby up to date since they weren’t using Ruby for anything else.</p>
+<p>And personally, my projects don’t have Ruby backends either now that I’ve moved to Server-side Swift. So I don’t want to deal with Ruby if possible, either.</p>
+<p>So I looked into how to automatically upload to TestFlight without Fastlane, and it was much easier than I expected. It was embarrassingly easier than I expected. It’s 4 commands.</p>
+<h2 id="its-only-four-commands">It’s only four commands</h2>
+<p>The four steps are:</p>
+<ol>
 <li>Update build number</li>
 <li>Archive project</li>
 <li>Export the archive</li>
 <li>Upload the exported <code>.ipa</code></li>
-</ol><p>There’s a little bit of housekeeping around that: making a temporary directory to store the build artifacts. I chose <code>.build</code> here, but of course you can choose whatever you like.</p><h2 id="the-script-appstoresh">The script: appstore.sh</h2><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">#!/bin/bash</span></span>
+</ol>
+<p>There’s a little bit of housekeeping around that: making a temporary directory to store the build artifacts. I chose <code>.build</code> here, but of course you can choose whatever you like.</p>
+<h2 id="the-script-appstoresh">The script: appstore.sh</h2>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">#!/bin/bash</span></span>
 <span class="line"><span style="color: #c9d1d9"></span></span>
 <span class="line"><span style="color: #c9d1d9">if [ -z $APP_LOADER_USERNAME ]; then</span></span>
-<span class="line"><span style="color: #c9d1d9">  echo &quot;need app loader username stored in \$APP_LOADER_USERNAME&quot;</span></span>
+<span class="line"><span style="color: #c9d1d9">  echo "need app loader username stored in \$APP_LOADER_USERNAME"</span></span>
 <span class="line"><span style="color: #c9d1d9">  exit 1</span></span>
 <span class="line"><span style="color: #c9d1d9">fi</span></span>
 <span class="line"><span style="color: #c9d1d9"></span></span>
 <span class="line"><span style="color: #c9d1d9">if [ -z $APP_LOADER_PASSWORD ]; then</span></span>
-<span class="line"><span style="color: #c9d1d9">  echo &quot;need app loader password stored in \$APP_LOADER_PASSWORD\nGenerate an app-specific password at appleid.apple.com&quot;</span></span>
+<span class="line"><span style="color: #c9d1d9">  echo "need app loader password stored in \$APP_LOADER_PASSWORD\nGenerate an app-specific password at appleid.apple.com"</span></span>
 <span class="line"><span style="color: #c9d1d9">  exit 1</span></span>
 <span class="line"><span style="color: #c9d1d9">fi</span></span>
 <span class="line"><span style="color: #c9d1d9"></span></span>
@@ -76,35 +84,39 @@ Ruby up to date since they weren’t using Ruby for anything else.</p><p>And per
 <span class="line"><span style="color: #c9d1d9">}</span></span>
 <span class="line"><span style="color: #c9d1d9"></span></span>
 <span class="line"><span style="color: #c9d1d9">function upload {</span></span>
-<span class="line"><span style="color: #c9d1d9">  echo &quot;=== uploading ExampleApp to App Store ===&quot; &amp;&amp; \</span></span>
+<span class="line"><span style="color: #c9d1d9">  echo "=== uploading ExampleApp to App Store ===" &#x26;&#x26; \</span></span>
 <span class="line"><span style="color: #c9d1d9">  xcrun altool --upload-app -t ios \</span></span>
 <span class="line"><span style="color: #c9d1d9">    -f ./.build/ExampleApp.ipa \</span></span>
-<span class="line"><span style="color: #c9d1d9">    -u $APP_LOADER_USERNAME -p $APP_LOADER_PASSWORD &amp;&amp; \</span></span>
-<span class="line"><span style="color: #c9d1d9">  echo &quot;Uploaded ExampleApp build $(xcrun agvtool what-version -terse) of version $(xcrun agvtool what-marketing-version -terse1)&quot;</span></span>
+<span class="line"><span style="color: #c9d1d9">    -u $APP_LOADER_USERNAME -p $APP_LOADER_PASSWORD &#x26;&#x26; \</span></span>
+<span class="line"><span style="color: #c9d1d9">  echo "Uploaded ExampleApp build $(xcrun agvtool what-version -terse) of version $(xcrun agvtool what-marketing-version -terse1)"</span></span>
 <span class="line"><span style="color: #c9d1d9">}</span></span>
 <span class="line"><span style="color: #c9d1d9"></span></span>
-<span class="line"><span style="color: #c9d1d9">mkdir -p ./.build &amp;&amp; \</span></span>
-<span class="line"><span style="color: #c9d1d9">version_bump &amp;&amp; \</span></span>
-<span class="line"><span style="color: #c9d1d9">archive_project &amp;&amp; \</span></span>
-<span class="line"><span style="color: #c9d1d9">export_archive &amp;&amp; \</span></span>
-<span class="line"><span style="color: #c9d1d9">upload</span></span></code></pre><p>You’ll also need a file with the export options. In the script above, it’s called <code>appstore-export-options.plist</code>. And you can stick it wherever.
+<span class="line"><span style="color: #c9d1d9">mkdir -p ./.build &#x26;&#x26; \</span></span>
+<span class="line"><span style="color: #c9d1d9">version_bump &#x26;&#x26; \</span></span>
+<span class="line"><span style="color: #c9d1d9">archive_project &#x26;&#x26; \</span></span>
+<span class="line"><span style="color: #c9d1d9">export_archive &#x26;&#x26; \</span></span>
+<span class="line"><span style="color: #c9d1d9">upload</span></span></code></pre>
+<p>You’ll also need a file with the export options. In the script above, it’s called <code>appstore-export-options.plist</code>. And you can stick it wherever.
 In this example, it’s in the root directory of the project.
-The file looks like this:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">&lt;plist version=&quot;1.0&quot;&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">&lt;dict&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;key&gt;method&lt;/key&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;string&gt;app-store&lt;/string&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;key&gt;teamID&lt;/key&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;string&gt;XXXXXXXXXX&lt;/string&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;key&gt;generateAppStoreInformation&lt;/key&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;true/&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;key&gt;uploadBitcode&lt;/key&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;true/&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;key&gt;uploadSymbols&lt;/key&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">    &lt;true/&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">&lt;/dict&gt;</span></span>
-<span class="line"><span style="color: #c9d1d9">&lt;/plist&gt;</span></span></code></pre><h2 id="personalize-the-script">Personalize the script</h2><ol>
+The file looks like this:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">&#x3C;?xml version="1.0" encoding="UTF-8"?></span></span>
+<span class="line"><span style="color: #c9d1d9">&#x3C;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"></span></span>
+<span class="line"><span style="color: #c9d1d9">&#x3C;plist version="1.0"></span></span>
+<span class="line"><span style="color: #c9d1d9">&#x3C;dict></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;key>method&#x3C;/key></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;string>app-store&#x3C;/string></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;key>teamID&#x3C;/key></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;string>XXXXXXXXXX&#x3C;/string></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;key>generateAppStoreInformation&#x3C;/key></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;true/></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;key>uploadBitcode&#x3C;/key></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;true/></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;key>uploadSymbols&#x3C;/key></span></span>
+<span class="line"><span style="color: #c9d1d9">    &#x3C;true/></span></span>
+<span class="line"><span style="color: #c9d1d9">&#x3C;/dict></span></span>
+<span class="line"><span style="color: #c9d1d9">&#x3C;/plist></span></span></code></pre>
+<h2 id="personalize-the-script">Personalize the script</h2>
+<ol>
 <li>Change <code>ExampleApp.xcodeproj</code> to whatever you’re using. If you’re using a workspace, then pass along <code>-workspace ExampleWorkspace.xcworkspace</code> to the archive command.</li>
 <li>Change the <code>ExampleApp</code> scheme name to whatever you’re using.</li>
 <li>Change the team ID in the <code>appstore-export-options.plist</code></li>
@@ -112,11 +124,20 @@ The file looks like this:</p><pre class="astro-code" style="background-color: #0
 Be sure to set them in your environment before running the script, however you store them. They are used by the app loader tool to upload the <code>.ipa</code> to Apple.
 The script checks that username and password environment variables are set
 at the beginning of the script so that the whole build succeeds just to find that the username and password are missing.</li>
-</ol><h2 id="additional-notes">Additional notes</h2><h3 id="agvtool">agvtool</h3><p>If you want to use <code>agvtool</code> to update your build numbers, then you’ll need to enable it in your project settings.
+</ol>
+<h2 id="additional-notes">Additional notes</h2>
+<h3 id="agvtool">agvtool</h3>
+<p>If you want to use <code>agvtool</code> to update your build numbers, then you’ll need to enable it in your project settings.
 <a href="https://medium.com/xcblog/agvtool-automating-ios-build-and-version-numbers-454cab6f1bbe">Here is a lengthy guide</a> to agvtool and how to
-enable it on your project. I recommend using <code>agvtool</code> since it comes with Xcode, there’s no additional dependencies.</p><h3 id="codesign">codesign</h3><p>The first time you run this script, you may get a password prompt saying something like “codesign would like to access some keys in your keychain.”
-I always hit “Always allow” so that it doesn’t bug me any more.</p><h2 id="and-thats-it">And that’s it</h2><p>Now you have a short script that builds and uploads your app to the App Store. You don’t have to worry about Ruby or Ruby Gems anymore.
-And since bash is already on every Mac, and Xcode is already needed for iOS development, there’s no additional dependencies to download for development, or during CI/CD build.</p><h2 id="please-note">Please Note</h2><p>I learned a lot of this stuff from <a href="https://medium.com/xcblog/xcodebuild-deploy-ios-app-from-command-line-c6defff0d8b8">this article</a>
+enable it on your project. I recommend using <code>agvtool</code> since it comes with Xcode, there’s no additional dependencies.</p>
+<h3 id="codesign">codesign</h3>
+<p>The first time you run this script, you may get a password prompt saying something like “codesign would like to access some keys in your keychain.”
+I always hit “Always allow” so that it doesn’t bug me any more.</p>
+<h2 id="and-thats-it">And that’s it</h2>
+<p>Now you have a short script that builds and uploads your app to the App Store. You don’t have to worry about Ruby or Ruby Gems anymore.
+And since bash is already on every Mac, and Xcode is already needed for iOS development, there’s no additional dependencies to download for development, or during CI/CD build.</p>
+<h2 id="please-note">Please Note</h2>
+<p>I learned a lot of this stuff from <a href="https://medium.com/xcblog/xcodebuild-deploy-ios-app-from-command-line-c6defff0d8b8">this article</a>
 back when I was first researching how to do this for my client. That article hasn’t been updated in a while, and so I can’t just send people directly to that article.
 That’s why I wrote this one.</p>
 </div>

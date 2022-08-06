@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html><link rel="stylesheet" href="/assets/b2092d7e.adda91d6.css" /><html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -13,8 +12,8 @@
     <meta name="author" content="Dan Ramteke">
     <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/b2092d7e.b6f74ec7.css" /></head>
-<body class="bg-sky-100 text-sky-900 ">
+<link rel="stylesheet" href="/assets/b2092d7e.adda91d6.css" /></head>
+<body class="bg-sky-50 text-sky-900 ">
 
 <div class="sm:sticky sm:top-0 sm:flex sm:justify-between sm:items-center bg-neutral-800 text-blue-50 py-2">
   <div class="text-3xl font-bold px-8"><a href="/">Daniel Ramteke</a></div>
@@ -38,11 +37,14 @@
 <div>
 <div class="text-3xl font-bold py-4 px-8">Xcodegen for Multiplatform Xcode projects</div><div class="px-8 container">
         <div class="blog-post px-8">
- <p>Here’s how I use <a href="https://github.com/yonaskolb/XcodeGen">Xcodegen</a> for a new project that targets MacOS and iOS. It’s here for your reference or inspiration.</p><h1 id="project">Project</h1><p>Here is my <code>project.yml</code>:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">name: Example</span></span>
+ <p>Here’s how I use <a href="https://github.com/yonaskolb/XcodeGen">Xcodegen</a> for a new project that targets MacOS and iOS. It’s here for your reference or inspiration.</p>
+<h1 id="project">Project</h1>
+<p>Here is my <code>project.yml</code>:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">name: Example</span></span>
 <span class="line"><span style="color: #c9d1d9">options:</span></span>
 <span class="line"><span style="color: #c9d1d9">  deploymentTarget:</span></span>
-<span class="line"><span style="color: #c9d1d9">    iOS: &quot;14.0&quot;</span></span>
-<span class="line"><span style="color: #c9d1d9">    macOS: &quot;11.0&quot;</span></span>
+<span class="line"><span style="color: #c9d1d9">    iOS: "14.0"</span></span>
+<span class="line"><span style="color: #c9d1d9">    macOS: "11.0"</span></span>
 <span class="line"><span style="color: #c9d1d9">schemes:</span></span>
 <span class="line"><span style="color: #c9d1d9">  Example-iOS:</span></span>
 <span class="line"><span style="color: #c9d1d9">    build:</span></span>
@@ -62,7 +64,7 @@
 <span class="line"><span style="color: #c9d1d9">    settings:</span></span>
 <span class="line"><span style="color: #c9d1d9">      DEVELOPMENT_TEAM: 1234567890</span></span>
 <span class="line"><span style="color: #c9d1d9">      CODE_SIGN_STYLE: Automatic</span></span>
-<span class="line"><span style="color: #c9d1d9">      ORGANIZATIONNAME: &quot;Example Organization&quot;</span></span>
+<span class="line"><span style="color: #c9d1d9">      ORGANIZATIONNAME: "Example Organization"</span></span>
 <span class="line"><span style="color: #c9d1d9">      PRODUCT_BUNDLE_IDENTIFIER: com.Example.app</span></span>
 <span class="line"><span style="color: #c9d1d9">      VERSIONING_SYSTEM: apple-generic</span></span>
 <span class="line"><span style="color: #c9d1d9">      SWIFT_VERSION: 5.3</span></span>
@@ -80,9 +82,9 @@
 <span class="line"><span style="color: #c9d1d9">        CFBundleDevelopmentRegion: $(DEVELOPMENT_LANGUAGE)</span></span>
 <span class="line"><span style="color: #c9d1d9">        CFBundleName: $(PRODUCT_NAME)</span></span>
 <span class="line"><span style="color: #c9d1d9">        CFBundleDisplayName: Example</span></span>
-<span class="line"><span style="color: #c9d1d9">        CFBundleIconFile: &quot;&quot;</span></span>
+<span class="line"><span style="color: #c9d1d9">        CFBundleIconFile: ""</span></span>
 <span class="line"><span style="color: #c9d1d9">        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)</span></span>
-<span class="line"><span style="color: #c9d1d9">        CFBundleInfoDictionaryVersion: &quot;6.0&quot;</span></span>
+<span class="line"><span style="color: #c9d1d9">        CFBundleInfoDictionaryVersion: "6.0"</span></span>
 <span class="line"><span style="color: #c9d1d9">        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)</span></span>
 <span class="line"><span style="color: #c9d1d9">        LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)</span></span>
 <span class="line"><span style="color: #c9d1d9">  Example-iOS:</span></span>
@@ -94,7 +96,7 @@
 <span class="line"><span style="color: #c9d1d9">    settings:</span></span>
 <span class="line"><span style="color: #c9d1d9">      DEVELOPMENT_TEAM: 1234567890</span></span>
 <span class="line"><span style="color: #c9d1d9">      CODE_SIGN_STYLE: Automatic</span></span>
-<span class="line"><span style="color: #c9d1d9">      ORGANIZATIONNAME: &quot;Example Organization&quot;</span></span>
+<span class="line"><span style="color: #c9d1d9">      ORGANIZATIONNAME: "Example Organization"</span></span>
 <span class="line"><span style="color: #c9d1d9">      PRODUCT_BUNDLE_IDENTIFIER: com.Example.app</span></span>
 <span class="line"><span style="color: #c9d1d9">      TARGETED_DEVICE_FAMILY: 1,2</span></span>
 <span class="line"><span style="color: #c9d1d9">      VERSIONING_SYSTEM: apple-generic</span></span>
@@ -124,12 +126,18 @@
 <span class="line"><span style="color: #c9d1d9">          - UIInterfaceOrientationPortrait</span></span>
 <span class="line"><span style="color: #c9d1d9">          - UIInterfaceOrientationPortraitUpsideDown</span></span>
 <span class="line"><span style="color: #c9d1d9">          - UIInterfaceOrientationLandscapeLeft</span></span>
-<span class="line"><span style="color: #c9d1d9">          - UIInterfaceOrientationLandscapeRight</span></span></code></pre><p>This defines two targets, one for macOS and one for iOS, just like Xcode’s multiplatform template.</p><h2 id="bootstrap">Bootstrap</h2><p>I don’t call <code>xcodegen</code> directly. The <code>project.yml</code> references two variables for the build number and the marketing version, and those are stored in two files named <code>build-number</code> which contains the current build number (for example: <code>1</code>) and <code>build-version</code> which contains the current marketing version (for example: <code>1.0.0</code>).</p><p>To make sure those values are available to <code>xcodegen</code>, I create a <code>bootstrap.sh</code> script that looks like this:</p><pre class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">rm -fr *.xcodeproj</span></span>
+<span class="line"><span style="color: #c9d1d9">          - UIInterfaceOrientationLandscapeRight</span></span></code></pre>
+<p>This defines two targets, one for macOS and one for iOS, just like Xcode’s multiplatform template.</p>
+<h2 id="bootstrap">Bootstrap</h2>
+<p>I don’t call <code>xcodegen</code> directly. The <code>project.yml</code> references two variables for the build number and the marketing version, and those are stored in two files named <code>build-number</code> which contains the current build number (for example: <code>1</code>) and <code>build-version</code> which contains the current marketing version (for example: <code>1.0.0</code>).</p>
+<p>To make sure those values are available to <code>xcodegen</code>, I create a <code>bootstrap.sh</code> script that looks like this:</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">rm -fr *.xcodeproj</span></span>
 <span class="line"><span style="color: #c9d1d9"></span></span>
 <span class="line"><span style="color: #c9d1d9">export APP_BUILD_NUMBER=$(cat build-number)</span></span>
 <span class="line"><span style="color: #c9d1d9">export APP_BUILD_VERSION=$(cat build-version)</span></span>
 <span class="line"><span style="color: #c9d1d9"></span></span>
-<span class="line"><span style="color: #c9d1d9">xcodegen generate -s project.yml</span></span></code></pre><p>So when I need to regenerate the xcode project, I run <code>./bootstrap.sh</code> from the project’s root directory.</p>
+<span class="line"><span style="color: #c9d1d9">xcodegen generate -s project.yml</span></span></code></pre>
+<p>So when I need to regenerate the xcode project, I run <code>./bootstrap.sh</code> from the project’s root directory.</p>
 </div>
     </div>
 </div>
