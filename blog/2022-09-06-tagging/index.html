@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -40,8 +39,39 @@
 </div>
 
 <div>
-<div class="text-3xl font-bold py-4 px-8">Contact</div><div class="px-8 container">
-        <p class="pb-2 prose">Contact me daniel at danramteke dot com</p>
+<div class="text-3xl font-bold py-4 px-8">Tagging</div><div class="px-8 container">
+        <div class="prose mt-8
+prose-a:text-red-600 prose-a:no-underline
+hover:prose-a:text-red-400 hover:prose-a:underline hover:prose-a:decoration-2
+
+prose-h1:font-sans
+prose-h2:font-sans
+prose-h3:font-sans
+prose-h4:font-sans
+prose-h5:font-sans
+prose-h6:font-sans
+prose-strong:font-sans">
+ <h1 id="branching--tagging-for-ios-devops">Branching &#x26; Tagging for iOS DevOps</h1>
+<p>When you’re ready to submit a build to TestFlight, I recommend tagging that commit in the style of <code>1.2.3-7</code>, where <code>1.2.3</code> is the marketing version shown on the App Store and <code>7</code> is the build number. This strategy allows us to easily reference what code went into which build.</p>
+<p>If we take this approach, we can set up our CI/CD system to build our code and push to the App Store.</p>
+<p>On <a href="https://bitrise.io">BitRise</a>, we can use the following code to interpret the tag as as a marketing version and build number. This code uses Bash regular expressions.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">#!/usr/bin/env bash</span></span>
+<span class="line"><span style="color: #c9d1d9">set -e set -o pipefail set -x</span></span>
+<span class="line"><span style="color: #c9d1d9"></span></span>
+<span class="line"><span style="color: #c9d1d9">echo "tag is: $BITRISE_GIT_TAG"</span></span>
+<span class="line"><span style="color: #c9d1d9">rx='([0-9]+\.[0-9]+\.[0-9]+)-([0-9]+)'</span></span>
+<span class="line"><span style="color: #c9d1d9">if [[ $BITRISE_GIT_TAG =~ $rx ]]; then</span></span>
+<span class="line"><span style="color: #c9d1d9"> echo "0: ${BASH_REMATCH[0]}"</span></span>
+<span class="line"><span style="color: #c9d1d9"> echo "1: ${BASH_REMATCH[1]}"</span></span>
+<span class="line"><span style="color: #c9d1d9"> echo "2: ${BASH_REMATCH[2]}"</span></span>
+<span class="line"><span style="color: #c9d1d9">else</span></span>
+<span class="line"><span style="color: #c9d1d9"> echo "No match!"</span></span>
+<span class="line"><span style="color: #c9d1d9"> exit 1</span></span>
+<span class="line"><span style="color: #c9d1d9">fi</span></span>
+<span class="line"><span style="color: #c9d1d9">envman add --key GIT_TAG_MARKETING_VERSION --value "${BASH_REMATCH[1]}"</span></span>
+<span class="line"><span style="color: #c9d1d9">envman add --key GIT_TAG_BUILD_NUMBER --value "${BASH_REMATCH[2]}"</span></span></code></pre>
+<p>If this script is run as a “build step”, we use BitRise’s <code>envman</code> to add the parsed information to our environment, so that our other build steps have easy access to this information.</p>
+</div>
     </div>
 </div>
 
