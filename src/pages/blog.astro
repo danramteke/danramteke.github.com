@@ -1,5 +1,6 @@
 ---
 import Layout from 'layout:PageLayout'
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 
 const blogPosts = await Astro.glob('./blog/*.md');
 
@@ -21,12 +22,15 @@ const dateOptions: any = { weekday: 'long', year: 'numeric', month: 'long', day:
 ---
 
 <Layout title="Blog">
+
+  <P>Interesting or helpful tidbits related to development</P>
+
     {blogPosts.sort(compareBlogPosts).reverse().map((post) =>
 
     <div class="pt-6 w-full">
-        <div class="text-xl mt-4 font-bold  w-full"><a href={post.url}>{post.title}</a></div>
-        <div class="w-full">{post.description}</div>
-        <div class="text-gray-400 w-full">{new Date(post.date).toLocaleDateString("en-US", dateOptions)}</div>
+        <div class="text-xl mt-4 font-bold  w-full"><a href={post.url}>{post.frontmatter.title}</a></div>
+        <div class="w-full">{post.frontmatter.description}</div>
+        <div class="text-gray-400 w-full">{new Date(post.frontmatter.date).toLocaleDateString("en-US", dateOptions)}</div>
     </div>
 )}
 </Layout>

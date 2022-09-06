@@ -1,7 +1,7 @@
 ---
 title: Sublime Text 2 Keymapping
 layout: layout:BlogLayout
-date: 2012-08-20T00:00:00-04:00
+date: 2012-08-20
 ---
 
 Made some keymappings in Sublime Text 2.
