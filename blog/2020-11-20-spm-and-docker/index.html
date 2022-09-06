@@ -10,9 +10,9 @@
     <meta name="description" content="Freelance iOS App Developer for New York City">
     <meta name="keywords" content="nyc, new york city, ios, swift, iphone, developer, programmer, engineer, freelance, contractor, devops, kubernetes, digitalocean, docker, terraform">
     <meta name="author" content="Dan Ramteke">
-    <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
+    <title>Docker Layers for Swift Package Manager :: Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/e38ebe00.7514f286.css" /></head>
+<link rel="stylesheet" href="/assets/2f67cb1b.7514f286.css" /></head>
 <body class="bg-sky-50 text-sky-900 ">
 
 <div class="sm:sticky sm:top-0 sm:flex sm:justify-between sm:items-center bg-neutral-800 text-blue-50 py-2">
@@ -39,8 +39,8 @@
 </div>
 
 <div>
-<div class="text-3xl font-bold py-4 px-8">Docker Layers for Swift Package Manager</div><div class="px-8 container">
-        <div class="prose mt-8
+<div class="px-8 container">
+    <div class="prose mt-8
 prose-a:text-red-600 prose-a:no-underline
 hover:prose-a:text-red-400 hover:prose-a:underline hover:prose-a:decoration-2
 
@@ -51,7 +51,8 @@ prose-h4:font-sans
 prose-h5:font-sans
 prose-h6:font-sans
 prose-strong:font-sans">
- <p>This post will show how to use Docker layers for Swift Package Manager projects. The sample project is on <a href="https://github.com/danramteke/spm-in-docker">GitHub</a>.</p>
+ <h1 id="docker-layers-for-swift-package-manager">Docker Layers for Swift Package Manager</h1>
+<p>This post will show how to use Docker layers for Swift Package Manager projects. The sample project is on <a href="https://github.com/danramteke/spm-in-docker">GitHub</a>.</p>
 <h2 id="motivation">Motivation</h2>
 <p>Consider this Dockerfile for a Swift project:</p>
 <pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #c9d1d9">FROM swift:5.3.1-focal</span></span>
@@ -144,7 +145,7 @@ the output of <code>docker build -t hello-world .</code> looks like this:</p>
 <p>Also, we can see the various layers marked as <code>CACHED</code>. Only our own project’s code needs to be compiled, since the third party dependencies already are compiled and cached in the docker layer.</p>
 <p>I hope this was helpful. Checkout the sample project on Github here <a href="https://github.com/danramteke/spm-in-docker">https://github.com/danramteke/spm-in-docker</a></p>
 </div>
-    </div>
+  </div>
 </div>
 
 <footer class=" mt-8 pt-2 border-solid bg-sky-900  border-t px-8 text-slate-300 ">

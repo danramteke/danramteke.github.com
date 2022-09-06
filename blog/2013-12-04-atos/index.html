@@ -10,9 +10,9 @@
     <meta name="description" content="Freelance iOS App Developer for New York City">
     <meta name="keywords" content="nyc, new york city, ios, swift, iphone, developer, programmer, engineer, freelance, contractor, devops, kubernetes, digitalocean, docker, terraform">
     <meta name="author" content="Dan Ramteke">
-    <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
+    <title>Symbolicating RubyMotion Crash Logs :: Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/e38ebe00.7514f286.css" /></head>
+<link rel="stylesheet" href="/assets/2f67cb1b.7514f286.css" /></head>
 <body class="bg-sky-50 text-sky-900 ">
 
 <div class="sm:sticky sm:top-0 sm:flex sm:justify-between sm:items-center bg-neutral-800 text-blue-50 py-2">
@@ -39,8 +39,8 @@
 </div>
 
 <div>
-<div class="text-3xl font-bold py-4 px-8">Symbolicating RubyMotion Crash Logs</div><div class="px-8 container">
-        <div class="prose mt-8
+<div class="px-8 container">
+    <div class="prose mt-8
 prose-a:text-red-600 prose-a:no-underline
 hover:prose-a:text-red-400 hover:prose-a:underline hover:prose-a:decoration-2
 
@@ -51,7 +51,8 @@ prose-h4:font-sans
 prose-h5:font-sans
 prose-h6:font-sans
 prose-strong:font-sans">
- <p><strong>Update!</strong> The information in this blog post is mostly irrelevent now that you can type <code>rake crashlog:device</code> to symbolicate crash logs from your device as of RubyMotion 2.18. <strong>Thanks!</strong></p>
+ <h1 id="symbolicating-rubymotion-crash-logs">Symbolicating RubyMotion Crash Logs</h1>
+<p><strong>Update!</strong> The information in this blog post is mostly irrelevent now that you can type <code>rake crashlog:device</code> to symbolicate crash logs from your device as of RubyMotion 2.18. <strong>Thanks!</strong></p>
 <p>Symbolicating a crash log is the process of finding a line number in source from a crash log. Crash logs often look like <a href="http://i.imgur.com/HLXbG1I.png">this</a>. This specific process is interesting in particular to RubyMotion because Apple’s Xcode doesn’t symbolicate to Ruby code.</p>
 <p>Now let’s see how it’s done.</p>
 <p>After running <code>rake device</code>, you have binary files in the build directory, including a <code>.dSYM</code> file. Go ahead and <code>cd</code> into that directory, I’ll be typing all commands from that directory. Here is the directory listing for my <code>build/iPhoneOS-7.0-Development</code> directory: <img src="http://i.imgur.com/Nas5e5N.png" alt="Imgur"></p>
@@ -74,7 +75,7 @@ prose-strong:font-sans">
 <p>As you can see, the crash was in the login controller. Looking at that file, it’s the Facebook log in code.</p>
 <p>Although having to copy/paste addresses into the command line isn’t ideal, the main goal is retrieving a line number in ruby code (although off by one) from an otherwise opaque crash log intended for Xcode. And this allows further debugging.</p>
 </div>
-    </div>
+  </div>
 </div>
 
 <footer class=" mt-8 pt-2 border-solid bg-sky-900  border-t px-8 text-slate-300 ">

@@ -10,9 +10,9 @@
     <meta name="description" content="Freelance iOS App Developer for New York City">
     <meta name="keywords" content="nyc, new york city, ios, swift, iphone, developer, programmer, engineer, freelance, contractor, devops, kubernetes, digitalocean, docker, terraform">
     <meta name="author" content="Dan Ramteke">
-    <title>Dan Ramteke iOS, DevOps, and web development in New York City</title>
+    <title>Tagging for iOS DevOps :: Dan Ramteke iOS, DevOps, and web development in New York City</title>
 
-<link rel="stylesheet" href="/assets/e38ebe00.7514f286.css" /></head>
+<link rel="stylesheet" href="/assets/2f67cb1b.7514f286.css" /></head>
 <body class="bg-sky-50 text-sky-900 ">
 
 <div class="sm:sticky sm:top-0 sm:flex sm:justify-between sm:items-center bg-neutral-800 text-blue-50 py-2">
@@ -39,8 +39,8 @@
 </div>
 
 <div>
-<div class="text-3xl font-bold py-4 px-8">Tagging</div><div class="px-8 container">
-        <div class="prose mt-8
+<div class="px-8 container">
+    <div class="prose mt-8
 prose-a:text-red-600 prose-a:no-underline
 hover:prose-a:text-red-400 hover:prose-a:underline hover:prose-a:decoration-2
 
@@ -51,7 +51,7 @@ prose-h4:font-sans
 prose-h5:font-sans
 prose-h6:font-sans
 prose-strong:font-sans">
- <h1 id="branching--tagging-for-ios-devops">Branching &#x26; Tagging for iOS DevOps</h1>
+ <h1 id="tagging-for-ios-devops">Tagging for iOS DevOps</h1>
 <p>When you’re ready to submit a build to TestFlight, I recommend tagging that commit in the style of <code>1.2.3-7</code>, where <code>1.2.3</code> is the marketing version shown on the App Store and <code>7</code> is the build number. This strategy allows us to easily reference what code went into which build.</p>
 <p>If we take this approach, we can set up our CI/CD system to build our code and push to the App Store.</p>
 <p>On <a href="https://bitrise.io">BitRise</a>, we can use the following code to interpret the tag as as a marketing version and build number. This code uses Bash regular expressions.</p>
@@ -72,7 +72,7 @@ prose-strong:font-sans">
 <span class="line"><span style="color: #c9d1d9">envman add --key GIT_TAG_BUILD_NUMBER --value "${BASH_REMATCH[2]}"</span></span></code></pre>
 <p>If this script is run as a “build step”, we use BitRise’s <code>envman</code> to add the parsed information to our environment, so that our other build steps have easy access to this information.</p>
 </div>
-    </div>
+  </div>
 </div>
 
 <footer class=" mt-8 pt-2 border-solid bg-sky-900  border-t px-8 text-slate-300 ">
