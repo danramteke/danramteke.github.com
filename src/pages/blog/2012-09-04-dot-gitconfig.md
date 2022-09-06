@@ -1,8 +1,10 @@
 ---
-title: .gitconfig
+title: Log commnad for .gitconfig
 layout: layout:BlogLayout
 date: 2012-09-04T00:00:00-04:00
 ---
+
+# Log commnad for .gitconfig
 
 Here is a sweet pretty log command that I found somewhere in my `~/.gitconfig`.
 

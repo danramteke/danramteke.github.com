@@ -5,5 +5,6 @@ import Section from "./Section.astro";
 import Link from "./Link.astro";
 import List from "./List.astro";
 import ListItem from "./ListItem.astro";
+import PageTitle from "./PageTitle.astro";
 
-export { P, Section, Link, ListItem, List, H1, H2 };
+export { P, Section, Link, ListItem, List, H1, H2, PageTitle };

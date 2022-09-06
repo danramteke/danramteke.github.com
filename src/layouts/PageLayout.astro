@@ -3,16 +3,8 @@ import BaseLayout from 'layout:BaseLayout'
 
 const { title } = Astro.props;
 ---
-<BaseLayout>
-
-
-
-    <div class="text-3xl font-bold py-4 px-8">{title}</div>
-
-    <div class="px-8 container">
-        <slot/>
-    </div>
-
-
-
+<BaseLayout title={title}>
+  <div class="px-8 container">
+    <slot/>
+  </div>
 </BaseLayout>

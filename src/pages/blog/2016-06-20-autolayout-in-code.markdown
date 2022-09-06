@@ -4,6 +4,8 @@ categories: ios-dev ui
 layout: layout:BlogLayout
 ---
 
+# Autolayout in Code
+
 When you write your views in code and use autolayout, you need to turn off the autoresizing resizing masks, like this: `myView.translatesAutoresizingMaskIntoConstraints = false`. And you'll be doing this for every view you add to your view hierarchy.
 
 To make this easier to type, I made an extension on `UIView` to turn off the autoresizing masks,

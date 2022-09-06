@@ -5,6 +5,8 @@ categories: ios-dev ui
 layout: layout:BlogLayout
 ---
 
+# UIAppearance
+
 I feel like I'm missing something about Apple's UIAppearance. I've google'd around and such, and still haven't found out a solution. So here's my question: How do I make UIAppearance only affect views that I can fully control?
 
 Let me try to motivate this question a little bit. If I say [something like this](https://github.com/danramteke/uiappearance-question/blob/master/UIAppearanceQuestion/AppDelegate.swift#L29):

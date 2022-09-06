@@ -1,9 +1,11 @@
 ---
 published: true
 date: 2012-09-04T20:18:12-04:00
-title: Git Branch in command -line
+title: Git branch in command-line
 layout: layout:BlogLayout
 ---
+
+# Git branch in command-line
 
 Here's a script to show the git branch in the command prompt. I color the git branch to quickly show thestate of the working directory. RED means there are unstaged changes. YELLOW means the working directory and index match. And GREEN means working directory is clean (nothing to commit).
 

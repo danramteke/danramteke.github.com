@@ -1,6 +1,6 @@
 ---
 import Layout from 'layout:PageLayout'
-import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
+import { P, Section, Link, ListItem, List, H1, H2, PageTitle } from '@elements';
 
 const blogPosts = await Astro.glob('./blog/*.md');
 
@@ -22,6 +22,8 @@ const dateOptions: any = { weekday: 'long', year: 'numeric', month: 'long', day:
 ---
 
 <Layout title="Blog">
+
+  <PageTitle>Developer blog</PageTitle>
 
   <P>Interesting or helpful tidbits related to development</P>
 

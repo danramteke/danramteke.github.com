@@ -5,7 +5,9 @@ categories: ios-dev ui
 layout: layout:BlogLayout
 ---
 
-I was implenting drag-and-drop for re-ordering a `UICollectionView` with a custom `UICollectionViewLayout` subclass. And I ran into a gotcha.
+# Reordering UICollectionViews with Custom UICollectionView Layouts
+
+I was implementing drag-and-drop for re-ordering a `UICollectionView` with a custom `UICollectionViewLayout` subclass. And I ran into a gotcha.
 
 In my layout's `func layoutAttributesForElements(in rect: CGRect)` method, I was referencing my underlying view model to get the number of items in each section. However, UIKit was giving me odd behaviors, including many `NSInternalInconsistencyException`'s.
 

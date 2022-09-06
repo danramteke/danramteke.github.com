@@ -1,11 +1,11 @@
 ---
-title: Tagging
+title: Tagging for iOS DevOps
 published: true
 layout: layout:BlogLayout
 date: 2022-09-06
 ---
 
-# Branching & Tagging for iOS DevOps
+# Tagging for iOS DevOps
 
 When you're ready to submit a build to TestFlight, I recommend tagging that commit in the style of `1.2.3-7`, where `1.2.3` is the marketing version shown on the App Store and `7` is the build number. This strategy allows us to easily reference what code went into which build.
 

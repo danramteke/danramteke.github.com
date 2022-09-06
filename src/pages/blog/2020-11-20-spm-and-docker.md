@@ -6,6 +6,8 @@ published: true
 layout: layout:BlogLayout
 ---
 
+# Docker Layers for Swift Package Manager
+
 This post will show how to use Docker layers for Swift Package Manager projects. The sample project is on [GitHub](https://github.com/danramteke/spm-in-docker).
 
 ## Motivation

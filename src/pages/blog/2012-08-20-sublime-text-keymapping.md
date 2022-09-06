@@ -4,6 +4,8 @@ layout: layout:BlogLayout
 date: 2012-08-20
 ---
 
+# Sublime Text 2 Keymapping
+
 Made some keymappings in Sublime Text 2.
 
 Open the keymap files by going to "Sublime Text 2" > "Preferences" > "Key Bindings - User"

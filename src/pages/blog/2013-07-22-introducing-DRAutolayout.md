@@ -5,6 +5,8 @@ published: true
 layout: layout:BlogLayout
 ---
 
+# Introducing DRAutolayout
+
 Autolayout in iOS enables responsive design. It's more enjoyable than computing frames by hand; however, it's a bit wordy when writing views in code. And a lot of the autolayout api look the similar. I've been using some helper code to encapsulate some of the calls. I published them in a Cocoa pod. Here is a tour of the features of this Cocoa pod.
 
 There are two categories that I made. The first is a category on `NSLayoutConstraint` for making raw `NSLayoutConstraint`s. The second is a category on `UIView` for adding subviews and layout to a view.

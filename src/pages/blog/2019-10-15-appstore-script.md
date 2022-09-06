@@ -6,6 +6,8 @@ published: true
 layout: layout:BlogLayout
 ---
 
+# Automating Your Upload to Testflight in 4 Easy Steps
+
 ## Motivation
 
 I was working on a project for a client where I was wrapping their website into a `WKWebView` in order to provide native BlueTooth access.
