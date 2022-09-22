@@ -2,8 +2,11 @@
 import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 import Card from 'component:Card';
 const { style } = Astro.props;
+
+const gridClasses = "sm:grid sm:gap-x-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
 ---
 <H1>Current projects</H1>
+<div class={gridClasses}>
 <Card title="Underway NYC">
   <P>For New Yorkers, Underway is the best app to quickly see real-time info. All the tools you need to make decisions while on the go or underground. Available on <Link href="https://apps.apple.com/app/id1118548566">iOS</Link> and <Link href="https://play.google.com/store/apps/details?id=nyc.underway.underway">Android</Link>. </P>
   <P>Learn more at <Link href="https://www.underway.nyc/" isBold="true">underway.nyc</Link></P>
@@ -28,8 +31,10 @@ const { style } = Astro.props;
 <P>Learn more at <Link href="https://github.com/FullQueueDeveloper/swish" isBold="true">FullQueueDeveloper/Swish</Link></P>
 </Card>
 
-<H1>Older projects</H1>
+</div>
 
+<H1>Older projects</H1>
+<div class={gridClasses}>
 <Card title="Daniel Forgetful">
 <P>Instrumental music. Listen in at <Link href="https://soundcloud.com/DanielForgetful" isBold="true">soundcloud.com/DanielForgetful</Link></P>
 </Card>
@@ -37,3 +42,4 @@ const { style } = Astro.props;
 <Card title="Daniel Delicious">
 <P>Recipe log at <Link href="https://daniel-delicious.gitlab.io" isBold="true">daniel-delicious.gitlab.io</Link></P>
 </Card>
+</div>
