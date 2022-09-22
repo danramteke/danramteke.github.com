@@ -1,1 +1,9 @@
-<p class="pb-2 prose"><slot/></p>
+---
+const { isBottom } = Astro.props;
+var classes = "pb-2 prose";
+if (isBottom) {
+
+
+}
+---
+<p class={classes}><slot/></p>
