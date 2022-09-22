@@ -1,0 +1,12 @@
+---
+const { title, style } = Astro.props;
+
+
+---
+<div class="  mt-8 bg-white px-2 rounded-md">
+    <div class="col-span-2">
+      <h2 class="text-xl font-bold mt-2">{title}</h2>
+      <slot/>
+    </div>
+
+</div>

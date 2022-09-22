@@ -1,34 +1,33 @@
 ---
 import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
-import BlueSection from 'component:BlueSection';
+import Card from 'component:Card';
 const { style } = Astro.props;
 ---
 
-<BlueSection title="Current projects" style={style}>
+<Card title="Underway NYC">
+  <P>For New Yorkers, Underway is the best app to quickly see real-time info. All the tools you need to make decisions while on the go or underground. Available on <Link href="https://apps.apple.com/app/id1118548566">iOS</Link> and <Link href="https://play.google.com/store/apps/details?id=nyc.underway.underway">Android</Link>. </P>
+  <P>Learn more at <Link href="https://www.underway.nyc/" isBold="true">underway.nyc</Link></P>
+</Card>
+
+<Card title="Full Queue Developer">
+  <P>I share my love for creativity & programming on my <Link href="https://www.twitch.tv/fullqueuedeveloper">Twitch stream</Link> and <Link href="https://www.youtube.com/channel/UCqJ4mrrpAXbzA-KaZ8f_aMg">YouTube channel</Link>.</P>
+  <P>Learn more at <Link href="https://FullQueueDeveloper.com" isBold="true">FullQueueDeveloper.com</Link></P>
+</Card>
 
 
-<div slot="left">
-<H2>Underway</H2>
-<P>For New Yorkers, Underway is the best app to quickly see real-time info. All the tools you need to make decisions while on the go or underground. Available on <Link href="https://apps.apple.com/app/id1118548566">iOS</Link> and <Link href="https://play.google.com/store/apps/details?id=nyc.underway.underway">Android</Link>. </P>
+<Card title="Sincere Labs NYC Inc">
+  <P>Custom app & website design & development for clients & customers.</P>
+  <P>Learn more at <Link href="https://SincereLabs.nyc">SincereLabs.nyc</Link></P>
+</Card>
 
-<P>Learn more at <Link href="https://www.underway.nyc/">underway.nyc</Link></P>
-</div>
 
-<div slot="middle">
-<H2>Live coding</H2>
-<P>
-Checkout my <Link href="https://www.twitch.tv/fullqueuedeveloper">Twitch stream</Link> and <Link href="https://www.youtube.com/channel/UCqJ4mrrpAXbzA-KaZ8f_aMg">YouTube channel</Link> where I share my love for creativity & programming!
-</P>
-
-<P>Learn more at <Link href="https://fullqueuedeveloper.com">FullQueueDeveloper.com</Link></P>
-</div>
-
-<div slot="right">
-<H2>Swish</H2>
+<Card title="Swish & Sh">
 <P>For developers, <Link href="https://github.com/FullQueueDeveloper/swish">Swish</Link> enables writing scripts in Swift. It bridges the gap between shell scripting and Swift.
 </P>
 
-<P>Learn more at <Link href="https://github.com/FullQueueDeveloper/swish">FullQueueDeveloper/swish</Link></P>
-</div>
+<P>Learn more at <Link href="https://github.com/FullQueueDeveloper/swish" isBold="true">FullQueueDeveloper/Swish</Link></P>
+</Card>
 
-</BlueSection>
+<Card title="Music">
+<P>Listen in at <Link href="https://soundcloud.com/DanielForgetful" isBold="true">soundcloud.com/DanielForgetful</Link></P>
+</Card>

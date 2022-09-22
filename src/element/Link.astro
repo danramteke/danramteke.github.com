@@ -1,9 +1,12 @@
 ---
-const { href } = Astro.props;
+const { href, isBold } = Astro.props;
+
+var classes = "underline text-blue-900 hover:text-blue-600"
+
+if (isBold) {
+  classes += " font-bold"
+}
+
+
 ---
-<a class="
-underline
-text-blue-900
-hover:text-blue-600
-font-bold
-" href={href}><slot /></a>
+<a class={classes} href={href}><slot /></a>
