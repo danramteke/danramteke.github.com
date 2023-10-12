@@ -1,12 +1,16 @@
 ---
-const { title, style } = Astro.props;
+const { title, style, href } = Astro.props;
 
 
 ---
+<div>
+<a href={href}>
 <div class="container relative  mb-4 bg-sky-50 px-2 -mx-2 rounded-md">
 
     <h2 class="text-xl font-bold mt-2">{title}</h2>
     <slot/>
 
 
+</div>
+</a>
 </div>

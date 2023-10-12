@@ -5,41 +5,28 @@ const { style } = Astro.props;
 
 const gridClasses = "sm:grid sm:gap-x-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
 ---
-<H1>Current projects</H1>
+
+<H1>Resume</H1>
+
 <div class={gridClasses}>
-<Card title="Underway NYC">
-  <P>For New Yorkers, Underway is the best app to quickly see real-time info. All the tools you need to make decisions while on the go or underground. Available on <Link href="https://apps.apple.com/app/id1118548566">iOS</Link> and <Link href="https://play.google.com/store/apps/details?id=nyc.underway.underway">Android</Link>. </P>
-  <P>Learn more at <Link href="https://www.underway.nyc/" isBold="true">underway.nyc</Link></P>
-</Card>
 
-<Card title="Full Queue Developer">
-  <P>I share my love for creativity & programming on my <Link href="https://www.twitch.tv/fullqueuedeveloper">Twitch stream</Link> and <Link href="https://www.youtube.com/channel/UCqJ4mrrpAXbzA-KaZ8f_aMg">YouTube channel</Link>.</P>
-  <P>Learn more at <Link href="https://FullQueueDeveloper.com" isBold="true">FullQueueDeveloper.com</Link></P>
-</Card>
+  <Card title="Resume" href="/resume">
+    <P>I'm currently looking for work as an iOS Developer. Read me resume for how I can fit into your team!</P>
 
-
-<Card title="Sincere Labs NYC Inc">
-  <P>Custom app & website design & development for clients & customers.</P>
-  <P isBottom="true">Learn more at <Link href="https://SincereLabs.nyc" isBold="true">SincereLabs.nyc</Link></P>
-</Card>
-
-
-<Card title="Swish & Sh">
-<P>For developers, <Link href="https://github.com/FullQueueDeveloper/Swish">Swish</Link> & <Link href="https://github.com/FullQueueDeveloper/Sh">Sh</Link> bridge the gap between shell scripting and Swift. They work well together or a part.
-</P>
-
-<P isBottom="true">Learn more at <Link href="https://github.com/FullQueueDeveloper/swish" isBold="true">FullQueueDeveloper/Swish</Link></P>
-</Card>
-
+  </Card>
 </div>
 
-<H1>Dormant projects</H1>
+<H1>Current projects</H1>
 <div class={gridClasses}>
-<Card title="Daniel Forgetful">
-<P>Instrumental music. Listen in on SoundCloud: <Link href="https://soundcloud.com/DanielForgetful" isBold="true">DanielForgetful</Link></P>
+
+<Card title="Underway NYC" href="https://Underway.nyc">
+  <P>For New Yorkers, Underway is the best app to quickly see real-time info. All the tools you need to make decisions while on the go or underground. Available on iOS & Android. </P>
+  <P>Learn more at <span class="underline">underway.nyc</span></P>
 </Card>
 
-<Card title="Daniel Delicious">
-<P>Recipe log at <Link href="https://daniel-delicious.gitlab.io" isBold="true">daniel-delicious.gitlab.io</Link></P>
+<Card title="Full Queue Developer" href="https://fullqueuedeveloper.com">
+  <P>I share my love for creativity & programming on my YouTube channel & Twitch stream.</P>
+  <P>Learn more at <span class="underline">FullQueueDeveloper.com</span></P>
 </Card>
+
 </div>

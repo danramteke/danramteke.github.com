@@ -1,0 +1,60 @@
+---
+import Layout from 'layout:PageLayout';
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
+
+import Markdown from '@astrojs/markdown-component';
+
+---
+<Layout title="Press coverage">
+  <Section id="press">
+    <H1>Press coverage</H1>
+
+    <P>Publications highlighting my work</P>
+
+    <H2>For <Link href="https://fullqueuedeveloper.com">Full Queue Developer</Link></H2>
+    <List>
+      <ListItem>
+        <Link isBold="true" href="https://iosdevweekly.com/issues/616#comment">iOS Dev Weekly #616</Link>
+
+        <P>This post-WWDC '23 issue featured three of my Swift Macros.<Link href="https://github.com/FullQueueDeveloper/IdentifiedEnumCases">IdentifiedEnumCases</Link> to generate IDs for enumeration cases, <Link href="https://github.com/FullQueueDeveloper/StaticMemberIterable">StaticMemberIterable</Link> to confidently iterate through static members of a type, and <Link href="https://github.com/FullQueueDeveloper/UniquelyTypedID">UniquelyTypedID</Link> to let the compiler confirm you're passing the right kind of ID</P>
+      </ListItem>
+
+      <ListItem>
+        <Link isBold="true" href="https://iosdevweekly.com/issues/563#RR1Nrdp">iOS Dev Weekly #563</Link>
+
+        <P>"I’m linking to this app from Daniel Ramteke for several reasons. First, it’s an excellent (and free) way to play with the various haptic parameters to get precisely the desired effect. Secondly, Daniel streamed the entire development of this app on his Twitch channel and uploaded all 13 session recordings to YouTube."</P>
+      </ListItem>
+
+    </List>
+
+    <H2>For <Link href="https://underway.nyc">Underway</Link></H2>
+    <List>
+      <ListItem>
+        <Link isBold="true" href="https://viewing.nyc/underway-nyc-app-shows-your-new-york-city-subway-lines-arrival-time-in-real-time/">Viewing NYC</Link>
+        <P>"Enter Underway NYC, a new iOS App that removes all the extra features and bloat of the transit apps and simply
+              shows
+              you how many minutes it is until the next train at your station."</P>
+      </ListItem>
+
+      <ListItem>
+        <Link isBold="true" href="https://brokelyn.com/subway-arrival-time-app/">Brokelyn</Link>
+
+        <P>"In addition to the MTA's online Subway Times, which offers the current arrival times by line and station and is accessible from the internet even beyond the subway's hallowed platforms, Underway NYC now offers the same information but in app form and plotted to a subway map."</P>
+
+      </ListItem>
+
+      <ListItem>
+        <Link isBold="true" href="https://makespace.com/blog/posts/best-new-york-apps/">MakeSpace</Link>
+
+        <P>"Let's face it: Google Maps can only get you so far. &hellip; Made specifically with busy New Yorkers in mind, it's an all-in-one commute compendium."</P>
+      </ListItem>
+
+      <ListItem>
+        <Link isBold="true" href="https://www.brickunderground.com/live/brick-underground-guide-to-NYC-transit-apps">Brick Underground</Link>
+
+        <P>"Should you use it? If you just want to know when the next train is arriving, but don't need step-by-step navigation."</P>
+      </ListItem>
+    </List>
+
+  </Section>
+</Layout>
