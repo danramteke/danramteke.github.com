@@ -4,33 +4,6 @@ import social from '@data/social.json'
 
 ---
 <footer class=" mt-8 pt-2 border-solid bg-sky-900  border-t px-8 text-slate-300 ">
-
-    <div class=" grid grid-cols-1 md:grid-cols-3 gap-8 ">
-
-            <div class="">
-                <p>Interested in working together? I'd love to hear from you. Contact me <a href="mailto:daniel@danramteke.com">daniel at
-                        danramteke dot com</a>.</p>
-
-            </div>
-            <div class="pt-1">
-                <p>
-                   <img src="/hi.png" width="220" height="220" />
-                </p>
-            </div>
-
-            <div class="">
-
-             <ul class="list-group ">
-
-
-              {social.map((obj, i) => <div>
-                     <a href={obj.url} class="hover:underline">{obj.site}: {obj.user}</a>
-                </div>)}
-             </ul>
-
-            </div>
-
-    </div>
     <p class="py-8"><a href="/" class="hover:underline">&copy;2022 Daniel Ramteke</a> </p>
 </footer>
 

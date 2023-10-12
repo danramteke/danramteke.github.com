@@ -1,7 +1,9 @@
 ---
 import Layout from 'layout:PageLayout'
 import { P, Section, Link, ListItem, List, H1, H2, PageTitle } from '@elements';
-import BlueSection from '../components/BlueSection.astro';
+import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
+import social from '@data/social.json'
+
 ---
 
 
@@ -13,5 +15,12 @@ import BlueSection from '../components/BlueSection.astro';
 
 
 
+      <ul class="list-group ">
+
+
+  {social.map((obj, i) => <div>
+         <a href={obj.url} class="hover:underline">{obj.site}: {obj.user}</a>
+    </div>)}
+ </ul>
 
 </Layout>
