@@ -1,5 +1,16 @@
 [
   {
+    "name": "Artium",
+    "url": "https://thisisartium.com",
+    "capacity": "Android engineer",
+    "timeframe": "March 2023 - October 2023",
+    "items": [
+      "Built the Android app using JetPack Compose and Koin",
+      "Managed CI/CD scripts for tagging and releasing to Firebase",
+      "Built a CLI for testing using Bash."
+    ]
+  },
+  {
     "name": "WeThink",
     "url": "https://wethink.com",
     "capacity": "Freelancer",
