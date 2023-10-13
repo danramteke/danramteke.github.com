@@ -13,7 +13,7 @@
   {
     "name": "WeThink",
     "url": "https://wethink.com",
-    "capacity": "Freelancer",
+    "capacity": "Freelancer with TopTal",
     "timeframe": "July 2022 - October 2022",
     "items": [
       "Inherited partially complete iOS, Android and node web app",
@@ -33,9 +33,9 @@
   },
 
   {
-    "name": "TopTal",
+    "name": "TopTal client",
     "url": "https://toptal.com",
-    "capacity": "Freelancer",
+    "capacity": "Freelancer with TopTal",
     "items": [
       "Designed iPhone app to instantly book technicians to fix home maintenance issues",
       "Streamlined onboarding flow with camera",
@@ -45,7 +45,7 @@
   {
     "name": "Daring Bit Assembly",
     "url": "https://www.dbadbadba.com",
-    "capacity": "Consultant",
+    "capacity": "Consultant with Sincere Labs NYC",
     "timeframe": "February 2022 - March 2022",
     "items": [
       "Aided in their client project by porting open source framework away from Realm to GRDB.",
@@ -56,7 +56,7 @@
   {
     "name": "Stash",
     "url": "https://stash.com",
-    "capacity": "Full-time employee",
+    "capacity": "Full-stack React & Rails, and iOS engineer",
     "timeframe": "January 2020 - November 2021",
     "items": [
       "Tech-lead for a referral rewards program across backend, web, Android, and iOS",
@@ -71,7 +71,7 @@
   {
     "name": "GrowFlow",
     "url": "https://growflow.com",
-    "capacity": "Consultant",
+    "capacity": "Consultant with TopTal",
     "timeframe": "August 2019 - September 2019",
     "items": [
       "Embedded GrowFlow's existing webapp into a `WKWebView` with native login screen",
@@ -84,7 +84,7 @@
   {
     "name": "Stash",
     "url": "https://stash.com",
-    "capacity": "Consultant",
+    "capacity": "Freelancer with Dan Ramteke Consulting",
     "timeframe": "September 2018 - April 2019",
     "items": [
       "Took ownership of investigating a launch bug that involved AppsFlyer and concurrent threads which resulted in potential 10 second launch times. The fix I architected and implemented resulted in a ~10% increase in registrations.",
@@ -95,7 +95,8 @@
   },
   {
     "name": "CoinMarketCap",
-    "capacity": "Freelancer",
+    "url": "https://CoinMarketCap.com",
+    "capacity": "Freelancer with Dan Ramteke Consulting",
     "timeframe": "August 2017 - August 2018",
     "items": [
       "Built first iOS app according to the provided designs.",
@@ -107,7 +108,7 @@
   {
     "name": "Stash",
     "url": "https://stash.com",
-    "capacity": "Consultant",
+    "capacity": "Freelancer with Dan Ramteke Consulting",
     "timeframe": "July 2017 - October 2017",
     "items": [
       "Massive iOS app rewrite from Objective-C with MVC architecture to Swift with VIPER architecture with improved testability.",
@@ -119,7 +120,7 @@
   {
     "name": "Pascal Dangin",
     "url": "http://kidscreative.com",
-    "capacity": "Freelancer",
+    "capacity": "Freelancer with Dan Ramteke Consulting",
     "timeframe": "August 2016 - May 2017",
     "items": [
       "Added usuability features to existing Objective-C camera app",
@@ -129,7 +130,7 @@
   {
     "name": "Sifftr",
     "url": "http://www.sifftr.com",
-    "capacity": "Freelancer",
+    "capacity": "Freelancer with Dan Ramteke Consulting",
     "timeframe": "February 2016 - December 2017",
     "items": [
       "Led team of two designers, two developers to build iOS app using Swift",
@@ -139,7 +140,7 @@
   {
     "name": "Showdown!",
     "url": "http://www.theshowdownapp.com",
-    "capacity": "Freelancer",
+    "capacity": "Freelancer with Dan Ramteke Consulting",
     "timeframe": "May 2014 - February 2017",
     "items": [
       "Led team of one developer and one designer",
@@ -151,7 +152,7 @@
   {
     "name": "uSTADIUM",
     "url": "https://www.ustadium.com",
-    "capacity": "Freelancer",
+    "capacity": "Freelancer with Dan Ramteke Consulting",
     "timeframe": "August 2015 - December 2015",
     "items": [
       "Used Parse and Objective-C to help deliver UI improvements and a new feature: daily fantasy.",
@@ -160,7 +161,7 @@
   },
   {
     "name": "Newsela",
-    "capacity": "Consultant",
+    "capacity": "Freelancer with Dan Ramteke Consulting",
     "timeframe": "February 2015 - June 2015",
     "items": [
       "Used Swift and UIKit to create the first version of their iOS app",
@@ -190,7 +191,7 @@
   {
     "name": "Peter Russo Design",
     "url": "http://www.prussodesign.com",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2013 - Fall 2013",
     "items": [
       "Used `CoreBluetooth`, `MapKit`, and RubyMotion to deliver an iPhone app to control mechanical components for a prototype automobile project."
@@ -199,7 +200,7 @@
   {
     "name": "BazaarVoice",
     "url": "http://response.bazaarvoice.com/",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Fall 2012 - Spring 2013",
     "items": [
       "Used AngularJS, Dropwizard, Elastic Search, and AWS automation to deliver internal tools"
@@ -208,21 +209,21 @@
   {
     "name": "For the Makers",
     "url": "http://forthemakers.com/",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2012",
     "items": ["Contributed to a small ecommerce website using Ruby on Rails"]
   },
   {
     "name": "Make Love Not Porn",
     "url": "http://www.makelovenotporn.tv/",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2012",
     "items": ["Used Ruby and Rails to help with video encoding and admin pages"]
   },
   {
     "name": "Simon and Schuster",
     "url": "http://www.simonandschuster.com/",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Fall 2011 - Spring 2012",
     "items": [
       "Delivered features as an integrated member of their Ruby on Rails development team. Features include new search results page, typeahead search, and PowerReviews integration."
@@ -231,7 +232,7 @@
   {
     "name": "TheLadders",
     "url": "http://www.theladders.com/",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Spring, Summer 2011",
     "items": [
       "Added features and fixed bugs for their marketing-focused CMS using Java"
@@ -240,7 +241,7 @@
   {
     "name": "Federal Reserve Bank of NY",
     "url": "https://www.newyorkfed.org",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Winter 2011",
     "items": [
       "Developed a document sharing platform in JRuby on Rails, in addition to other maintenance and bug fixes"
@@ -249,7 +250,7 @@
   {
     "name": "Boston Capital (Lexingon Solutions)",
     "url": "http://lexington-solutions.com/",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Spring 2009 - 2010",
     "items": [
       "Built their core asset management system using Webwork, Hibernate, Tomcat, and Pico.",
@@ -260,7 +261,7 @@
   {
     "name": "ICorrect.com",
     "url": "icorrect.com",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2008",
     "items": [
       "Used Ruby, Rails, Rspec, Selenium, and MySql to build a custom CMS."
@@ -269,7 +270,7 @@
   {
     "name": "Kaplan Test Prep",
     "url": "http://kaplan.com/",
-    "capacity": "Cyrus Innovation",
+    "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2007 - Winter 2009",
     "items": [
       "Aided in Agile conversion as an embedded team.",
