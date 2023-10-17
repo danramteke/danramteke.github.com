@@ -2,7 +2,7 @@
 import Layout from 'layout:BaseLayout';
 import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
 
-import Markdown from '@astrojs/markdown-component';
+import { marked } from 'marked';
 
 import experience from '@data/experience.json';
 import pullRequests from '@data/pull-request.json';
@@ -79,11 +79,13 @@ import pullRequests from '@data/pull-request.json';
         <Link href={x.url} isBold="true">{x.name}</Link>
         <div class="prose">{x.capacity}, {x.timeframe}</div>
         <List level="1">
-          {x.items.map(item => (
+          {x.items.map(markdownItem => {
+            const content = marked.parse(markdownItem);
+            return (
           <ListItem><span class="prose prose-p:inline prose-a:underline
           prose-a:text-blue-900
-          prose-a:hover:text-blue-600"><Markdown>{item}</Markdown></span></ListItem>
-          ))}
+          prose-a:hover:text-blue-600" set:html={content}/></ListItem>
+          )})}
         </List>
       </ListItem>
     ))
