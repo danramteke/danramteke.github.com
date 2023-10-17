@@ -6,22 +6,13 @@ const { style } = Astro.props;
 const gridClasses = "sm:grid sm:gap-x-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
 ---
 
-<H1>Resume</H1>
-
-<div class={gridClasses}>
-
-  <Card title="Resume" href="/resume">
-    <P>I'm currently looking for work as an iOS Developer. Read me resume for how I can fit into your team!</P>
-
-  </Card>
-</div>
-
 <H1>Current projects</H1>
 <div class={gridClasses}>
 
-<Card title="Underway NYC" href="https://Underway.nyc">
-  <P>For New Yorkers, Underway is the best app to quickly see real-time info. All the tools you need to make decisions while on the go or underground. Available on iOS & Android. </P>
-  <P>Learn more at <span class="underline">underway.nyc</span></P>
+<Card title="Job search" href="/resume">
+  <P>I'm currently looking for work as an Developer Relations Engineer.</P>
+  <P>Read my <span class="underline">resume</span> for how I can fit into your team!</P>
+
 </Card>
 
 <Card title="Full Queue Developer" href="https://fullqueuedeveloper.com">
@@ -29,4 +20,24 @@ const gridClasses = "sm:grid sm:gap-x-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-co
   <P>Learn more at <span class="underline">FullQueueDeveloper.com</span></P>
 </Card>
 
+
+<Card title="Underway" href="https://Underway.nyc">
+  <P>Underway is the best app for New Yorkers to quickly see real-time subway info. Available on iOS & Android. </P>
+  <P>Learn more at <span class="underline">underway.nyc</span></P>
+</Card>
+
+
 </div>
+
+<!--
+  {
+  "name": "Full Queue Developer",
+  "url": "https://fullqueuedeveloper.com",
+  "capacity": "Live stream on Twitch",
+  "timeframe": "April 2022 - Present",
+  "items": [
+    "Featured in [iOS Dev Weekly](https://iosdevweekly.com/issues/563#RR1Nrdp)!",
+    "Built [Haptics Studio](https://apps.apple.com/app/id1624792731) using SwiftUI, which helps you discover the perfect customized haptics for your app",
+    "Answer viewers' programming questions"
+  ]
+}, -->
