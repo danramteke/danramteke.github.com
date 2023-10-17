@@ -2,6 +2,7 @@
   {
     "name": "Artium",
     "url": "https://thisisartium.com",
+    "category": "Consulting",
     "capacity": "Android engineer",
     "timeframe": "March 2023 - October 2023",
     "items": [
@@ -14,6 +15,7 @@
     "name": "WeThink",
     "url": "https://wethink.com",
     "capacity": "Freelancer with TopTal",
+
     "timeframe": "July 2022 - October 2022",
     "items": [
       "Inherited partially complete iOS, Android and node web app",
@@ -24,6 +26,7 @@
     "name": "TopTal client",
     "url": "https://toptal.com",
     "capacity": "Freelancer with TopTal",
+
     "items": [
       "Designed iPhone app to instantly book technicians to fix home maintenance issues",
       "Streamlined onboarding flow with camera",
@@ -33,6 +36,7 @@
   {
     "name": "Daring Bit Assembly",
     "url": "https://www.dbadbadba.com",
+
     "capacity": "Consultant with Sincere Labs NYC",
     "timeframe": "February 2022 - March 2022",
     "items": [
@@ -44,6 +48,7 @@
   {
     "name": "Stash",
     "url": "https://stash.com",
+
     "capacity": "Full-stack engineer",
     "timeframe": "January 2020 - November 2021",
     "items": [

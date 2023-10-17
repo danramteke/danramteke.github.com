@@ -9,14 +9,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - 
-        uses: actions/checkout@v2
-      - 
-        run: yarn install
-      - 
-        run: yarn build
-      - 
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v2
+      - run: npm install
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
