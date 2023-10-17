@@ -20,7 +20,6 @@
       "Hired specialists across the globe and managed the project to launch"
     ]
   },
-
   {
     "name": "TopTal client",
     "url": "https://toptal.com",
@@ -45,14 +44,14 @@
   {
     "name": "Stash",
     "url": "https://stash.com",
-    "capacity": "Full-stack React & Rails, and iOS engineer",
+    "capacity": "Full-stack engineer",
     "timeframe": "January 2020 - November 2021",
     "items": [
       "Tech-lead for a referral rewards program across backend, web, Android, and iOS",
       "Mentored colleagues learning to develop on iOS.",
       "Experimental social financial site at crew.stash.com using React & Ruby on Rails",
       "Converted monolithic services to microservices, using Ruby on Rails, Kafka, HTML/CSS and Docker",
-      "iOS developr ependency management using Mint, Cocoapods, & Xcodegen",
+      "iOS developer dependency management using Mint, Cocoapods, & Xcodegen",
       "Native iOS screens and architecture for onboarding overhaul",
       "Interviewed candidates for senior roles"
     ]

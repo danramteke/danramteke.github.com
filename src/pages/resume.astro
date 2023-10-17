@@ -17,7 +17,7 @@ import pullRequests from '@data/pull-request.json';
     <List>
       <div class="pb-2 hover:underline"><a href="#about">About &rsaquo;</a></div>
       <div class="pb-2 hover:underline"><a href="#skills">Skills &rsaquo;</a></div>
-      <div class="pb-2 hover:underline"><a href="#experience">Experience &rsaquo;</a></div>
+      <div class="pb-2 hover:underline"><a href="#experience">Past experience &rsaquo;</a></div>
       <div class="pb-2 hover:underline"><a href="#pull-requests">Merged open source pull requests  &rsaquo;</a></div>
       <div class="pb-2 hover:underline"><a href="#conferences">Conferences &rsaquo;</a></div>
       <div class="pb-2 hover:underline"><a href="#education">Education &rsaquo;</a></div>
@@ -39,7 +39,7 @@ import pullRequests from '@data/pull-request.json';
 
     <List>
       <ListItem><Link href="#about">About</Link></ListItem>
-      <ListItem><Link href="#experience">Experience</Link></ListItem>
+      <ListItem><Link href="#experience">Past experience</Link></ListItem>
       <ListItem><Link href="#pull-requests">Merged open source pull requests</Link></ListItem>
       <ListItem><Link href="#conferences">Conferences</Link></ListItem>
       <ListItem><Link href="#education">Education</Link></ListItem>
@@ -75,7 +75,7 @@ import pullRequests from '@data/pull-request.json';
     <List>
       {experience.map(x => (
       <ListItem>
-        <Link href={x.url}>{x.name}</Link>
+        <Link href={x.url} isBold="true">{x.name}</Link>
         <div class="prose">{x.capacity}, {x.timeframe}</div>
         <List level="1">
           {x.items.map(item => (
