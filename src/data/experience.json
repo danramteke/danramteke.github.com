@@ -1,5 +1,17 @@
 [
   {
+    "name": "SiriusXM Pandora",
+    "url": "https://siriusxm.com",
+    "category": "Consulting",
+    "capacity": "Vendor consultant, infrastructure",
+    "timeframe": "November 2023 - February 2026",
+    "items": [
+      "Managed AWS infrastructure with CDK and TypeScript",
+      "Maintained Java backend applications",
+      "Maintained an infrastructure library picked up by the Platform dev team to be used company-wide to manage AWS SageMaker AI infrastructure"
+    ]
+  },
+  {
     "name": "Artium",
     "url": "https://thisisartium.com",
     "category": "Consulting",
