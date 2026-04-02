@@ -1,6 +1,6 @@
 ---
 import Layout from 'layout:BaseLayout';
-import { P, Section, Link, ListItem, List, H1, H2 } from '@elements';
+import { P, Section, Link, ListItem, List, H1, H2, B } from '@elements';
 
 import { marked } from 'marked';
 
@@ -28,9 +28,8 @@ import pullRequests from '@data/pull-request.json';
 
   <Section id="about">
     <H2>About</H2>
-    <P>I am a seasoned Swift developer, specializing in iOS, Swift-on-the-Server, and DevOps.</P>
-    <P>I am looking for a Swift developer role, leading & mentoring teammates or customers as part of DevRel or DevEx.</P>
-    <P>I have been featured twice in <Link href="https://iosdevweekly.com">iOS Dev Weekly</Link>, and my personal app is featured on Vapor's <Link href="https://vapor.codes">website</Link></P>
+    <P>Senior Swift/iOS engineer with 15+ years building production apps for companies like SiriusXM, Stash, and CoinMarketCap. 
+      Experienced tech lead, open source contributor, and DevOps practitioner seeking a Swift or iOS role with mentorship or DevRel responsibilities.</P>
   </Section>
 
 
@@ -55,17 +54,12 @@ import pullRequests from '@data/pull-request.json';
     <H2>Skills</H2>
 
     <List>
-      <ListItem>Swift, SwiftUI, UIKit, Xcode, VIPER</ListItem>
-      <ListItem>Vapor, GRDB, XcodeGen</ListItem>
-      <ListItem>Swift Argument Parser</ListItem>
-      <ListItem>Unit testing, UI testing</ListItem>
-      <ListItem>Terraform, Kubernetes, Docker</ListItem>
-      <ListItem>Redis, Postgres, MySQL</ListItem>
-      <ListItem>TypeScript, JavaScript, AstroJS, React, NodeJS</ListItem>
-      <ListItem>Kotlin, JetPack Compose, Java</ListItem>
-      <ListItem>GitHub Actions, GitLab CI/CD, BitRise CI</ListItem>
-      <ListItem>Figma, PaintCode, ImageMagick, ffmpeg</ListItem>
-      <ListItem>Final Cut Pro, Pixelmator Pro, Inkscape, Logic Pro</ListItem>
+      <ListItem><B>Primary:</B> Swift, SwiftUI, UIKit, Xcode, VIPER</ListItem>
+      <ListItem><B>Mobile databases</B>: GRDB, SQLite, Realm</ListItem>
+      <ListItem><B>Backend databases</B>: Postgres, Supabase, MySQL, MongoDB, Redis</ListItem>
+      <ListItem><B>DevOps:</B> Terraform, Kubernetes, Docker, AWS, DigitalOcean, GitHub Actions, GitLab CI/CD, BitRise CI</ListItem>
+      <ListItem><B>Other languages:</B> TypeScript, JavaScript, NodeJS, AstroJS, React, Python, Kotlin, Java</ListItem> 
+      <ListItem><B>Other tools:</B> Figma, PaintCode, ImageMagick, ffmpeg, Final Cut Pro, Pixelmator Pro, Inkscape, Logic Pro</ListItem>
     </List>
 
   </Section>
@@ -75,7 +69,7 @@ import pullRequests from '@data/pull-request.json';
 
     <P>Summary: XP/Agile consulting with Cyrus Innovation from 2007-2014, iOS freelancing from 2014 to 2020, and the pandemic era from 2020 on when I started my online personality, <Link href="https://fullqueuedeveloper.com">Full Queue Developer</Link>. Post-pandemic, I abandoned content-creation, to focus on my app Underway and my client SiriusXM.</P>
     <List>
-      {experience.map(x => (
+      {experience.filter(item => !item.hidden).map(x => (
       <ListItem>
         <Link href={x.url} isBold="true">{x.name}</Link>
         <div class="prose">{x.capacity}, {x.timeframe}</div>
@@ -92,6 +86,7 @@ import pullRequests from '@data/pull-request.json';
     ))
     }
     </List>
+    <P>Full experience available upon request. Clients include The Federal Reserve Bank of NY, Simon & Schuster, and others.</P>
   </Section>
 
 

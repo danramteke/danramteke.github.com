@@ -179,6 +179,7 @@
     "url": "http://www.blinkbuggy.com",
     "capacity": "Freelance iOS Developer",
     "timeframe": "February 2014 - June 2014",
+    "hidden": true,
     "items": ["Used Objective-C and Rails to further improve their app"]
   },
   {
@@ -186,10 +187,11 @@
     "timeframe": "July 2007 - February 2014",
     "url": "https://cyrusinnovation.com",
     "capacity": "Senior Agile Developer",
+    "hidden": true,
     "items": [
       "Built an internal mailing list server in Python, Cyrus Lists, allowing co-workers to self-manage mailing list subscriptions, before Slack was popular.",
       "Launched a Planning Poker iPhone app on the App Store.",
-      "Launched an internal iPhone app using RubyMotion.",
+      "Launched an internal iPhone app called I'm Late using RubyMotion.",
       "Engaged in hiring process, interviewing, and reviewing code tests",
       "Full client project list to come"
     ]
@@ -199,6 +201,7 @@
     "url": "http://www.prussodesign.com",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2013 - Fall 2013",
+    "hidden": true,
     "items": [
       "Used `CoreBluetooth`, `MapKit`, and RubyMotion to deliver an iPhone app to control mechanical components for a prototype automobile project, for pitching to a large automotive company."
     ]
@@ -208,6 +211,7 @@
     "url": "http://response.bazaarvoice.com/",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Fall 2012 - Spring 2013",
+    "hidden": true,
     "items": [
       "Used AngularJS, Dropwizard, Elastic Search, and AWS automation to deliver internal tools"
     ]
@@ -217,6 +221,7 @@
     "url": "http://forthemakers.com/",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2012",
+    "hidden": true,
     "items": ["Contributed to a small ecommerce website using Ruby on Rails"]
   },
   {
@@ -224,6 +229,7 @@
     "url": "http://www.makelovenotporn.tv/",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2012",
+    "hidden": true,
     "items": ["Ruby on Rails project, helping with video encoding and admin pages"]
   },
   {
@@ -231,6 +237,7 @@
     "url": "http://www.simonandschuster.com/",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Fall 2011 - Spring 2012",
+    "hidden": true,
     "items": [
       "Delivered features as an integrated member of their Ruby on Rails development team. Features include new search results page, typeahead search, and PowerReviews integration."
     ]
@@ -240,6 +247,7 @@
     "url": "http://www.theladders.com/",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Spring, Summer 2011",
+    "hidden": true,
     "items": [
       "Added features and fixed bugs for their custom marketing CMS using Java"
     ]
@@ -249,6 +257,7 @@
     "url": "https://www.newyorkfed.org",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Winter 2011",
+    "hidden": true,
     "items": [
       "Developed a document sharing platform in JRuby on Rails, in addition to other maintenance and bug fixes"
     ]
@@ -258,6 +267,7 @@
     "url": "http://lexington-solutions.com/",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Spring 2009 - 2010",
+    "hidden": true,
     "items": [
       "Built their core asset management system using Webwork, Hibernate, Tomcat, Pico, and other Java technologies.",
       "Migrated new client databases into Fusion.",
@@ -270,6 +280,7 @@
     "url": "icorrect.com",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2008",
+    "hidden": true,
     "items": [
       "Used Ruby, Rails, Rspec, Selenium, and MySql to build a custom CMS."
     ]
@@ -279,6 +290,7 @@
     "url": "http://kaplan.com/",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2007 - Winter 2009",
+    "hidden": true,
     "items": [
       "Aided in Agile conversion as an embedded team.",
       "Built out their revenue recognition system and their drop shipping system using SpringMVC, Hibernate, Selenium, Dojo, and Fit.",
