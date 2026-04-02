@@ -6,8 +6,8 @@
     "capacity": "Vendor consultant, infrastructure",
     "timeframe": "November 2023 - February 2026",
     "items": [
-      "Managed AWS infrastructure with CDK and TypeScript",
-      "Maintained Java backend applications",
+      "Infra structure as code, CDK, TypeScript: Managed AWS infrastructure including AI services",
+      "SpringBoot, IntelliJ IDEA, Maven, AWS Step Functions, AWS S3, AWS Lambda, AWS ECS: Maintained Java backend applications",
       "Maintained an infrastructure library picked up by the Platform dev team to be used company-wide to manage AWS SageMaker AI infrastructure"
     ]
   },
@@ -18,9 +18,9 @@
     "capacity": "Android engineer",
     "timeframe": "March 2023 - October 2023",
     "items": [
-      "Built the Android app using JetPack Compose and Koin",
-      "Managed CI/CD scripts for tagging and releasing to Firebase",
-      "Built a CLI for testing using Bash."
+      "Kotlin: Built the Android app using JetPack Compose and Koin",
+      "Bash: Managed CI/CD scripts for tagging and releasing to Firebase",
+      "Bash: Built a CLI to aide the team with testing using Bash."
     ]
   },
   {
@@ -31,7 +31,8 @@
     "timeframe": "July 2022 - October 2022",
     "items": [
       "Inherited partially complete iOS, Android and node web app",
-      "Hired specialists across the globe and managed the project to launch"
+      "Aiding in interviewing and hiring specialists across the globe",
+      "Managed the project to launch"
     ]
   },
   {
@@ -52,8 +53,8 @@
     "capacity": "Consultant with Sincere Labs NYC",
     "timeframe": "February 2022 - March 2022",
     "items": [
-      "Aided in their client project by porting open source framework away from Realm to GRDB.",
-      "Objective-C interacting with new Swift code.",
+      "Aided in their client project by porting open source framework away from Realm to GRDB, which is an open-source Swift wrapper for SQLite.",
+      "Maintained Objective-C code interacting with new Swift code.",
       "Worked quickly to meet their client's deadline, updating frequently"
     ]
   },
@@ -129,7 +130,7 @@
     "timeframe": "August 2016 - May 2017",
     "items": [
       "Added usuability features to existing Objective-C camera app",
-      "Migration off Parse to new vendor due to Parse end-of-life"
+      "Migration off Parse to new BaaS vendor due to Parse's end-of-life"
     ]
   },
   {
@@ -170,7 +171,7 @@
     "timeframe": "February 2015 - June 2015",
     "items": [
       "Used Swift and UIKit to create the first version of their iOS app",
-      "Worked with their in-house design and backend teams, as well as their newly-hired iOS engineer."
+      "Worked closely with their in-house design and backend teams, as well as their newly-hired iOS engineer, to deliver the app."
     ]
   },
   {
@@ -188,7 +189,7 @@
     "items": [
       "Built an internal mailing list server in Python, Cyrus Lists, allowing co-workers to self-manage mailing list subscriptions, before Slack was popular.",
       "Launched a Planning Poker iPhone app on the App Store.",
-      "Launched I'm Late iPhone app using RubyMotion.",
+      "Launched an internal iPhone app using RubyMotion.",
       "Engaged in hiring process, interviewing, and reviewing code tests",
       "Full client project list to come"
     ]
@@ -199,7 +200,7 @@
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2013 - Fall 2013",
     "items": [
-      "Used `CoreBluetooth`, `MapKit`, and RubyMotion to deliver an iPhone app to control mechanical components for a prototype automobile project."
+      "Used `CoreBluetooth`, `MapKit`, and RubyMotion to deliver an iPhone app to control mechanical components for a prototype automobile project, for pitching to a large automotive company."
     ]
   },
   {
@@ -223,7 +224,7 @@
     "url": "http://www.makelovenotporn.tv/",
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Summer 2012",
-    "items": ["Used Ruby and Rails to help with video encoding and admin pages"]
+    "items": ["Ruby on Rails project, helping with video encoding and admin pages"]
   },
   {
     "name": "Simon and Schuster",
@@ -240,7 +241,7 @@
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Spring, Summer 2011",
     "items": [
-      "Added features and fixed bugs for their marketing-focused CMS using Java"
+      "Added features and fixed bugs for their custom marketing CMS using Java"
     ]
   },
   {
@@ -258,9 +259,10 @@
     "capacity": "Consultant with Cyrus Innovation",
     "timeframe": "Spring 2009 - 2010",
     "items": [
-      "Built their core asset management system using Webwork, Hibernate, Tomcat, and Pico.",
+      "Built their core asset management system using Webwork, Hibernate, Tomcat, Pico, and other Java technologies.",
       "Migrated new client databases into Fusion.",
-      "Setup a VMware TeamCity continuous integration instance."
+      "Setup a VMware TeamCity continuous integration instance.",
+      "Wrote tests in Fitnesse and JUnit."
     ]
   },
   {
@@ -280,6 +282,7 @@
     "items": [
       "Aided in Agile conversion as an embedded team.",
       "Built out their revenue recognition system and their drop shipping system using SpringMVC, Hibernate, Selenium, Dojo, and Fit.",
+      "Built features for their internal business software system.",
       "Maintained their legacy CSR apps."
     ]
   }
